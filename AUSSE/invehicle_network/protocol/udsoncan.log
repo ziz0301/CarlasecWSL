@@ -1,0 +1,732 @@
+2023-10-16 11:49:36 [INFO] Connection: Connection closed
+2023-10-16 11:50:01 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 11:50:01 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 11:50:01 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 11:50:01 [INFO] Connection: Connection closed
+2023-10-16 11:55:46 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 11:55:46 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 11:55:46 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 11:55:46 [INFO] Connection: Connection closed
+2023-10-16 11:56:16 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 11:56:16 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 11:56:16 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 11:56:16 [INFO] Connection: Connection closed
+2023-10-16 14:52:05 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 14:52:05 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 14:52:05 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 14:52:05 [INFO] Connection: Connection closed
+2023-10-16 14:52:21 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 14:52:21 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 14:52:21 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 14:52:21 [INFO] Connection: Connection closed
+2023-10-16 14:55:38 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 14:55:38 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 14:55:38 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 14:55:38 [INFO] Connection: Connection closed
+2023-10-16 14:57:01 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf200
+2023-10-16 14:57:01 [INFO] Connection: Connection closed
+2023-10-16 15:00:32 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf200
+2023-10-16 15:00:32 [INFO] Connection: Connection closed
+2023-10-16 15:00:53 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf186
+2023-10-16 15:00:53 [INFO] Connection: Connection closed
+2023-10-16 15:09:35 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf186
+2023-10-16 15:09:35 [INFO] Connection: Connection closed
+2023-10-16 15:09:58 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf186
+2023-10-16 15:09:58 [INFO] Connection: Connection closed
+2023-10-16 15:11:05 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf186 (ActiveDiagnosticSessionDataIdentifier)
+2023-10-16 15:11:05 [DEBUG] Connection: Sending 3 bytes : [b'22f186']
+2023-10-16 15:11:05 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:11:05 [INFO] Connection: Connection closed
+2023-10-16 15:12:09 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf186 (ActiveDiagnosticSessionDataIdentifier)
+2023-10-16 15:12:09 [DEBUG] Connection: Sending 3 bytes : [b'22f186']
+2023-10-16 15:12:09 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:12:09 [INFO] Connection: Connection closed
+2023-10-16 15:12:27 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf186 (ActiveDiagnosticSessionDataIdentifier)
+2023-10-16 15:12:27 [DEBUG] Connection: Sending 3 bytes : [b'22f186']
+2023-10-16 15:12:27 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:12:27 [INFO] Connection: Connection closed
+2023-10-16 15:13:22 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf186 (ActiveDiagnosticSessionDataIdentifier)
+2023-10-16 15:13:22 [DEBUG] Connection: Sending 3 bytes : [b'22f186']
+2023-10-16 15:13:22 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:13:22 [INFO] Connection: Connection closed
+2023-10-16 15:15:16 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0xf186
+2023-10-16 15:15:16 [INFO] Connection: Connection closed
+2023-10-16 15:15:40 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf191 (VehicleManufacturerECUHardwareNumberDataIdentifier)
+2023-10-16 15:15:40 [DEBUG] Connection: Sending 3 bytes : [b'22f191']
+2023-10-16 15:15:40 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:15:40 [INFO] Connection: Connection closed
+2023-10-16 15:16:40 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf191 (VehicleManufacturerECUHardwareNumberDataIdentifier)
+2023-10-16 15:16:40 [DEBUG] Connection: Sending 3 bytes : [b'22f191']
+2023-10-16 15:16:40 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:16:40 [INFO] Connection: Connection closed
+2023-10-16 15:17:21 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:17:21 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:17:21 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:17:21 [INFO] Connection: Connection closed
+2023-10-16 15:17:45 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:17:45 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:17:45 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:17:45 [INFO] Connection: Connection closed
+2023-10-16 15:18:38 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:18:38 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:18:39 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:18:39 [INFO] Connection: Connection closed
+2023-10-16 15:18:44 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:18:44 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:18:44 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:18:44 [INFO] Connection: Connection closed
+2023-10-16 15:19:01 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:19:01 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:19:01 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:19:01 [INFO] Connection: Connection closed
+2023-10-16 15:19:52 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:19:52 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:19:52 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:19:52 [INFO] Connection: Connection closed
+2023-10-16 15:20:05 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:20:05 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:20:06 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:20:06 [INFO] Connection: Connection closed
+2023-10-16 15:20:10 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:20:10 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:20:11 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 15:20:11 [INFO] Connection: Connection closed
+2023-10-16 15:47:22 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 15:47:22 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 15:47:22 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 15:47:22 [INFO] Connection: Connection closed
+2023-10-16 16:12:45 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 16:12:45 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 16:12:45 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 16:12:45 [INFO] Connection: Connection closed
+2023-10-16 16:13:03 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 16:13:03 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 16:13:03 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 16:13:03 [INFO] Connection: Connection closed
+2023-10-16 16:17:11 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:17:11 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:17:11 [ERROR] UdsClient: [OSError] : [Errno 84] Invalid or incomplete multibyte or wide character
+2023-10-16 16:17:11 [INFO] Connection: Connection closed
+2023-10-16 16:17:27 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:17:27 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:17:27 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:17:27 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:17:27 [DEBUG] Connection: Sending 18 bytes : [b'2704db2ba64c226acfc8118eadf2281a7a9f']
+2023-10-16 16:17:27 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SecurityAccessDenied (0x33)
+2023-10-16 16:17:27 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2023-10-16 16:17:27 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2023-10-16 16:17:27 [ERROR] UdsClient: [UnexpectedResponseException] : SecurityAccess service execution returned a valid response but unexpected. Details : Response gotten from server has a service ID different than the request service ID. Received=0x67, Expected=0x50 
+2023-10-16 16:17:27 [INFO] Connection: Connection closed
+2023-10-16 16:17:55 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2023-10-16 16:17:55 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2023-10-16 16:17:55 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2023-10-16 16:17:55 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2023-10-16 16:17:55 [INFO] Connection: Connection closed
+2023-10-16 16:18:21 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:18:21 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:18:21 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:18:21 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:18:21 [DEBUG] Connection: Sending 18 bytes : [b'2704c86d327070682da63f6d41ed97938b4e']
+2023-10-16 16:18:21 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SecurityAccessDenied (0x33)
+2023-10-16 16:18:21 [INFO] Connection: Connection closed
+2023-10-16 16:18:41 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:18:41 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:18:41 [ERROR] UdsClient: [OSError] : [Errno 84] Invalid or incomplete multibyte or wide character
+2023-10-16 16:18:41 [INFO] Connection: Connection closed
+2023-10-16 16:18:54 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:18:54 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:18:54 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:18:54 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:18:54 [DEBUG] Connection: Sending 18 bytes : [b'270436b05c0df42b41a694315b5f09bab7a2']
+2023-10-16 16:18:54 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SecurityAccessDenied (0x33)
+2023-10-16 16:18:54 [INFO] Connection: Connection closed
+2023-10-16 16:19:17 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:19:17 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:19:17 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:19:17 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:19:17 [DEBUG] Connection: Sending 18 bytes : [b'2704e7653af39b411d45d1de13f4c816d268']
+2023-10-16 16:19:17 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:19:17 [ERROR] UdsClient: [UnexpectedResponseException] : SecurityAccess service execution returned a valid response but unexpected. Details : Response subfunction received from server (0x03) does not match the requested subfunction (0x04) 
+2023-10-16 16:19:17 [INFO] Connection: Connection closed
+2023-10-16 16:21:20 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:21:20 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:21:20 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:20 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:21:20 [DEBUG] Connection: Sending 18 bytes : [b'2704b298127220c42b27ce21849773cd54f2']
+2023-10-16 16:21:20 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:20 [INFO] Connection: Connection closed
+2023-10-16 16:21:26 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:21:26 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:21:26 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:26 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:21:26 [DEBUG] Connection: Sending 18 bytes : [b'2704724adb92116aaa7804abbc08990854f3']
+2023-10-16 16:21:26 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:26 [INFO] Connection: Connection closed
+2023-10-16 16:21:39 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2023-10-16 16:21:39 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2023-10-16 16:21:39 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:39 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2023-10-16 16:21:39 [DEBUG] Connection: Sending 18 bytes : [b'27040bdf9aaabe556d3b79118283c7545ece']
+2023-10-16 16:21:39 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2023-10-16 16:21:39 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2023-10-16 16:21:39 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2023-10-16 16:21:39 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2023-10-16 16:21:39 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2023-10-16 16:21:39 [INFO] Connection: Connection closed
+2023-10-16 16:23:21 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2023-10-16 16:23:21 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2023-10-16 16:23:21 [WARNING] UdsClient: WriteDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2023-10-16 16:23:21 [INFO] Connection: Connection closed
+2023-10-16 16:23:38 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2023-10-16 16:23:38 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2023-10-16 16:23:38 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2023-10-16 16:23:38 [INFO] Connection: Connection closed
+2023-10-16 16:42:28 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2023-10-16 16:42:28 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2023-10-16 16:42:28 [INFO] UdsClient: Received positive response for service WriteDataByIdentifier (0x2e) from server.
+2023-10-16 16:42:28 [INFO] Connection: Connection closed
+2023-10-16 16:50:53 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 2 bytes
+2023-10-16 16:50:53 [DEBUG] Connection: Sending 6 bytes : [b'310101a90102']
+2023-10-16 16:50:53 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2023-10-16 16:50:53 [INFO] Connection: Connection closed
+2023-10-16 16:51:55 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 2 bytes
+2023-10-16 16:51:55 [DEBUG] Connection: Sending 6 bytes : [b'310101a90102']
+2023-10-16 16:51:55 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2023-10-16 16:51:55 [INFO] Connection: Connection closed
+2024-02-04 22:12:52 [INFO] Connection: Connection closed
+2024-02-04 22:13:09 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-04 22:13:09 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:13:09 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 18 bytes : [b'27044f08ebdfc3b239a3a2452b47fceed9a7']
+2024-02-04 22:13:09 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:13:09 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-04 22:13:09 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-04 22:13:09 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-04 22:13:09 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2024-02-04 22:13:09 [WARNING] UdsClient: WriteDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:13:09 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-04 22:13:09 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:13:09 [INFO] UdsClient: ECUReset<0x11> - Requesting reset of type 0x01 (hardReset)
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 2 bytes : [b'1101']
+2024-02-04 22:13:09 [WARNING] UdsClient: ECUReset service execution returned a negative response ServiceNotSupported (0x11)
+2024-02-04 22:13:09 [INFO] UdsClient: InputOutputControlByIdentifier<0x2f> - Sending request for DID=0xf192, control parameter 0x00 (returnControlToECU).
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 4 bytes : [b'2ff19200']
+2024-02-04 22:13:09 [WARNING] UdsClient: InputOutputControlByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:13:09 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 0 bytes
+2024-02-04 22:13:09 [DEBUG] Connection: Sending 4 bytes : [b'310201a9']
+2024-02-04 22:13:09 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-04 22:13:09 [INFO] Connection: Connection closed
+2024-02-04 22:16:53 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-04 22:16:53 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-04 22:16:53 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-04 22:16:53 [INFO] Connection: Connection closed
+2024-02-04 22:21:15 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-04 22:21:15 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-04 22:21:15 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:21:15 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-04 22:21:15 [DEBUG] Connection: Sending 18 bytes : [b'2704001ed0f84f060cd71222b21e2a55ea5e']
+2024-02-04 22:21:15 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:21:15 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-04 22:21:15 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-04 22:21:15 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-04 22:21:15 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-04 22:21:15 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2024-02-04 22:21:15 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2024-02-04 22:21:15 [WARNING] UdsClient: WriteDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:21:15 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-04 22:21:15 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-04 22:21:15 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:21:15 [INFO] Connection: Connection closed
+2024-02-04 22:29:43 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-04 22:29:43 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-04 22:29:43 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:29:43 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-04 22:29:43 [DEBUG] Connection: Sending 18 bytes : [b'27044a1b87524f126b47045fcae7caa508f2']
+2024-02-04 22:29:43 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-04 22:29:43 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-04 22:29:43 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-04 22:29:43 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-04 22:29:43 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-04 22:29:43 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2024-02-04 22:29:43 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2024-02-04 22:29:43 [WARNING] UdsClient: WriteDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:29:43 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-04 22:29:43 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-04 22:29:43 [WARNING] UdsClient: ReadDataByIdentifier service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-04 22:29:43 [INFO] Connection: Connection closed
+2024-02-05 09:14:01 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-05 09:14:01 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-05 09:14:01 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2024-02-05 09:14:01 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 0 bytes
+2024-02-05 09:14:01 [DEBUG] Connection: Sending 4 bytes : [b'310201a9']
+2024-02-05 09:14:01 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 09:14:01 [INFO] Connection: Connection closed
+2024-02-05 09:14:01 [INFO] Connection: Connection closed
+2024-02-05 09:14:48 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-05 09:14:48 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-05 09:14:48 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2024-02-05 09:14:48 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 0 bytes
+2024-02-05 09:14:48 [DEBUG] Connection: Sending 4 bytes : [b'310201a9']
+2024-02-05 09:14:48 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:14:48 [INFO] Connection: Connection closed
+2024-02-05 09:14:48 [INFO] Connection: Connection closed
+2024-02-05 09:28:16 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2024-02-05 09:28:16 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038393838']
+2024-02-05 09:28:16 [INFO] UdsClient: Received positive response for service WriteDataByIdentifier (0x2e) from server.
+2024-02-05 09:28:16 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-05 09:28:16 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-05 09:28:16 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2024-02-05 09:28:16 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 0 bytes
+2024-02-05 09:28:16 [DEBUG] Connection: Sending 4 bytes : [b'310201a9']
+2024-02-05 09:28:16 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:28:16 [INFO] Connection: Connection closed
+2024-02-05 09:28:16 [INFO] Connection: Connection closed
+2024-02-05 09:34:46 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 0 bytes
+2024-02-05 09:34:46 [DEBUG] Connection: Sending 4 bytes : [b'310201a9']
+2024-02-05 09:34:46 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:34:46 [INFO] Connection: Connection closed
+2024-02-05 09:34:46 [INFO] Connection: Connection closed
+2024-02-05 09:35:04 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 09:35:04 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 09:35:04 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 09:35:04 [INFO] Connection: Connection closed
+2024-02-05 09:35:04 [INFO] Connection: Connection closed
+2024-02-05 09:49:10 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 09:49:10 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 09:49:10 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:49:10 [INFO] Connection: Connection closed
+2024-02-05 09:49:10 [INFO] Connection: Connection closed
+2024-02-05 09:50:01 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-05 09:50:01 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-05 09:50:01 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 09:50:01 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-05 09:50:01 [DEBUG] Connection: Sending 18 bytes : [b'27048740ed3983f49609e7f18e03f465d76b']
+2024-02-05 09:50:01 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 09:50:01 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-05 09:50:01 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-05 09:50:01 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-05 09:50:01 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-05 09:50:01 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 09:50:01 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 09:50:01 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:50:01 [INFO] Connection: Connection closed
+2024-02-05 09:50:01 [INFO] Connection: Connection closed
+2024-02-05 09:50:16 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-05 09:50:16 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-05 09:50:16 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 09:50:16 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-05 09:50:16 [DEBUG] Connection: Sending 18 bytes : [b'270412792574b778ad4871636b309298afde']
+2024-02-05 09:50:16 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 09:50:16 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-05 09:50:16 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-05 09:50:16 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-05 09:50:16 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-05 09:50:16 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 09:50:16 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 09:50:16 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 09:50:16 [INFO] Connection: Connection closed
+2024-02-05 09:50:16 [INFO] Connection: Connection closed
+2024-02-05 10:31:13 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2024-02-05 10:31:13 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2024-02-05 10:31:13 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2024-02-05 10:31:13 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 10:31:13 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 10:31:13 [ERROR] UdsClient: [UnexpectedResponseException] : WriteDataByIdentifier service execution returned a valid response but unexpected. Details : Response gotten from server has a service ID different than the request service ID. Received=0x6e, Expected=0x71 
+2024-02-05 10:31:14 [INFO] Connection: Connection closed
+2024-02-05 10:31:14 [INFO] Connection: Connection closed
+2024-02-05 11:18:44 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:18:44 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 11:18:44 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:18:44 [INFO] Connection: Connection closed
+2024-02-05 11:18:44 [INFO] Connection: Connection closed
+2024-02-05 11:24:20 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:24:20 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 11:24:20 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:24:20 [INFO] Connection: Connection closed
+2024-02-05 11:24:20 [INFO] Connection: Connection closed
+2024-02-05 11:24:50 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:24:50 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 11:24:50 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:24:50 [INFO] Connection: Connection closed
+2024-02-05 11:24:50 [INFO] Connection: Connection closed
+2024-02-05 11:29:37 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:29:37 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 11:29:37 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:29:37 [INFO] Connection: Connection closed
+2024-02-05 11:29:37 [INFO] Connection: Connection closed
+2024-02-05 11:30:30 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:30:30 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 11:30:31 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:30:34 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:30:34 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 11:30:34 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:30:34 [INFO] Connection: Connection closed
+2024-02-05 11:30:34 [INFO] Connection: Connection closed
+2024-02-05 11:36:00 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:36:00 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 11:36:00 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:36:03 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 11:36:03 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 11:36:03 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 11:36:03 [INFO] Connection: Connection closed
+2024-02-05 11:36:03 [INFO] Connection: Connection closed
+2024-02-05 12:55:32 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 12:55:32 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 12:55:32 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 12:55:32 [INFO] Connection: Connection closed
+2024-02-05 12:55:32 [INFO] Connection: Connection closed
+2024-02-05 13:08:09 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:08:09 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:08:09 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 13:08:09 [INFO] Connection: Connection closed
+2024-02-05 13:08:09 [INFO] Connection: Connection closed
+2024-02-05 13:10:05 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:10:05 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:10:06 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 13:10:06 [INFO] Connection: Connection closed
+2024-02-05 13:10:06 [INFO] Connection: Connection closed
+2024-02-05 13:16:41 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:16:41 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:16:41 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 13:16:41 [INFO] Connection: Connection closed
+2024-02-05 13:16:41 [INFO] Connection: Connection closed
+2024-02-05 13:17:12 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:17:12 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:17:12 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-05 13:17:12 [INFO] Connection: Connection closed
+2024-02-05 13:17:12 [INFO] Connection: Connection closed
+2024-02-05 13:22:30 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:22:30 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:22:30 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:22:30 [INFO] Connection: Connection closed
+2024-02-05 13:22:30 [INFO] Connection: Connection closed
+2024-02-05 13:32:14 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:32:14 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:32:14 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:32:14 [INFO] Connection: Connection closed
+2024-02-05 13:32:14 [INFO] Connection: Connection closed
+2024-02-05 13:36:22 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:36:22 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:36:22 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:36:24 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:36:24 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:36:24 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:36:24 [INFO] Connection: Connection closed
+2024-02-05 13:36:24 [INFO] Connection: Connection closed
+2024-02-05 13:43:30 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:43:30 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:43:30 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:43:32 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:43:32 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:43:32 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:43:32 [INFO] Connection: Connection closed
+2024-02-05 13:43:32 [INFO] Connection: Connection closed
+2024-02-05 13:44:00 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:00 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:44:00 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:02 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:02 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:44:02 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:02 [INFO] Connection: Connection closed
+2024-02-05 13:44:02 [INFO] Connection: Connection closed
+2024-02-05 13:44:08 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:08 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:44:08 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:10 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:10 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:44:10 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:10 [INFO] Connection: Connection closed
+2024-02-05 13:44:10 [INFO] Connection: Connection closed
+2024-02-05 13:44:21 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:21 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:44:21 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:23 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:23 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:44:23 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:23 [INFO] Connection: Connection closed
+2024-02-05 13:44:23 [INFO] Connection: Connection closed
+2024-02-05 13:44:29 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:29 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:44:29 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:31 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:31 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:44:31 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:31 [INFO] Connection: Connection closed
+2024-02-05 13:44:31 [INFO] Connection: Connection closed
+2024-02-05 13:44:37 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:37 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 13:44:37 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:40 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 13:44:40 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 13:44:40 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 13:44:40 [INFO] Connection: Connection closed
+2024-02-05 13:44:40 [INFO] Connection: Connection closed
+2024-02-05 14:55:34 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-05 14:55:34 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-05 14:55:34 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 14:55:34 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-05 14:55:34 [DEBUG] Connection: Sending 18 bytes : [b'2704b2a606df85cecc956b35bb9e664b61c0']
+2024-02-05 14:55:34 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 14:55:34 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-05 14:55:34 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-05 14:55:34 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-05 14:55:34 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-05 14:55:34 [INFO] Connection: Connection closed
+2024-02-05 14:55:34 [INFO] Connection: Connection closed
+2024-02-05 14:55:57 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-05 14:55:57 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-05 14:55:57 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 14:55:57 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-05 14:55:57 [DEBUG] Connection: Sending 18 bytes : [b'2704912ee5496f9934fc9f53e44e60b67b20']
+2024-02-05 14:55:57 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 14:55:57 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-05 14:55:57 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-05 14:55:57 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-05 14:55:57 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-05 14:55:57 [INFO] Connection: Connection closed
+2024-02-05 14:55:57 [INFO] Connection: Connection closed
+2024-02-05 19:49:54 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-02-05 19:49:54 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-02-05 19:49:54 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 19:49:54 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-02-05 19:49:54 [DEBUG] Connection: Sending 18 bytes : [b'27046c5aa0ad62ab252f691ed36ce6acc1b5']
+2024-02-05 19:49:54 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-02-05 19:49:54 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2024-02-05 19:49:54 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2024-02-05 19:49:54 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2024-02-05 19:49:54 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2024-02-05 19:49:54 [INFO] Connection: Connection closed
+2024-02-05 19:49:54 [INFO] Connection: Connection closed
+2024-02-05 19:50:21 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 19:50:21 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-05 19:50:21 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 19:50:23 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-05 19:50:23 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-05 19:50:23 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-05 19:50:23 [INFO] Connection: Connection closed
+2024-02-05 19:50:23 [INFO] Connection: Connection closed
+2024-02-11 01:24:53 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-11 01:24:53 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-11 01:24:53 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 01:24:58 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-11 01:24:58 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-11 01:24:58 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 01:24:58 [INFO] Connection: Connection closed
+2024-02-11 01:24:58 [INFO] Connection: Connection closed
+2024-02-11 02:13:17 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x04f1 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 02:13:17 [DEBUG] Connection: Sending 5 bytes : [b'310104f15f']
+2024-02-11 02:13:17 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 02:13:19 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x04f1 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 02:13:19 [DEBUG] Connection: Sending 5 bytes : [b'310204f15f']
+2024-02-11 02:13:19 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 02:13:19 [INFO] Connection: Connection closed
+2024-02-11 02:13:19 [INFO] Connection: Connection closed
+2024-02-11 03:09:13 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:09:13 [DEBUG] Connection: Sending 5 bytes : [b'3101020310']
+2024-02-11 03:09:13 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-11 03:09:13 [INFO] Connection: Connection closed
+2024-02-11 03:09:13 [INFO] Connection: Connection closed
+2024-02-11 03:11:56 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:11:56 [DEBUG] Connection: Sending 5 bytes : [b'3101020310']
+2024-02-11 03:11:56 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-11 03:11:56 [INFO] Connection: Connection closed
+2024-02-11 03:11:56 [INFO] Connection: Connection closed
+2024-02-11 03:15:48 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:15:48 [DEBUG] Connection: Sending 5 bytes : [b'3101020310']
+2024-02-11 03:15:48 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-11 03:15:48 [INFO] Connection: Connection closed
+2024-02-11 03:15:48 [INFO] Connection: Connection closed
+2024-02-11 03:17:22 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:17:22 [DEBUG] Connection: Sending 5 bytes : [b'3101020310']
+2024-02-11 03:17:22 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:17:24 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:17:24 [DEBUG] Connection: Sending 5 bytes : [b'3102020310']
+2024-02-11 03:17:24 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:17:24 [INFO] Connection: Connection closed
+2024-02-11 03:17:24 [INFO] Connection: Connection closed
+2024-02-11 03:17:50 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:17:50 [DEBUG] Connection: Sending 5 bytes : [b'3101020310']
+2024-02-11 03:17:50 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:17:52 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:17:52 [DEBUG] Connection: Sending 5 bytes : [b'3102020310']
+2024-02-11 03:17:52 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:17:52 [INFO] Connection: Connection closed
+2024-02-11 03:17:52 [INFO] Connection: Connection closed
+2024-02-11 03:18:59 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:18:59 [DEBUG] Connection: Sending 5 bytes : [b'3101020301']
+2024-02-11 03:18:59 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:19:01 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:19:01 [DEBUG] Connection: Sending 5 bytes : [b'3102020301']
+2024-02-11 03:19:01 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:19:01 [INFO] Connection: Connection closed
+2024-02-11 03:19:01 [INFO] Connection: Connection closed
+2024-02-11 03:20:41 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:20:41 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2024-02-11 03:20:41 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:20:43 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:20:43 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2024-02-11 03:20:43 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:20:43 [INFO] Connection: Connection closed
+2024-02-11 03:20:43 [INFO] Connection: Connection closed
+2024-02-11 03:22:42 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:22:42 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2024-02-11 03:22:42 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:22:44 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:22:44 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2024-02-11 03:22:44 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:22:44 [INFO] Connection: Connection closed
+2024-02-11 03:22:44 [INFO] Connection: Connection closed
+2024-02-11 03:23:50 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:23:50 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2024-02-11 03:23:50 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:23:52 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:23:52 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2024-02-11 03:23:52 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:23:52 [INFO] Connection: Connection closed
+2024-02-11 03:23:52 [INFO] Connection: Connection closed
+2024-02-11 03:25:58 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:25:58 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2024-02-11 03:25:58 [WARNING] UdsClient: RoutineControl service execution returned a negative response RequestOutOfRange (0x31)
+2024-02-11 03:26:00 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:26:00 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2024-02-11 03:26:00 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:26:00 [INFO] Connection: Connection closed
+2024-02-11 03:26:00 [INFO] Connection: Connection closed
+2024-02-11 03:28:14 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:28:14 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2024-02-11 03:28:14 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:28:16 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2024-02-11 03:28:16 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2024-02-11 03:28:16 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-11 03:28:16 [INFO] Connection: Connection closed
+2024-02-11 03:28:16 [INFO] Connection: Connection closed
+2024-02-12 14:49:58 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 14:49:58 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-12 14:49:58 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-12 14:49:58 [INFO] Connection: Connection closed
+2024-02-12 14:49:58 [INFO] Connection: Connection closed
+2024-02-12 14:54:11 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 14:54:11 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-12 14:54:11 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-12 14:54:13 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 14:54:13 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-12 14:55:03 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-12 14:55:03 [INFO] Connection: Connection closed
+2024-02-12 14:55:03 [INFO] Connection: Connection closed
+2024-02-12 14:57:08 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 14:57:08 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-12 14:57:08 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-12 14:59:35 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 14:59:45 [DEBUG] Connection: Sending 5 bytes : [b'310201a964']
+2024-02-12 14:59:45 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2024-02-12 14:59:45 [INFO] Connection: Connection closed
+2024-02-12 14:59:45 [INFO] Connection: Connection closed
+2024-02-12 15:04:13 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 15:04:13 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-12 15:04:14 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-12 15:04:14 [INFO] Connection: Connection closed
+2024-02-12 15:04:14 [INFO] Connection: Connection closed
+2024-02-12 15:17:36 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-02-12 15:17:36 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-02-12 15:17:36 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-02-12 15:17:37 [INFO] Connection: Connection closed
+2024-02-12 15:17:37 [INFO] Connection: Connection closed
+2024-03-25 22:11:53 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-03-25 22:11:53 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-03-25 22:11:53 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-03-25 22:11:53 [INFO] Connection: Connection closed
+2024-03-25 22:11:53 [INFO] Connection: Connection closed
+2024-03-25 22:12:53 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x01a9 (TachographTestIds) with a payload of 1 bytes
+2024-03-25 22:12:53 [DEBUG] Connection: Sending 5 bytes : [b'310101a964']
+2024-03-25 22:12:53 [ERROR] UdsClient: [UnexpectedResponseException] : WriteDataByIdentifier service execution returned a valid response but unexpected. Details : Response gotten from server has a service ID different than the request service ID. Received=0x6e, Expected=0x71 
+2024-03-25 22:12:53 [INFO] Connection: Connection closed
+2024-03-25 22:12:53 [INFO] Connection: Connection closed
+2024-03-25 22:14:22 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-25 22:14:22 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-25 22:14:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-25 22:14:22 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-25 22:14:22 [DEBUG] Connection: Sending 18 bytes : [b'2704d637bc41113bcd21d95f97660d9b4e69']
+2024-03-25 22:14:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-25 22:14:22 [INFO] Connection: Connection closed
+2024-03-25 22:14:22 [INFO] Connection: Connection closed
+2024-03-25 22:14:44 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-25 22:14:44 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-25 22:14:44 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-25 22:14:44 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-25 22:14:44 [DEBUG] Connection: Sending 18 bytes : [b'27048fe6a4e34d9972b878779d92dc485cf1']
+2024-03-25 22:14:44 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-25 22:14:44 [INFO] Connection: Connection closed
+2024-03-25 22:14:44 [INFO] Connection: Connection closed
+2024-03-26 00:08:33 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:08:33 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:08:33 [ERROR] UdsClient: [TypeError] : object of type 'NoneType' has no len()
+2024-03-26 00:08:33 [INFO] Connection: Connection closed
+2024-03-26 00:08:33 [INFO] Connection: Connection closed
+2024-03-26 00:08:40 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:08:40 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:08:40 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:08:40 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:08:40 [DEBUG] Connection: Sending 18 bytes : [b'27040e54b7f76a40b52664075e3430e7e6f0']
+2024-03-26 00:08:40 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:08:40 [INFO] Connection: Connection closed
+2024-03-26 00:08:40 [INFO] Connection: Connection closed
+2024-03-26 00:20:34 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:20:34 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:20:34 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:20:34 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:20:34 [DEBUG] Connection: Sending 18 bytes : [b'2704c079d43ffe2f55751b3cf2f57fcdebcb']
+2024-03-26 00:20:34 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:20:34 [INFO] Connection: Connection closed
+2024-03-26 00:20:34 [INFO] Connection: Connection closed
+2024-03-26 00:22:31 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:22:31 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:22:31 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:22:31 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:22:31 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 00:22:31 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:22:31 [INFO] Connection: Connection closed
+2024-03-26 00:22:31 [INFO] Connection: Connection closed
+2024-03-26 00:28:46 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:28:46 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:28:46 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:28:46 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:28:46 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 00:28:46 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:28:46 [INFO] Connection: Connection closed
+2024-03-26 00:28:46 [INFO] Connection: Connection closed
+2024-03-26 00:29:55 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:29:55 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:29:55 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:29:55 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:29:55 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 00:29:55 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:29:55 [INFO] Connection: Connection closed
+2024-03-26 00:29:55 [INFO] Connection: Connection closed
+2024-03-26 00:43:22 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:43:22 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:43:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:43:22 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:43:22 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 00:43:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:43:22 [INFO] Connection: Connection closed
+2024-03-26 00:43:22 [INFO] Connection: Connection closed
+2024-03-26 00:55:26 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 00:55:26 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 00:55:26 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:55:26 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 00:55:26 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 00:55:26 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 00:55:26 [INFO] Connection: Connection closed
+2024-03-26 00:55:26 [INFO] Connection: Connection closed
+2024-03-26 09:52:51 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2024-03-26 09:52:51 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2024-03-26 09:52:51 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 09:52:51 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2024-03-26 09:52:51 [DEBUG] Connection: Sending 18 bytes : [b'2704000102030405060708090a0b0c0d0e10']
+2024-03-26 09:52:51 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2024-03-26 09:52:51 [INFO] Connection: Connection closed
+2024-03-26 09:52:51 [INFO] Connection: Connection closed

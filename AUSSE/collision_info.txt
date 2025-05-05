@@ -1,0 +1,8 @@
+Version: 1
+Map: Town10HD
+Date: 11/27/23 21:35:56
+
+    Time  Types     Id Actor 1                                 Id Actor 2                            
+
+Frames: 101
+Duration: 16.1177 seconds

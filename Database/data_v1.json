@@ -1,0 +1,2280 @@
+{
+    "tactics": [
+        {
+            "ID": "TA0500",
+            "name": "Manipulate Environment",
+            "short_description": "The adversary is trying to manipulate the external environment to disrupt UGV operations or enable further attacks.",
+            "full_description": "Manipulate Environment consists of techniques where adversaries exploit external factors, such as wireless networks, connected infrastructure, and sensory/signal inputs, to deceive, disrupt, or compromise vehicle security without direct physical interference or initial access.\nThese techniques involves deploying rogue devices, intercepting or manipulating data transmissions, and exploiting signal inputs to mislead vehicle control systems or AI-based perception models.\nBy influencing the vehicle’s environment rather than altering its internal systems, adversaries can create conditions that enable additional attack tactics and techniques.\nThis tactic was adapted from AUTO-ISAC ATM.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5004","T5002","T5003","T5006","T5000","T5001","T5005"]
+        },
+        {
+            "ID": "TA0501",
+            "name": "Initial Access",
+            "short_description": "The adversary is attempting to gain unauthorised access to the UGV’s systems or networks.",
+            "full_description": "Initial Access consists of techniques that adversaries use as entry vectors to establish a foothold within UGV systems or networks.\nEntry points targeted by adversaries include telematics units, infotainment systems, and wireless interfaces (Wi-Fi, Bluetooth, or cellular connections). They may exploit vulnerabilities in manufacturer services, mobile applications, or cloud-based APIs that handle remote access and vehicle data. Physical interfaces, such as OBD-II ports, removable devices, and aftermarket dongles, can also be used as techniques to gain initial unauthorised access to the system.\nFootholds gained through initial access may enable additional attack tactics and techniques.\nThis tactic was adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5012","T5015","T5009","T5013","T5011","T5008","T5017","T5010","T5014","T5016","T5007"]
+        },
+        {
+            "ID": "TA0502",
+            "name": "Execution",
+            "short_description": "The adversary is trying to run malicious code or manipulate vehicle functions and data without authorisation.",
+            "full_description": "Execution consists of techniques that allow adversary-controlled code to run on a vehicle’s service, network, control unit, application, firmware, or other asset.\nThese attacks may involve direct code injection, unauthorised commands, or malicious payloads delivered through network interfaces, firmware updates, or compromised software. \nAttackers can exploit communication protocols such as the Controller Area Network (CAN) and Unified Diagnostic Services (UDS) to inject malicious messages and manipulate vehicle behUGViour. They may also execute code on vulnerable telematics units, infotainment systems, OTA update services or mobile-connected services.\nAdditionally, adversaries can tamper with UGV sensor inputs, such as LiDAR, radar, and GPS, to disrupt perception systems and trigger unintended vehicle responses.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5019","T5020","T5024","T5028","T5023","T5022","T5024","T5021","T5018","T5026","T5027"]
+        },
+        {
+            "ID": "TA0503",
+            "name": "Persistence",
+            "short_description": "The adversary attempts to maintain a foothold within the UGV’s systems.",
+            "full_description": "Persistence consists of techniques that enable long-term access, allowing adversaries to execute future attacks or retain control over compromised components.\nAdversaries can achieve persistence through various means, such as malicious OTA updates, unauthorised firmware modifications, or backdoors in telematics units and ECUs. These backdoors may remain active even after system reboots.\nFor example, attackers may tamper with firmware integrity mechanisms like Secure Boot to prevent recovery or install persistent malware in infotainment or telematics systems. This allows them to conduct long-term surveillance, execute unauthorised commands, and move laterally across the vehicle network.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5029","T5030","T5035","T5031","T5033","T5037","T5032","T5034","T5036"]
+        },
+        {
+            "ID": "TA0504",
+            "name": "Privilege Escalation",
+            "short_description": "The adversary is attempting to obtain elevated permissions within the UGV’s systems.",
+            "full_description": "Privilege escalation consists of techniques that allow adversaries to gain higher-level access within an UGV system or network. With elevated privileges, they can execute administrative commands, control vehicle components, and disable security measures.\nAdversaries often start with limited access and escalate their privileges by exploiting system weaknesses, misconfigurations, or vulnerabilities.\nExamples of elevated access include: User accounts with extended permissions, root level of infotainment system, root level of telematic system, root level of central gateway system. Once attackers gain administrative access, they can run arbitrary commands, alter vehicle firmware, and disable security features to enable further attacks.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5039","T5040","T5038"]
+        },
+        {
+            "ID": "TA0505",
+            "name": "Defense Evasion",
+            "short_description": "The adversary is trying to bypass or disable the UGV's security measures.",
+            "full_description": "Defense evasion consists of techniques adversaries use to disable or bypass security mechanisms within an UGV system. Unlike traditional ATT&CK approaches that focus on UGVoiding detection, these methods allow attackers to directly neutralize security controls. This enables them to execute malicious code, advance their attacks, or manipulate the system without interference.\nCommon techniques include:\n\t- Disabling or bypassing security mechanisms in the telematics system to maintain access.\n\t- Exploiting software update processes and code integrity checks to insert malicious code undetected.\n\t- Disabling vehicle IDS to evade monitoring and alerts.\n\t- Bypassing security controls in diagnostic functions to perform unauthorised operations.\nThis tactic is adapted from AUTO-ISAC ATM.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5041","T5044","T5042","T5043"]
+        },
+        {
+            "ID": "TA0506",
+            "name": "Credential Access",
+            "short_description": "The adversary is trying to steal UGV authentication credentials, such as passwords, access tokens, or cryptographic keys.",
+            "full_description": "Credential access consists of techniques such as compromising mobile apps or wireless network to steal authentication credentials, exploiting vulnerabilities in keyless entry systems to gain unauthorised vehicle access, and intercepting communication to obtain session tokens or API keys. These methods enable attackers to bypass security controls, execute unauthorised actions, and further infiltrate the system.\nCommon credential access techniques may include:\n\t- Compromising mobile apps or wireless network to intercept authentication credentials like tokens, passwords, and keys.\n\t- Exploiting vulnerabilities in key fob systems or remote keyless entry (RKE) to gain unauthorised access.\n\t- Targeting mobile apps or infotainment systems to steal sensitive information like vehicle identification numbers (VINs).\n\t- Intercepting vehicle-to-cloud communications to obtain session tokens or API keys that enable backend system access.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5045","T5047","T5048","T5046","T5049"]
+        },
+		{
+            "ID": "TA0507",
+            "name": "Discovery",
+            "short_description": "The adversary is trying to understand the vehicle network and environment.",
+            "full_description": "Discovery consists of techniques for exploring a vehicle's network, interfaces, and communication protocols to identify vulnerable components within the autonomous vehicle.\nThrough analysing system structures, scanning networks, and probing interfaces, adversaries can map attack surfaces and find exploitable vulnerabilities.\nCommon discovery techniques include intercepting and analysing network traffic or CAN messages to understand vehicle communication structures, scanning and mapping internal vehicle networks to identify vulnerabilities and access points, and exploring interfaces like OBD-II ports, telematics systems, and sensors to find misconfigurations or security weaknesses.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5052","T5050","T5051"]
+        },
+        {
+            "ID": "TA0508",
+            "name": "Lateral Movement",
+            "short_description": "The adversary is trying to move through the UGV’s network or systems.",
+            "full_description": "Lateral movement consists of techniques that allow adversaries to traverse the vehicle’s internal network, pivot between components to access additional resources and escalate their attack. \nBy exploiting vulnerabilities, leveraging trusted communication channels, remote services or uploading malicious tools, attackers can extend their control and compromise additional vehicle functions.\nCommon lateral movement techniques include: moving from infotainment or telematics systems to other ECUs to control critical functions (via SSH, Telnet, direct connections, or shared CAN buses); transitioning from non-critical to critical CAN buses to access safety-critical components through diagnostic functions; and uploading tools to the head unit for exploitation, control, and automated spreading across connected vehicles through cellular networks.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5054","T5053","T5055"]
+        },
+        {
+            "ID": "TA0509",
+            "name": "Collection",
+            "short_description": "The adversary is collecting data of interest from the UGV’s systems or environment.",
+            "full_description": "Collection consists of techniques used to capture, extract, and analyse data from vehicle networks, internal systems, and external interfaces. By obtaining critical information, attackers can gain insights into vehicle operations, exfiltrate data, and plan further exploits.\nCommon data sources include CAN bus messages, important UGV files like VIN numbers and system logs, and vehicle data such as location, camera images, phone calls, software/firmware versions, and real-time status.\nAdversaries typically collect data through network sniffing, exploiting web service vulnerabilities, or directly accessing local vehicle systems. \nThis tactic is adapted from AUTO-ISAC ATM.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5059","T5056","T5058","T5057"]
+        },
+        {
+            "ID": "TA0510",
+            "name": "Command and Control",
+            "short_description": "The adversary is trying to communicate with compromised UGV systems to control them.",
+            "full_description": "Command and control consists of techniques that adversaries use to maintain communication (typically remote) and issue malicious commands to vehicles. By establishing covert communication channels, attackers can manipulate UGV functions, steal data, or launch additional attacks while UGVoiding detection.\nCommon command and control techniques include using removable devices, modifying firmware, establishing reverse shells, or installing malicious applications to gain and maintain long-term remote control over compromised UGV systems.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5062","T5060","T5061"]
+        },
+		{
+            "ID": "TA0511",
+            "name": "Impair Process Control",
+            "short_description": "The adversary is trying to manipulate, disable, or damage physical control processes within UGV.",
+            "full_description": "Impair Process Control consists of techniques that interfere with the vehicle's operational processes by altering control logic, modifying system parameters, or manipulating reporting mechanisms. These techniques can result in unsafe driving conditions, compromised safety features, or loss of vehicle control.\nCommon techniques for this tactic include replaying normal diagnostic responses to emulate a healthy airbag system, or injecting malicious code into the control program to corrupt vehicle stability and response.\nThis tactic is adapted from MITRE ATT&CK (ICS domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5064","T5063"]
+        },
+		{
+            "ID": "TA0512",
+            "name": "Inhibit Response Function",
+            "short_description": "The adversary is trying to prevent your safety, protection, quality assurance, and operator intervention functions from responding to a failure, hazard, or unsafe state.",
+            "full_description": "Inhibit Response Function consists of techniques that interfere with a vehicle's ability to detect and respond to threats, manipulate safety mechanisms, and suppress critical alerts. Through blocking or altering response functions, attackers can create unsafe driving conditions, disable security features, and cause system failures.\nCommon techniques include suppressing anti-theft systems, spoofing emergency brake data, forcing unnecessary stops by creating false obstacles, and jamming radar and ultrasonic sensors. These actions prevent the vehicle from detecting real obstacles, which can lead to collisions or failure to respond to actual threats.\nThis tactic is adapted from MITRE ATT&CK (ICS domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5065","T5066"]
+        },		
+        {
+            "ID": "TA0513",
+            "name": "Exfiltration",
+            "short_description": "The adversary is attempting to steal data from the UGV and transmit it externally.",
+            "full_description": "Exfiltration refers to techniques that adversaries use to steal data from vehicles. After collecting data, adversaries typically package it using compression and encryption to UGVoid detection during removal.\nData can be exfiltrated manually or through automated processes using command and control channels or alternative pathways. Adversaries may exploit various vehicle connectivity features, such as mobile applications, telematics data loggers, cellular networks, Wi-Fi, or Bluetooth, to extract and transmit stolen information.\nThis tactic is adapted from MITRE ATT&CK (Enterprise domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5068","T5067"]
+        },    
+        {
+            "ID": "TA0514",
+            "name": "Impact",
+            "short_description": "The adversary is attempting to manipulate, disrupt, or damage the UGV's systems or its operational environment.",
+            "full_description": "Impact consists of techniques that degrade vehicle functionality, compromise safety, or exploit vulnerabilities at scale. Through malicious commands, system output manipulation, or disruption of essential operations, attackers can inflict physical harm, cause financial losses, and create widespread security breaches, threatening safety, security, and privacy.\nCommon impact techniques include forcing vehicles off-road, causing accidents, initiating emergency shutdowns, and impairing safe operation. Attackers may also steal sensitive vehicle data, including operational and security-critical information, or exploit vulnerabilities across identical vehicle models to launch large-scale attacks after breaching a single vehicle.\nThis tactic is adapted from MITRE ATT&CK (Enterprise and ICS domain).",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "technique ID": ["T5076","T5078","T5070","T5077","T5073","T5075","T5074","T5072","T5069","T5079","T5071","T5081","T5080"]
+        }
+    ],
+    "techniques": [
+		{
+            "ID": "T5000",
+            "name": "Rogue Cellular Base Station ",
+            "short_description": "Adversaries may set up a rogue cellular base station (fake bts or femtocell) to intercept or manipulate vehicle telematics communication. A compromised femtocell can also allow direct interaction with a vehicle’s telematics system by bypassing carrier network restrictions",
+            "full_description": "By masquerading as a legitimate tower, attackers can downgrade security protocols, intercept authentication data, or inject malicious commands, potentially compromising remote services or firmware updates.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "RE0013",
+                    "description": "Researchers used a rogue GSM base station to intercept TCP messages and escalate access to BMW’s NBT Head Unit and Telematic Communication Box (TCB)."
+                },
+				{
+                    "reference ID": "RE0014",
+                    "description": "Researchers modified a Sprint Airave femtocell to communicate directly with Uconnect over Sprint’s network to demonstrate remote exploitation of the infotainment system."
+                }
+            ],
+            "reference ID": ["RE0013", "RE0014"]
+        },
+		{
+            "ID": "T5001",
+            "name": "Rogue Wi-Fi Access Point ",
+            "short_description": "Adversaries may set up rogue Wi-Fi access points to perform man-in-the-middle (MitM) attacks, intercept credentials, or inject malicious firmware into vehicle systems. By spoofing trusted networks, such as those used for OTA updates, diagnostics, or infotainment, attackers can perform man-in-the-middle (MitM) attacks and capture authentication credentials.",
+			"full_description": "By compromising a vehicle’s wireless entry point, adversaries can establish an initial foothold, enabling further attack techniques such as remote code execution, firmware manipulation, and CAN message injection. This can lead to deeper system compromise, allowing attackers to escalate privileges, persist within the system, or disrupt vehicle operations.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0011",
+                    "description": "Researchers spoofed Tesla Guest Wi-Fi, a trusted network used by Tesla body shops and superchargers, to trick vehicles into auto-connecting. By redirecting browser traffic, they found out the vulnerabilities in QtCarBrowser."
+                },
+				{
+                    "reference ID": "RE0012",
+                    "description": "Researchers spoofed Tesla Guest Wi-Fi, a trusted network used by Tesla body shops and superchargers, to trick vehicles into auto-connecting. By redirecting browser traffic, they could exploit zero-day vulnerabilities in QtCarBrowser."
+                }
+            ],
+            "reference ID": ["RE0011", "RE0012"]
+        },
+		{
+            "ID": "T5002",
+            "name": "Downgrade to Insecure Protocols",
+            "short_description": "Adversaries may force a vehicle’s wireless interfaces to switch to weaker communication protocols, reducing security protections. This can be achieved by jamming high-security protocols (e.g., LTE) and allowing only older, vulnerable protocols (e.g., GSM).",
+            "full_description": " Attackers can then exploit the downgraded channel to intercept, manipulate, or inject malicious communications, potentially compromising remote vehicle services or authentication mechanisms.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0023",
+                    "description": "Researchers downgraded a vehicle’s T-Box from LTE to GSM using a rogue base station (USRP + OpenBTS), enabling them to intercept GSM text messages."
+                }
+            ],
+            "reference ID": ["RE0023"]
+        },
+		{
+            "ID": "T5003",
+            "name": "Jamming or Denial of Service",
+            "short_description": "Adversarials may jam radio signals, such as Wi-Fi, cellular, GPS or key fobs to prevent the vehicle from communicating.",
+            "full_description": "This technique involves disrupting or exploiting wireless communication channels integral to vehicle operations. By targeting these channels, attackers can interfere with or gain unauthorized access to vehicle systems, leading to potential control over vehicle functionalities or denial of essential services.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0024",
+                    "description": "Researchers sends deauthentication frames to disconnect the Tesla from its Wi-Fi network"
+                },
+				{
+					"reference ID": "RE0029",
+					"description": "Researchers conducted experiments with 8 different cars and 2 different jammers to disrupt the Remote Keyless Entry systems, causing the cars to remain unlocked."
+				}
+            ],
+            "reference ID": ["RE0024", "RE0029"]
+        },
+		{
+            "ID": "T5004",
+            "name": "Adversarial Machine Learning",
+            "short_description": "Adversaries may try to use adversarial machine learning techniques to cause vehicle perception systems to misclassify objects, fail to detect obstacles, misinterpret road signs, respond inappropriately to road conditions, and others.",
+            "full_description": "Adversarial Machine Learning (AML) attacks target machine learning models used in vehicle perception, security, and decision-making systems. By manipulating model outputs, these attacks can cause misclassification, system failure, or unsafe driving behavior. \n AML attacks on autonomous vehicles primarily affect sensor systems and intrusion detection systems (IDS). In sensor attacks, adversarial inputs trick machine learning models into misclassifying obstacles or detecting nonexistent ones, leading to navigation errors and safety risks. In IDS attacks, adversarial modifications to network data cause misclassification, making normal traffic appear malicious or vice versa. \n The impact of these attacks is severe. A compromised perception system can lead to traffic accidents, navigation failures, or vehicle immobilization. Meanwhile, attacks on cybersecurity defenses can bypass anomaly detection, exposing critical vehicle components to further exploitation.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": ["T5004.001", "T5004.002"],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0025",
+                    "description": "Reseachers using physical adversarial patches in the form of road decals to mislead object detection systems in autonomous vehicles, causing incorrect object recognition and disrupt AV navigation."
+                },
+				{
+					"reference ID": "RE0019",
+					"description": "Researchers demonstrated an adversarial sensor attack on LiDAR-based perception. The attack created false 'front-near obstacles' within five meters, causing incorrect driving decisions such as emergency braking or vehicle freezing at intersections. "
+				},
+				{
+					"reference ID": "RE0027",
+					"description": "Researchers tested adversarial attacks on ML-based IDS models, including Deep Neural Network (DNN), Decision Tree (DT), Random Forest (RF), Extra Trees (ET), and XGBoost. Findings indicate that these IDS models are highly susceptible to adversarial perturbations, leading to significant misclassification of network traffic."
+				},
+				{
+					"reference ID": "RE0028",
+					"description": "Researchers examined adversarial attacks on two IDS models: a Deep Neural Network (DNN) and a Multi-Tier Hybrid IDS (MTH-IDS). The adversarial messages altered only the data payload fields (D0–D7) while maintaining CAN IDs and DLC values unchanged. The study observed a high attack success rate, with up to 52.34% of normal frames being misclassified as malicious."
+				}
+            ],
+            "reference ID": ["RE0019", "RE0020", "RE0025","RE0026","RE0027","RE0028"]
+        },
+		{
+            "ID": "T5005",
+            "name": "Sensor manipulation (new)",
+            "short_description": "Adversaries may manipulate vehicle sensors such as cameras, LIDAR, ultrasonic, and RADAR through various interference techniques, leading to false object detection, incorrect distance measurements, or sensor malfunctions.",
+            "full_description": "Sensor manipulation attacks pose significant threats to vehicle perception systems by exploiting vulnerabilities in their sensing capabilities. These attacks primarily target four key sensor types—Camera, LIDAR, RADAR, and SONAR—using techniques such as blinding, spoofing, jamming, and replay to interfere with signal processing. By distorting sensor inputs, adversaries can disrupt object detection, mislead distance measurements, or create phantom obstacles. \n While these attacks can severely impact a vehicle's perception and navigation capabilities, their effects typically remain isolated to the perception layer without directly compromising deeper vehicle systems, unless these manipulated inputs lead to incorrect decisions at higher processing levels. \n It is also important to distinguish Sensor Manipulation from Adversarial Attacks, which also target perception systems like LIDAR or Camera but focus on exploiting AI-based algorithms rather than manipulating sensor signals. Adversarial Attacks deceive machine learning models using crafted inputs, such as perturbing images to mislead object classification, whereas Sensor Manipulation interferes directly with physical signals before they are processed by the system.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": ["T5005.001", "T5005.002", "T5005.003", "T5005.004"],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0017",
+                    "description": "CAMERA Binding Attack - Researchers uses laser diodes and LEDs to emit intense light directly into the camera's sensor to prevent object detection."
+                },
+				{
+                    "reference ID": "RE0017",
+                    "description": "LIDAR Replay Attack - Researchers intercept and retransmit LiDAR pulses from a different location, creating false reflections at unintended positions."
+                },
+				{
+                    "reference ID": "RE0018",
+                    "description": "Ultrasonic Blinding attack - Researchers disrupting sensor accuracy by covering sensors or using thin objects or acoustic materials."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "Millimeter-Wave Radar Spoofing attack - Researchers injects synthetic radar signals with altered frequency modulation patterns, tricking the radar into detecting false objects or incorrect distances."
+                }
+            ],
+            "reference ID": ["RE0017", "RE0018", "RE0021"]
+        },
+		{
+            "ID": "T5006",
+            "name": "Remote Key Entry (new)",
+            "short_description": "Adversaries may exploit vulnerabilities in Remote Keyless Entry systems to gain unauthorized access to vehicles.",
+            "full_description": "Remote Key Entry attacks exploit weaknesses in Remote Keyless Entry (RKE) systems, allowing attackers to unlock and sometimes start a vehicle without the owner’s key. These systems rely on radio frequency communication between the key fob and the vehicle, but vulnerabilities in signal transmission and cryptographic protocols make them susceptible to exploitation. \n There are three main types of key fob attacks. Relay attacks involve intercepting and amplifying the key fob signal in real-time, tricking the car into believing the key is nearby. Replay attacks capture and store rolling codes transmitted by the key fob and replay them later to gain unauthorized access. Key fob reprogramming exploits the vehicle’s OBD-II port to add a new key while disabling the original, allowing attackers to take control of the vehicle permanently. \n The impact of these attacks extends beyond unauthorized entry. Attackers can leverage the OBD-II port to inject malicious firmware, disable security features, or extract sensitive authentication data.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [],
+            "example": [
+                {
+					"reference ID": "RE0030",
+					"description": "Researchers constructed two relay attack setups on 10 car models from 8 manufacturers, using both a wired physical-layer relay and a wireless radio frequency relay, to successfully open and start vehicles while the key remained physically far from the car."
+				},
+				{
+					"reference ID": "RE0031",
+					"description": "Researchers gained unauthorized access to vehicles by exploiting weaknesses in cryptographic implementations of Remote Keyless Entry systems, specifically in VW Group's RKE system and the Hitag2 rolling code system. By eavesdropping on the rolling code, they could generate valid codes to unlock the car and replay them for unauthorized access."
+				},
+				{
+					"reference ID": "RE0032",
+					"description": "Researchers demonstrated that OBD port scan attacks allow attackers to extract the entire memory state of the key fob and clone it to unlock the car."
+				},
+				{
+					"reference ID": "RE0033",
+					"description": "Researchers demonstrated serious vulnerabilities in the Hitag2-based immobilizer system and showed that vehicles using this system can be stolen in under 6 minutes."
+				}
+            ],
+            "reference ID": ["RE0030", "RE0031", "RE0032", "RE0033"]
+        },
+		{
+            "ID": "T5007",
+            "name": "Wireless Compromise",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": []
+        },
+		{
+            "ID": "T5008",
+            "name": "Hardware Additions",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5009",
+            "name": "Exploitation for Initial Access",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5010",
+            "name": "Remote Service",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5011",
+            "name": "External Remote Service",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5012",
+            "name": "Content Injection",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5013",
+            "name": "Exploitation of Software Vulnerability",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+        {
+            "ID": "T5014",
+            "name": "Replication Through Removable Media.",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "02/01/2023",
+            "modified": "02/01/2024",
+            "sub-technique ID": [
+                "T1001.001",
+                "T1001.002"
+            ],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5015",
+            "name": "Exploit Public Facing Application",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5016",
+            "name": "Valid Account",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5017",
+            "name": "Phishing",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5018",
+            "name": "Modify Controller Tasking",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5019",
+            "name": "Change Operation Mode",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5020",
+            "name": "Command and Scripting Interpreter",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5021",
+            "name": "Inter-Process Communication",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5022",
+            "name": "Exploitation for Client Execution",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5023",
+            "name": "Execution Through Firmware Modification",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5024",
+            "name": "Command via Diagnostic Tools (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5025",
+            "name": "External application (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5026",
+            "name": "OTA Process Manipulation (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5027",
+            "name": "Signal manipulation (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5028",
+            "name": "Execution through API",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5029",
+            "name": "Account Manipulation",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": ["T2001.001","T2001.001","T2001.002"],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5030",
+            "name": "Boot or Logon AutoStart Execution",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5031",
+            "name": "Create or Modify System Process",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5032",
+            "name": "Modify Program",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5033",
+            "name": "Event triggered execution",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5034",
+            "name": "Module Firmware",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5035",
+            "name": "Boot or Logon Initialization Scripts",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5036",
+            "name": "Pre-OS Boot",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5037",
+            "name": "Modify Configuration Files (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5038",
+            "name": "Valid Accounts",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5039",
+            "name": "Abuse Elevation Control Mechanisms",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5040",
+            "name": "Exploitation for Privilege Escalation",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5041",
+            "name": "Impair Defenses",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5042",
+            "name": "Obfuscated Files or Information",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5043",
+            "name": "Weaken Cryptography",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5044",
+            "name": "Modify Firmware",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5045",
+            "name": "Brute Force",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5046",
+            "name": "Modify Authentication Process",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5047",
+            "name": "Exploitation for  Credential Access",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5048",
+            "name": "Forge Web Credentials",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5049",
+            "name": "Steal Application Access Token",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5050",
+            "name": "Network Sniffing",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5051",
+            "name": "System Network Connection Discovery",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5052",
+            "name": "File and Directory Discovery",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5053",
+            "name": "Remote Services",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5054",
+            "name": "Lateral Tool Transfer",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5055",
+            "name": "Vehicle Worm Propagation (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5056",
+            "name": "Data from local system",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5057",
+            "name": "Network Connection Enumeration",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5058",
+            "name": "Input Capture",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5059",
+            "name": "Data from cloud service",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5060",
+            "name": "Communication Through Removable Media",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5061",
+            "name": "Remote Access Software",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5062",
+            "name": "Application Layer Protocol",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5063",
+            "name": "Spoof report message",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5064",
+            "name": "Modify Parameter",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5065",
+            "name": "Alarm Suppression",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5066",
+            "name": "Block Command Message",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5067",
+            "name": "Exfiltration Over other network medium",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5068",
+            "name": "Automated Exfiltration",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5069",
+            "name": "Network Denial of Service",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5070",
+            "name": "Endpoint Denial of Service",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5071",
+            "name": "Service Stop",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5072",
+            "name": "Manipulation of Control",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5073",
+            "name": "Loss of control",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5074",
+            "name": "Loss of Safety",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5075",
+            "name": "Loss of protection",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5076",
+            "name": "Damage to Property",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5077",
+            "name": "Equipment Hijacking (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5078",
+            "name": "Data Destruction",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5079",
+            "name": "Sensor Interference (new)",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5080",
+            "name": "Theft of Operational Information",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        },
+		{
+            "ID": "T5081",
+            "name": "System Shutdown/Reboot",
+            "description": "Exploiting software vulnerabilities to gain access.",
+            "created": "25/02/2025",
+            "modified": "25/02/2025",
+            "sub-technique ID": [],
+            "mitigation ID": [
+                "M2001"
+            ],
+            "example": [
+                {
+                    "reference ID": "EX1001",
+                    "description": "Attacker exploited a firmware vulnerability to gain control."
+                }
+            ],
+            "reference ID": [
+                "T1001"
+            ]
+        }        
+    ],
+    "sub-techniques": [
+		{
+            "ID": "T5005.001",
+            "name": "CAMERA Blinding or confusing",
+            "short_description": "Adversaries may manipulate camera sensors using light-based interference to degrade object detection and perception accuracy.",
+            "full_description": "In a CAMERA blinding or confusing attack, adversaries exploit the vulnerabilities of camera-based perception by using intense light sources or rapid light bursts. The impact of this attack includes failure to detect lane markings, obstacles, and traffic signs, leading to potential navigation errors or safety risks. Additionally, repeated exposure to high-intensity light may degrade the sensor’s long-term performance. \n However, this type of attack typically affects only the camera itself and does not propagate further into the vehicle’s internal systems, as the interference is limited to the sensor’s ability to capture and process visual data",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0017",
+                    "description": "CAMERA Binding Attack - Researchers uses laser diodes and LEDs to emit intense light directly into the camera's sensor to prevent object detection."
+                },
+				{
+                    "reference ID": "RE0017",
+                    "description": "CAMERA Confusing Attack - Researchers use rapid bursts of light to force the camera to continuously adjust exposure settings, creating time lag in the auto-adjustment process and causing missed object detection."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "CAMERA Binding Attack - Researchers uses three different light sources to temporarily or permanently blind the vehicle’s camera, obstructing recognition of lane markings, traffic signs, and obstacles."
+                }
+				
+            ],
+            "reference ID": ["RE0017", "RE0021"]
+        },
+		{
+            "ID": "T5005.002",
+            "name": "LIDAR Spoofing and Replay",
+            "short_description": "Adversarials may manipulate LIDAR signals through spoofing or replay to create false object detections or mislead distance measurements",
+            "full_description": "LIDAR spoofing and replay attacks exploit the system’s reliance on laser-based sensing to manipulate object detection and depth perception. Spoofing attacks introduce false LIDAR pulses that create phantom objects or alter measured distances, misleading the vehicle’s perception of its surroundings. Replay attacks involve capturing genuine LIDAR signals and retransmitting them with a delay or from a different location, causing incorrect environmental mapping. \n The impact of these attacks includes misleading obstacle detection, incorrect navigation decisions, and potential safety risks. However, LIDAR attacks typically affect only the perception layer and do not directly compromise other vehicle systems unless the false data is misinterpreted at higher decision-making levels.",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0017",
+                    "description": "LIDAR Replay Attack - Researchers intercept and retransmit LiDAR pulses from a different location, creating false reflections at unintended positions."
+                },
+				{
+                    "reference ID": "RE0017",
+                    "description": "LIDAR Spoofing Attack - Researchers use a pulse generator to synchronize with the LiDAR's scan cycle and inject false echoes, tricking the system into detecting nonexistent obstacles."
+                }
+            ],
+            "reference ID": ["RE0017"]
+        },
+		{
+            "ID": "T5005.003",
+            "name": "Ultrasonic Spoofing, Jamming and Blinding",
+            "short_description": "Adversarials may manipulate ultrasonic sensors using spoofing, jamming, or blinding techniques to interfere with distance measurements and obstacle detection.",
+            "full_description": "Ultrasonic sensors are used for short-range detection and collision avoidance. These sensors can be exploited through three main techniques: spoofing, jamming, and blinding. In spoofing attacks, false ultrasonic signals create fake object detections or change measured distances, fooling the vehicle about nearby obstacles. Jamming attacks use constant high-frequency noise to overwhelm the sensor, preventing it from working properly. Blinding attacks use thin objects or acoustic materials to physically block the sensor, making it unable to detect obstacles. \n These attacks can cause serious problems: the vehicle may fail to detect obstacles, measure distances incorrectly, or face collision risks. Yet ultrasonic attacks typically stay limited to the perception system and don't affect other vehicle systems or decision-making processes.",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0018",
+                    "description": "Ultrasonic Blinding attack - Researchers disrupting sensor accuracy by covering sensors or using thin objects or acoustic materials."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "Ultrasonic Jamming attack - Researchers uses an Arduino-based device to continuously transmit high-frequency sound waves, disrupting ultrasonic sensor function and preventing obstacle detection."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "Ultrasonic Spoofing attack - Researchers injects synthetic ultrasonic signals with modified frequency modulation patterns to create false object detections or alter measured distances."
+                }
+            ],
+            "reference ID": ["RE0018", "RE0021"]
+        },
+		{
+            "ID": "T5005.004",
+            "name": "RADAR Spoofing, Jamming and Replaying",
+            "short_description": "Adversarials may manipulate RADAR signals through spoofing, jamming, or replay techniques to interfere with object detection and distance measurement",
+            "full_description": "Radar is a sensor in autonomous vehicles for detecting objects, measuring distances, and enabling adaptive cruise control. Attackers can exploit radar-based perception through three main types of attacks: spoofing, jamming, and replay. Spoofing involves sending fake radar signals to create false detections or wrong distance measurements. Jamming overwhelms the system with powerful electromagnetic interference, preventing it from detecting obstacles. Replay attacks work by capturing real radar signals and sending them back with changes or delays, creating phantom objects or incorrect distance readings. \n These attacks can degrade object detection, distort the vehicle's perception of its surroundings, and cause navigation errors. \n While modern automotive radar systems, including millimeter-wave radar are built to resist interference, these attacks remain a threat mainly to the vehicle's perception system and do not directly affect other critical vehicle componentss",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0021",
+                    "description": "Millimeter-Wave Radar Jamming attack - Researchers transmit high-power electromagnetic signals to interfere with the vehicle’s radar system, preventing accurate object detection."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "Millimeter-Wave Radar Spoofing attack - Researchers injects synthetic radar signals with altered frequency modulation patterns, tricking the radar into detecting false objects or incorrect distances."
+                },
+				{
+                    "reference ID": "RE0021",
+                    "description": "Millimeter-Wave Radar Replaying attack - Researchers captures and retransmits radar signals with a delay, creating ghost objects at manipulated distances to deceive obstacle detection systems.."
+                }
+            ],
+            "reference ID": ["RE0021"]
+        },
+		{
+            "ID": "T5004.001",
+            "name": "Adversarial Sensor Attack",
+            "short_description": "Adversaries may exploit vulnerabilities in AI-based perception models to manipulate sensor inputs, misleading object detection and navigation systems.",
+            "full_description": "Sensor adversarial attacks target the AI-based perception models used in autonomous vehicles by introducing carefully crafted perturbations or manipulated sensor inputs. Unlike traditional sensor manipulation attacks that interfere with raw signals (e.g., jamming or spoofing), adversarial attacks focus on exploiting weaknesses in deep learning models used for sensor data interpretation. By misleading object detection and classification algorithms, these attacks can cause incorrect navigation decisions, including abrupt braking, lane deviation, or obstacle misidentification.\n Adversarial sensor attacks remain a serious threat, particularly in scenarios where vehicles rely heavily on deep learning-based perception. ",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "RE0025",
+                    "description": "Reseachers using physical adversarial patches in the form of road decals to mislead object detection systems in autonomous vehicles, causing incorrect object recognition and disrupt AV navigation."
+                },
+				{
+					"reference ID": "RE0019",
+					"description": "Researchers demonstrated an adversarial sensor attack on LiDAR-based perception. The attack created false 'front-near obstacles' within five meters, causing incorrect driving decisions such as emergency braking or vehicle freezing at intersections. "
+				},
+				{
+					"reference ID": "RE0020",
+					"description": "Reseachers injected manipulated point cloud data to create phantom vehicles or distort depth perception, misleading the AV’s navigation system."
+				}
+            ],
+            "reference ID": ["RE0021"]
+        },
+		{
+            "ID": "T5004.002",
+            "name": "Adversarial IDS attack",
+            "short_description": "Adversaries may manipulate ML-based Intrusion Detection Systems (IDSs) using adversarial machine learning techniques, causing misclassification of network traffic.",
+            "full_description": "IDS adversarial attacks target machine learning-based Intrusion Detection Systems (IDSs) in Autonomous Vehicles. These attacks generate specially crafted adversarial data to manipulate the IDS into misclassifying network traffic, either by evading detection (misclassifying attacks as normal) or triggering false alarms (misclassifying normal traffic as attacks).\n These attacks exploit vulnerabilities in IDS models trained on vehicle network data. \n The impact of IDS adversarial attacks includes decreased detection accuracy, increased false positive rates, and operational instability, potentially leading to unnecessary security responses or masking real threats.",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+					"reference ID": "RE0026",
+					"description": "Researchers evaluated machine learning and deep learning-based IDSs against adversarial examples designed to appear normal while containing attacks. The results demonstrate that ML-based IDS models are vulnerable to adversarial data manipulation."
+				},
+				{
+					"reference ID": "RE0027",
+					"description": "Researchers tested adversarial attacks on ML-based IDS models, including Deep Neural Network (DNN), Decision Tree (DT), Random Forest (RF), Extra Trees (ET), and XGBoost. Findings indicate that these IDS models are highly susceptible to adversarial perturbations, leading to significant misclassification of network traffic."
+				},
+				{
+					"reference ID": "RE0028",
+					"description": "Researchers examined adversarial attacks on two IDS models: a Deep Neural Network (DNN) and a Multi-Tier Hybrid IDS (MTH-IDS). The adversarial messages altered only the data payload fields (D0–D7) while maintaining CAN IDs and DLC values unchanged. The study observed a high attack success rate, with up to 52.34% of normal frames being misclassified as malicious."
+				}
+            ],
+            "reference ID": ["RE0026", "RE0027", "RE0028"]
+        },
+        {
+            "ID": "T1001.001",
+            "name": "Via CD",
+            "description": "Exploiting memory corruption vulnerabilities.",
+            "created": "03/01/2023",
+            "modified": "03/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "EX2001",
+                    "description": "An attacker used a buffer overflow attack to execute arbitrary code."
+                }
+            ],
+            "reference ID": [
+                "CVE-2023-1234"
+            ]
+        },
+        {
+            "ID": "T1001.002",
+            "name": "Via USB with updated file.",
+            "description": "Exploiting heap overflow vulnerabilities to gain control.",
+            "created": "04/01/2023",
+            "modified": "04/01/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "EX2002",
+                    "description": "An attacker used heap overflow to execute arbitrary code."
+                }
+            ],
+            "reference ID": [
+                "CVE-2023-5678"
+            ]
+        },
+        {
+            "ID": "T2001.001",
+            "name": "Remote Code Execution",
+            "description": "Executing code remotely within the vehicle system.",
+            "created": "03/02/2023",
+            "modified": "03/02/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "EX3001",
+                    "description": "An attacker injected malicious payloads remotely."
+                }
+            ],
+            "reference ID": [
+                "TIR-2023-890"
+            ]
+        },
+        {
+            "ID": "T2001.002",
+            "name": "Script Injection",
+            "description": "Injecting scripts into vehicle control software.",
+            "created": "04/02/2023",
+            "modified": "04/02/2024",
+            "mitigation ID": [],
+            "example": [
+                {
+                    "reference ID": "EX3002",
+                    "description": "A hacker injected malicious scripts into infotainment firmware."
+                }
+            ],
+            "reference ID": [
+                "CSR-2023-999"
+            ]
+        }
+    ],
+    "mitigations": [
+        {
+            "ID": "M2001",
+            "name": "Patch Management",
+            "description": "Regularly update and patch vehicle software.",
+            "created": "01/02/2023",
+            "modified": "01/02/2024",
+            "reference ID": []
+        },
+        {
+            "ID": "M2002",
+            "name": "User Training",
+            "description": "Educate users on phishing threats.",
+            "created": "02/02/2023",
+            "modified": "02/02/2024",
+            "reference ID": []
+        },
+        {
+            "ID": "M3001",
+            "name": "Code Signing",
+            "description": "Ensure all scripts are signed and verified.",
+            "created": "01/03/2023",
+            "modified": "01/03/2024",
+            "reference ID": []
+        }
+    ],
+    "references": [
+        {
+            "ID": "RE0001",
+            "name": "A study on cyber-security of autonomous and unmanned vehicles",
+			"cite": "E. Yağdereli, C. Gemci, and A. Z. Aktaş, “A study on cyber-security of autonomous and unmanned vehicles,” J. Def. Model. Simul., vol. 12, no. 4, pp. 369–381, 2015, doi: 10.1177/1548512915575803.",
+            "link": "https://doi.org/10.1177/1548512915575803",
+            "description": "The study by Yağdereli et al. (2015) explores the cyber-security challenges associated with autonomous and unmanned vehicles, encompassing a broad range of platforms such as autonomous cars, civilian aircraft, trains, unmanned surface vessels (USVs), and space-traversing vehicles. It categorises cyber-attacks into passive and active types, highlighting eavesdropping and traffic analysis as key passive threats, while identifying active threats like masquerading, replay attacks, message modification, and denial-of-service attacks. The study also outlines specific vulnerabilities, focusing on CAN bus protocol weaknesses in automotive systems and GPS spoofing, jamming, and signal manipulation in UAV systems. To address these risks, the authors propose mitigation strategies that include secure communication protocols for encryption and authentication, a defense-in-depth architecture, redundancy and diversity measures, secure-by-design principles, and the adoption of real-time distributed system architectures. "
+        },
+        {
+            "ID": "RE0002",
+			"name": "Cybersecurity for unmanned systems",
+            "cite": "J. Yen, J. Smigal, D. Singh, J. Ricks, D. Brower, and P. Barlow, “Cybersecurity for unmanned systems,” Unmanned Syst. Technol. XIX, vol. 10195, p. 101950R, 2017, doi: 10.1117/12.2265912.",
+            "link": "https://doi.org/10.1117/12.2265912",
+            "description": "The study by Yen et al. (2017) addresses cryptographic challenges faced by Unmanned Systems, particularly in protecting classified information in remote and high-risk environments. It highlights the importance of addressing Size, Weight, and Power (SWaP) constraints, which are critical for smaller platforms, and ensuring secure data exchange between classified and unclassified domains through Cross Domain Solutions (CDS). The authors propose cryptographic protection methods for both Data in Transit (DIT) and Data at Rest (DAR), advocating for the use of cryptographic devices to secure traffic such as data and voice transmissions and recommending secure erasure of cryptographic keys to mitigate risks in the event of system capture. For CDS, the study suggests ensuring secure transmission of data between encrypted (classified) and unencrypted (unclassified) domains, including radios and sensors, designing modular systems with secure interfaces to facilitate upgrades and integration, and employing cryptographic systems that restrict cross-boundary communication to predefined messages controlled by strict rules."
+        },
+        {
+            "ID": "RE0003",
+            "name": "Securing unmanned autonomous systems from cyber threats",
+			"cite": "B. B. Madan, M. Banik, and D. Bein, “Securing unmanned autonomous systems from cyber threats,” J. Def. Model. Simul., vol. 16, no. 2, pp. 119–136, 2019, doi: 10.1177/1548512916628335.",
+            "link": "https://doi.org/10.1177/1548512916628335",
+            "description": "The study by Madan et al. (2019) examines the cyber threats facing unmanned and autonomous systems, highlighting their differences and commonalities. Unmanned systems rely on remote human operators for control, whereas autonomous systems depend on sensors and autonomous functions for decision-making, though both share a reliance on sensors and controllers. The study identifies initial access threats to UAV systems, such as jamming, information theft, denial-of-service attacks, GPS and wireless jamming and spoofing, and malicious software injection. Common threats include confidentiality risks like insider leaks, wireless link sniffing, weak encryption, and capturing WPA2 handshakes, which can be mitigated using access control policies (Bell–LaPadula Model), standard encryption protocols (WPA2, WPA3, AES), secure communication practices, public key cryptography, and intrusion detection systems (IDS). Integrity threats, such as man-in-the-middle (MITM) attacks and sending fake data while masquerading as legitimate sources, can be addressed through access control policies (Biba Model), cryptographic techniques like digital signatures and hashing with message integrity codes (MIC), IPSEC authentication headers for sender verification, and real-time monitoring. Availability threats, including DoS/DDoS attacks, malware injection via buffer overflow vulnerabilities, and jamming attacks that disrupt communication frequencies, can be mitigated using spread spectrum techniques, anti-DoS/DDoS solutions like IPS and traffic filters, and tools like StackGuard or NX-bit protection to prevent executable code from exploiting buffer overflow. The authors also propose other mitigation strategies, including policy-based approaches, proactive threat identification through penetration testing, and honeypots."
+        },
+		{
+            "ID": "RE0004",
+            "name": "Vulnerability Assessment of Vehicle to Infrastructure Communication: A Case Study of Unmanned Ground Vehicle",
+			"cite": "A. Abdullahi, T. Dargahi, and M. Babaie, “Vulnerability Assessment of Vehicle to Infrastructure Communication: A Case Study of Unmanned Ground Vehicle,” 2020 IEEE Globecom Work. GC Wkshps 2020 - Proc., 2020, doi: 10.1109/GCWkshps50303.2020.9367408.",
+            "link": "https://doi.org/10.1109/GCWkshps50303.2020.9367408",
+            "description": "The study by Abdullahi et al. (2020)investigates vulnerabilities in Vehicle-to-Infrastructure communication, using an Unmanned Ground Vehicle as a case study. It aims to demonstrate how insecure wireless communication, even with WPA2-protected Wi-Fi, and poor access controls can allow attackers to remotely compromise UGVs. The experiment was set up with a target system comprising a Husky UGV equipped with stereo cameras, LiDAR, GPS, IMUs, and an onboard Robot Operating System (ROS 1.0) computer, along with a Wi-Fi base station and OpenSSH. The attacker system utilised tools such as Kali Linux, Aircrack-ng for Wi-Fi attacks, Bettercap for wireless network reconnaissance, NMAP for network scanning, and Metasploit for vulnerability exploitation. \n The attack followed a step-by-step process. During the reconnaissance phase, the attacker performed a Wi-Fi handshake replay attack on the WPA2-protected base station and used Bettercap to map the network topology, identifying the UGV’s onboard computer, camera, and LiDAR. In the vulnerability assessment phase, the onboard computer's IP address was targeted, and open ports and services were scanned, revealing that port 22 for SSH was open. The exploitation phase involved launching an SSH brute force attack using Metasploit’s CVE-1999-0502 module and exploiting weak or default credentials to establish an SSH session with administrator privileges. This granted access to all ROS core packages running on the UGV. In the post-exploitation phase, the attacker achieved complete control over the UGV, overwriting legitimate operator commands, modifying velocity control commands, and manipulating the UGV’s speed and direction."
+        },
+		{
+            "ID": "RE0005",
+            "name": "Towards data-driven autonomous cyber defence for military unmanned vehicles-threats & attacks",
+			"cite": "A. D. Kaasen, G. Grov, F. Mancini, and M. Baksaas, “Towards data-driven autonomous cyber defence for military unmanned vehicles-threats & attacks,” Proc. - IEEE Mil. Commun. Conf. MILCOM, vol. 2022-Novem, pp. 861–866, 2022, doi: 10.1109/MILCOM55135.2022.10017692.",
+            "link": "https://doi.org/10.1109/MILCOM55135.2022.10017692",
+            "description": "The study by Kaasen et al. (2022) explores methods to disrupt a military unmanned ground vehicle and develops a machine-learning-based detection capability. The attacks were demonstrated using the Tor Vehicle, a diesel-electric hybrid tracked vehicle equipped with LiDAR, cameras, GPS, and accelerometers for autonomous navigation. Tor uses ROS for low-level control and ROS2 for autonomous driving software, sensor drivers, and communication middleware. The experiments included testing the attacks in both simulated and real-vehicle scenarios. \nThe researchers carried out a range of attacks on the Tor Vehicle: (1) Denial of Service (DoS) attacks involved network flooding with fake UDP or ROS messages to overload system resources. (2) Topic hijacking attacks altered the generator mode, enabled or disabled brakes, activated emergency mode, modified the cooling system, and inserted fake drive commands. (3) Configuration and launch file tampering attacks involved altering sensor clock skew to cause incorrect decisions and modifying configuration files to create hidden channels for information exfiltration. The researchers collected and labeled attack messages to build an Intrusion Detection System (IDS) using machine learning models such as decision tree classifiers, k-nearest neighbors, and random forest, achieving an accuracy of 99%."
+        },
+		{
+            "ID": "RE0006",
+            "name": "Ensuring Cybersecurity of the Cyber Physical System of Combined Fleets of Unmanned Aerial, Ground and Sea Vehicles",
+			"cite": "H. Zemlianko and V. Kharchenko, Ensuring Cybersecurity of the Cyber Physical System of Combined Fleets of Unmanned Aerial, Ground and Sea Vehicles, vol. 996 LNNS. Springer Nature Switzerland, 2024. doi: 10.1007/978-3-031-60549-9_29",
+            "link": "https://link.springer.com/chapter/10.1007/978-3-031-60549-9_29",
+            "description": "The study by H. Zemlianko and V. Kharchenko (2024) proposes a System-of-System architecture for unmanned vehicles, providing a holistic view of the system. The UV system includes UAVs, UUVs, USVs, UGVs, charging stations, control centres, cloud databases, and communication hubs. The communication infrastructure relies on satellite-based global communication and control centres. Threats to the UV system are categorised into physical, cyber, internal, and external sources. Common attacks include data manipulation, DoS, unauthorised access, and data ransom attacks. Vulnerabilities are grouped into control channels, software flaws, hardware weaknesses, and insecure data transmission protocols. \n The paper discusses several countermeasures. These include encryption protocols, secure firmware updates, multi-factor authentication, behaviour analytics, IDS, network segmentation, and redundancy mechanisms. It also introduces Intrusion Mode and Effects Criticality Analysis to qualitatively evaluate threats, vulnerabilities, attack types, consequences, UV types, likelihood, severity, and risk. Based on this analysis, the paper provides a structured matrix of criticality for risks and proposes corresponding countermeasures."
+        },
+		{
+            "ID": "RE0007",
+            "name": "Event-Triggered Adaptive Security Path Following Control for Unmanned Ground Vehicles Under Sensor Attacks",
+			"cite": "H. T. Sun and C. Peng, “Event-Triggered Adaptive Security Path Following Control for Unmanned Ground Vehicles Under Sensor Attacks,” IEEE Trans. Veh. Technol., vol. 72, no. 7, pp. 8500–8509, 2023, doi: 10.1109/TVT.2023.3250709.",
+            "link": "https://link.springer.com/chapter/10.1109/TVT.2023.3250709",
+            "description": "The study of Sun et al. (2023) proposes an Event-Triggered Adaptive Security Control (ET-ASC) mechanism for unmanned ground vehicles (UGVs) to maintain path stability under sensor attacks. The approach is based on several assumptions, including that the UGV follows a fixed, predetermined route, and its position, rotation, and other dynamics are modelled using state-space representation. Additionally, attacks are modelled as state-dependent disturbances affecting the vehicle's performance. \n The ET-ASC mechanism operates by reducing communication overhead through event-triggered transmission, where sensor data is sent only when significant deviations occur. Upon receiving data, the mechanism detects sensor compromise and applies correction signals accordingly. The system continuously adjusts corrections to restore and maintain path stability. \n For validation, the proposed method was tested using MATLAB/Simulink and CarSim in a double-lane change scenario at 30 km/h. The evaluation considered three scenarios: no attack, an attack without correction, and an attack with ET-ASC. The results demonstrate that ET-ASC effectively mitigates sensor attacks, reducing lateral offset while minimising steering oscillations, lateral acceleration, and yaw rate."
+        },
+		{
+            "ID": "RE0008",
+            "name": "Towards the resilience quantification of (military) unmanned ground vehicles",
+			"cite": "R. Krecht, A. Suta, Á. Tóth, and Á. Ballagi, “Towards the resilience quantification of (military) unmanned ground vehicles,” Clean. Eng. Technol., vol. 14, no. May, 2023, doi: 10.1016/j.clet.2023.100644.",
+            "link": "https://link.springer.com/chapter/10.1016/j.clet.2023.100644",
+            "description": "The study of Kretch et al. (2023) quantifies the resilience of military unmanned ground vehicles (UGVs). Resilience is defined as the ability of a UGV to maintain functionality or recover from faults and failures under various conditions. To achieve this, the study proposes a methodology using Process Graphs (P-Graphs) and introduces a resilience index (R). The proposed method follows a step-by-step approach, where UGVs are modelled as systems with multiple subsystems, including environmental perception (sensors and processing units), propulsion systems (engines and motors), and control units responsible for high- and low-level navigation and task execution. Based on this system model, the author examines how the system functions and identifies potential failure points when different parts malfunction. This information is then represented in a P-Graph, which illustrates the dependencies between different system components and the types of failures that may occur. \n To quantify resilience, the study defines a metric, Resilience Quantification (q), which categorises subsystem functionality into five capability levels: complete failure, minimal functionality (emergency functions only), reduced functionality (partial operation with limitations), near-full functionality (minor errors), and no failure. Furthermore, the resilience index (R) is introduced to quantify the likelihood of maintaining acceptable functionality, defined as q ≥ 0.2."
+        },
+		{
+            "ID": "RE0009",
+            "name": "Experimental security analysis of a modern automobile",
+			"cite": "K. Koscher et al., “Experimental security analysis of a modern automobile,” Proc. - IEEE Symp. Secur. Priv., pp. 447–462, 2010, doi: 10.1109/SP.2010.34.",
+            "link": "https://link.springer.com/chapter/10.1109/SP.2010.34",
+            "description": "The study by K. Koscher et al. (2010) examines vehicle architectures and protocols, highlighting significant security challenges. It focuses on the lack of authentication and access control within the CAN protocol and identifies how various vehicle components fail to meet contemporary security standards. The authors conducted experiments to demonstrate these vulnerabilities through three testing approaches: bench testing, where the ECU was reverse-engineered in a controlled lab environment; stationary testing, which involved attacking a car mounted on a rack stand; and road testing, where attacks were tested on a closed road. The study implemented several attack methods to exploit these vulnerabilities. Packet injection techniques allowed crafted CAN packets to control critical vehicle systems, such as brakes, the engine, and instrument clusters. Fuzzing was employed to send random packets continuously, uncovering undocumented functionalities and vulnerabilities within ECUs. Additionally, firmware modification involved reverse-engineering ECU firmware to inject malicious code into the telematics unit and other vehicle modules. The researchers also executed multi-component exploits, such as manipulating speedometer readings and disabling all vehicle lights.\n The paper identifies several critical security weaknesses. The broadcast nature of CAN lacks authentication and source identifiers, enabling any node to impersonate others. Unprotected firmware updates, devoid of encryption or signing, allow attackers to load unauthorized code. Weak access controls, including poorly enforced challenge-response mechanisms on diagnostic protocols, further exacerbate security risks across ECUs. Moreover, network bridging issues were highlighted, with the telematics ECU acting as a cross-domain connection point, enabling attacks from the low-speed to the high-speed CAN network."
+        },
+		{
+            "ID": "RE0010",
+            "name": "Comprehensive experimental analyses of automotive attack surfaces",
+			"cite": "S. Checkoway et al., “Comprehensive experimental analyses of automotive attack surfaces,” Proc. 20th USENIX Secur. Symp., pp. 77–92, 2011",
+            "link": "https://dl.acm.org/doi/abs/10.5555/2028067.2028073",
+            "description": "The study by S. Checkoway et al. (2011) classifies vehicle attack vectors into three main categories. Physical access is achieved through service tools like OBD-II ports or PassThru devices used by manufacturers for ECU diagnostics and reprogramming, as well as media interfaces such as CDs. Short-range wireless access includes technologies like Bluetooth, Tire Pressure Monitoring Systems (TPMS), and RFID car keys. Long-range wireless access encompasses cellular communication, FM radio, and satellite communication. \n The analysis delves into the vulnerabilities of these attack vectors. For media players, a buffer overflow in the WMA parser allows arbitrary code execution. This vulnerability can be exploited by crafting a malicious WMA file that injects CAN packets when played, enabling vehicle control. PassThru devices, which connect via OBD-II ports, expose an unauthenticated API over WiFi, permitting shell-based attack injections. Malware installed on these devices during routine maintenance compromises vehicle systems. Bluetooth systems are vulnerable due to unsafe strcpy() calls in the telematics unit firmware. Exploits include Trojan apps on paired devices or brute-forcing Bluetooth PINs, leading to code execution. Cellular telematics suffer from a buffer overflow vulnerability that enables remote command execution and data exfiltration. In advanced attacks, remote code execution is achieved by sending specially crafted audio signals via a phone call to exploit telematics firmware. The potential impacts of these vulnerabilities are significant, including GPS data exfiltration, remote vehicle control, and cabin audio monitoring."
+        },
+		{
+            "ID": "RE0011",
+            "name": "Free-fall: hacking tesla from wireless to can bus",
+			"cite": "S. Nie, L. Liu, and Y. Du, “Free-fall: hacking tesla from wireless to can bus,” Defcon, pp. 1–16, 2017, [Online].",
+            "link": "https://www.blackhat.com/docs/us-17/thursday/us-17-Nie-Free-Fall-Hacking-Tesla-From-Wireless-To-CAN-Bus-wp.pdf",
+            "description": "The study by Nie et al. (2017) presents a detailed and technical breakdown of a remote attack on Tesla Model S vehicles. The attack chain spans from wireless entry points to critical in-vehicle systems, culminating in the injection of malicious CAN bus messages. For the remote attack surface, the researchers identified Tesla's wireless connectivity features as a primary vulnerability. Tesla vehicles use Wi-Fi networks, including Tesla Guest (a hotspot for body shops and superchargers). By spoofing this hotspot and redirecting browser traffic, attackers exploited vulnerabilities in Tesla’s QtCarBrowser. After obtaining a remote shell on the browser, the researchers bypassed the AppArmor application firewall to gain access to critical processes and escalate privileges to root. From the Central Information Display (CID), they gained remote access to the Instrument Cluster (IC), Parrot Module, and Central Gateway. \n By exploiting the Gateway firmware, the researchers successfully injected CAN messages, manipulated critical vehicle functions, and introduced custom firmware into the ECU update and firmware update processes. The experiment also highlighted weaknesses in the UDS protocol, including the use of fixed seeds and XOR-based keys for security access, which enabled predictable ECU unlocking. Additionally, privileged operations, such as reading/writing memory and resetting ECUs, were achievable after bypassing the Security Access service. \n Following the report, Tesla addressed these vulnerabilities. Their efforts included updating the kernel, enforcing stricter AppArmor rules, introducing non-executable directories for binaries, and implementing signature verification for OTA updates and ECU firmware to prevent unauthorized modifications."
+        },
+		{
+            "ID": "RE0012",
+            "name": " Over-The-Air: How we remotely compromised the gateway, BCM, and Autopilot ECUs of TESLA cars",
+			"cite": "S. Nie, L. Liu, Y. Du, and W. Zhang, “Over-The-Air: How we remotely compromised the gateway, BCM, and Autopilot ECUs of TESLA cars,” BlackHat USA 2018, vol. 1, pp. 1–19, 2018, [Online].",
+            "link": "https://www.blackhat.com/us-18/briefings/schedule/over-the-air-how-we-remotely-compromised-the-gateway-bcm-and-autopilot-ecus-of-tesla-cars-10806",
+            "description": "The study by Nie et al. (2018) demonstrates how researchers executed remote attacks on Tesla Model S/X vehicles by exploiting zero-day vulnerabilities in critical components such as the gateway ECU, Body Control Modules (BCMs), and Autopilot ECUs. Using the same initial attack vectors as their previous work, they exploited the CID’s wireless connection and leveraged a Webkit vulnerability for arbitrary code execution. They then used a kernel vulnerability (CVE-2017-6261) to escalate privileges and gain root access to the CID. \n While Tesla had previously addressed known vulnerabilities, the researchers found new zero-day exploits to achieve root access. With root access, they bypassed code-signing protections using TOCTOU and filesystem flaws to inject custom firmware into the gateway ECU, allowing manipulation of CAN messages and control over vehicle functions. They also exploited flaws in the ape-service to take control of the Autopilot ECU, used weaknesses in firmware signing and metadata to deploy malicious firmware during OTA updates and create a persistent backdoor, and injected patched firmware to customise the Easter Egg feature, demonstrating their control over body control ECUs."
+        },
+		{
+            "ID": "RE0013",
+            "name": "0-days & mitigations: Roadways to exploit and secure connected BMW cars",
+			"cite": "Z. Cai, A. Wang, W. Zhang, M. Gruffke, and H. Schweppe, “0-days & mitigations: Roadways to exploit and secure connected BMW cars,” Black Hat USA, vol. 2019, p. 39, 2019.",
+            "link": "https://i.blackhat.com/USA-19/Thursday/us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars-wp.pdf",
+            "description": "The study by Cai et al. (2019) reveals multiple vulnerabilities in the NBT Head Unit, Telematic Communication Box (TCB), and Central Gateway of BMW vehicles. The researchers demonstrated both physical and remote attack methods. For physical access, they exploited vulnerabilities via USB and OBD-II interfaces to gain root privileges on the Head Unit and Central Gateway. For remote attacks, they used a fake GSM base station to intercept TCP messages, gaining browser access and escalating to root privileges on the Head Unit. Similarly, they intercepted SMS messages and exploited a stack overflow to execute arbitrary code on the TCB. \n With root access to the Head Unit and TCB, the researchers were able to inject CAN messages onto the K-CAN bus, as both components are connected to the same bus. Additionally, they exploited diagnostic routing flaws in the Central Gateway to send unauthorized UDS messages across different CAN domains, allowing control over ECUs on other CAN buses. Both physical and remote methods ultimately enabled control over critical vehicle functions through CAN message injection and Central Gateway compromise. \n BMW promptly addressed these vulnerabilities with software updates and enhancements to the Remote Service flow."
+        },
+		{
+            "ID": "RE0014",
+            "name": "Remote Exploitation of an Unaltered Passenger Vehicle",
+			"cite": "C. Miller and C. Valasek, “Remote Exploitation of an Unaltered Passenger Vehicle,” Defcon 23, vol. 2015, pp. 1–91, 2015, [Online].",
+            "link": "https://www.scirp.org/reference/referencespapers?referenceid=3895347",
+            "description": "The study by Miller and Valasek (2015) outlines a detailed and systematic approach to remotely hacking and controlling a 2014 Jeep Cherokee. Their research focuses on vulnerabilities in the Uconnect infotainment system, which connects to both critical (CAN-C) and comfort (CAN-IHS) networks via the Renesas V850 chip. The authors discovered a flaw in the D-Bus service, allowing them to gain root access to the infotainment head unit. They then reprogrammed the system's firmware to send harmful CAN messages. Using this compromised system, the researchers demonstrated remote control of key functions like speed, steering, and brakes, showcasing realistic attack scenarios. \n More critically, the study explores how vulnerable vehicles could be identified over cellular networks through Uconnect’s telematics capabilities. The Uconnect system, which relies on Sprint’s cellular network for features like real-time traffic updates, in-car Wi-Fi, and remote diagnostics, exposed vehicles to scanning. By identifying Sprint’s IP address ranges, the researchers could locate vehicles with active Uconnect systems. Once found, they exploited the D-Bus service to remotely run commands on multiple vehicles. This included compromising the infotainment unit, reprogramming the V850 chip, and sending malicious CAN messages. With millions of vehicles using similar systems, such an attack could scale globally. The authors even proposed a theoretical `vehicle worm` to automate scanning, exploitation, and spreading, significantly increasing the threat's impact."
+        },
+		{
+            "ID": "RE0015",
+            "name": "Detecting attacks against robotic vehicles: A control invariant approach",
+			"cite": "H. Choi et al., “Detecting attacks against robotic vehicles: A control invariant approach,” Proc. ACM Conf. Comput. Commun. Secur., pp. 801–816, 2018, doi: 10.1145/3243734.3243752. ",
+            "link": "https://doi.org/10.1145/3243734.3243752",
+            "description": "The study of Choi et al. (2018) [1] presents a novel framework for detecting physical attacks on robotic vehicles, including drones and ground rovers. The proposed approach, known as the Control Invariant (CI) framework, verifies whether a vehicle is behaving normally by comparing its actual movements to expected behaviour based on fundamental physics and programmed control logic. \n The method consists of several key steps. First, the system performs Control Invariant Extraction by gathering information on vehicle dynamics, control algorithms, and environmental disturbances such as wind, gravity, and friction to define the vehicle’s expected behaviour. Next, the control invariant checking logic is embedded into the vehicle’s binary control software without requiring any hardware modifications. The system continuously monitors differences between the observed and predicted states, maintaining a tracking window to filter out minor, temporary variations that are not indicative of attacks. If accumulated errors exceed a predefined threshold, an alarm is triggered to indicate a potential attack. \n To evaluate its effectiveness, the CI framework was tested on 11 robotic vehicles, including quadrotors, hexarotors, and ground rovers. The results demonstrate that the framework successfully detected all tested attacks while maintaining zero false positives during normal operations, proving its reliability as a security mechanism for robotic vehicles."
+        },
+		{
+            "ID": "RE0016",
+            "name": "Security threats to automotive CAN networks. Practical examples and selected short-term countermeasures",
+			"cite": "T. Hoppe, S. Kiltz, and J. Dittmann, “Security threats to automotive CAN networks. Practical examples and selected short-term countermeasures,” Reliab. Eng. Syst. Saf., vol. 96, no. 1, pp. 11–25, 2011, doi: 10.1016/j.ress.2010.06.026.",
+            "link": "https://doi.org/10.1016/j.ress.2010.06.026",
+            "description": "The study of Hoppe et al. (2011) investigates security threats to automotive Controller Area Network (CAN) systems by exploring four practical attack scenarios targeting window lifts, warning lights, airbags, and gateway ECUs. The first scenario involves compromising the window lift system by injecting malicious code into an ECU connected to the comfort CAN subnetwork. The attacker monitors vehicle speed and replays CAN messages to open the window when the speed exceeds 200 km/h. This results in a Denial-of-Service (DoS) attack on the window system, preventing the driver from closing the window while the malicious code continuously sends CAN messages, thereby compromising driver safety and increasing potential distractions. \n The second attack scenario targets warning lights by using a tampered ECU or an external device, such as a development board, to manipulate CAN messages. The attacker intercepts ``warning light ON`` messages and injects ``warning light OFF`` messages, disrupting the anti-theft system. As a result, the attack disables the warning indicators, allowing theft without triggering alarms. \n The third attack manipulates the airbag system using a tampered device or an external controller to simulate a functional airbag ECU. The attacker records diagnostic responses and replays them during system checks, concealing the absence of an actual airbag ECU. This attack effectively hides warning indicators and bypasses diagnostic sessions, making the airbag system appear functional when it is not. \n The final scenario exploits a vulnerability in the gateway ECU’s message filtering mechanism during diagnostics. The attack initiates a diagnostic session and sends messages using reserved CAN IDs to force the gateway to forward them to critical ECUs. This enables unauthorised access to internal vehicle communications and allows potential manipulation of safety-critical systems. \n To mitigate these security threats, the study proposes short-term countermeasures, including an Intrusion Detection System (IDS) to detect abnormal message frequencies and verify message senders. Additionally, the study suggests a proactive IT forensic approach by identifying eight forensic data types that should be collected and logged during diagnostic sessions to detect suspicious activities and potential security breaches."
+        },
+		{
+            "ID": "RE0017",
+            "name": "Remote Attacks on Automated Vehicles Sensors: Experiments on Camera and LiDAR",
+			"cite": "J. Petit, B. Stottelaar, M. Feiri, and F. Kargl, “Remote Attacks on Automated Vehicles Sensors: Experiments on Camera and LiDAR,” Blackhat.com, pp. 1–13, 2015",
+            "link": "https://www.blackhat.com/docs/eu-15/materials/eu-15-Petit-Self-Driving-And-Connected-Cars-Fooling-Sensors-And-Tracking-Drivers-wp1.pdf",
+            "description": "The study of Petit et al. (2015) explores the vulnerability of automated vehicle (AV) sensors to remote attacks, specifically focusing on camera and LiDAR systems. The research examines different attack techniques and their impact on the perception systems of AVs. \n For camera attacks, the study investigates two primary methods: blinding the camera and confusing its auto controls. The blinding attack involves using laser diodes and LEDs to emit intense light directly into the camera’s sensor, disrupting object detection. The effectiveness of this attack depends on factors such as the wavelength of light, distance, and environmental lighting conditions, with darker environments making the attack easier. Experimental results indicate that a 650 nm laser was the most effective in impairing the camera's function. In contrast, the second attack manipulates the camera’s automatic exposure and gain settings by rapidly flashing LED pulses. This continuous exposure adjustment creates a time lag in the camera's auto-adjustment process, leading to missed objects. The experiment shows that the camera took 5.3 seconds to recover, during which it failed to detect objects. \n For LiDAR attacks, the study analyses two attack strategies: relay attacks and spoofing. The relay attack intercepts and retransmits LiDAR pulses from a different location, creating false reflections at unintended positions. The attack is executed using two transceivers: a 905 nm photodetector to capture incoming LiDAR pulses and a laser diode to retransmit the captured signal with a delay. This deception tricks the system into misjudging object distances, potentially leading to navigation errors or collisions. The spoofing attack, on the other hand, involves synchronizing with the LiDAR’s scan cycle and injecting false echoes, causing the system to detect non-existent obstacles. Multiple reflections can be introduced to simulate multiple fake objects, leading the LiDAR to classify them as real. \n To mitigate these threats, the study proposes several countermeasures. For camera attacks, redundancy through multiple cameras, the implementation of infrared filters to block unwanted light, and the use of materials that adjust transparency based on light intensity are suggested. For LiDAR attacks, the countermeasures include introducing random probing intervals to prevent synchronization by attackers, using multi-wavelength LiDAR systems to detect anomalies, and applying data fusion techniques to compare multiple sensor inputs for consistency."
+        },
+		{
+            "ID": "RE0018",
+            "name": "Autonomous vehicle ultrasonic sensor vulnerability and impact assessment",
+			"cite": "B. S. Lim, S. L. Keoh, and V. L. L. Thing, “Autonomous vehicle ultrasonic sensor vulnerability and impact assessment,” IEEE World Forum Internet Things, WF-IoT 2018 - Proc., vol. 2018-Janua, pp. 231–236, 2018, doi: 10.1109/WF-IoT.2018.8355132.",
+            "link": "https://doi.org/10.1109/WF-IoT.2018.8355132",
+            "description": "The study of Lim et al. (2018) [10] presents a threat model where adversaries, despite lacking internal access to the vehicle, can manipulate externally exposed ultrasonic sensors. The research examines four attack scenarios in a controlled lab environment using off-the-shelf ultrasonic sensors (HC-SR04) and an Arduino to assess vulnerabilities in autonomous vehicle perception systems. \n The first attack exploits ultrasonic sensor blind spots by using thin objects such as straws, chopsticks, hairpins, or cards to evade detection. This demonstrates how small obstacles may go undetected, potentially leading to collisions. The second scenario involves physically obstructing the sensor, either at the transmitter, receiver, or both, to evaluate the impact of blockage on detection accuracy. The results confirm that any physical obstruction severely degrades the sensor’s performance. \nThe third attack employs acoustic materials, such as acoustic foam, to absorb ultrasonic waves, effectively making obstacles invisible to the sensor. This highlights the risk of adversaries placing specific materials in the environment to manipulate sensor readings. Lastly, the fourth scenario explores interference attacks by positioning two ultrasonic sensors facing each other. This setup disrupts distance measurements, causing erroneous readings and unreliable obstacle detection. \n Through these experiments, the study underscores the vulnerabilities of ultrasonic sensors in autonomous vehicles and the potential consequences of external tampering on vehicle safety and navigation."
+        },
+		{
+            "ID": "RE0019",
+            "name": "Adversarial sensor attack on LiDAR-based perception in autonomous driving",
+			"cite": "Y. Cao et al., “Adversarial sensor attack on LiDAR-based perception in autonomous driving,” Proc. ACM Conf. Comput. Commun. Secur., pp. 2267–2281, 2019, doi: 10.1145/3319535.3339815",
+            "link": "https://doi.org/10.1145/3319535.3339815",
+            "description": "The study of Cao et al. (2019) [11] explores the feasibility of adversarial sensor attacks on LiDAR-based perception in autonomous driving, specifically investigating whether spoofed LiDAR points can manipulate machine learning-based object detection pipelines and influence autonomous vehicle (AV) decision-making. The research finds that blind spoofing methods, which operate within a narrow horizontal range (~8 degrees), are ineffective at mimicking real obstacles. \n The proposed threat model assumes that an attacker leverages LiDAR spoofing techniques to inject adversarial data into the AV perception system. The adversary is granted white-box access to the perception model, allowing them to craft targeted perturbations. Attack scenarios include both static roadside attackers and those positioned in adjacent vehicles. The primary attack objective is to introduce ``front-near obstacles`` within approximately five meters of the AV, leading to incorrect driving decisions such as sudden braking or freezing at intersections. \n To achieve this, the study introduces an attack methodology termed Adv-LiDAR, which comprises four key stages. First, input perturbation analysis is performed to model the capabilities of LiDAR spoofing, including position and distance control. Next, the attack is formulated as an optimization problem to maximize the likelihood of successfully spoofing an obstacle. A hybrid approach involving global sampling and optimization is then employed to escape local minima and improve attack success rates. Finally, the driving decision impact evaluation stage simulates attacks to assess how AVs respond to spoofed obstacles. \n The research also presents two case studies demonstrating the real-world impact of these attacks. The first, an emergency brake attack, involves spoofed obstacles forcing the AV to halt abruptly, increasing the risk of rear-end collisions. The second, an AV freezing attack, exploits phantom obstacles at a traffic light to keep the AV stationary, leading to traffic congestion. These findings underscore the potential risks of LiDAR spoofing in AV systems and highlight the need for robust countermeasures."
+        },
+		{
+            "ID": "RE0020",
+            "name": "Towards robust LiDAR-based perception in autonomous driving: General black-box adversarial sensor attack and countermeasures",
+			"cite": "J. Sun, Y. Cao, Q. A. Chen, and Z. Morley Mao, “Towards robust LiDAR-based perception in autonomous driving: General black-box adversarial sensor attack and countermeasures,” Proc. 29th USENIX Secur. Symp., pp. 877–894, 2020, doi: 10.48550/arXiv.2006.16974",
+            "link": "https://doi.org/10.48550/arXiv.2006.16974",
+            "description": "The study of Sun et al. (2020) [12] investigates the vulnerabilities of current LiDAR-based perception models in autonomous driving, particularly their failure to account for occlusion patterns, which makes them susceptible to adversarial spoofing attacks. Two types of occlusion issues are identified: inter-occlusion, where objects hidden behind others receive fewer LiDAR points, and intra-occlusion, where distant objects naturally contain sparse point clouds due to self-occlusion. \n To exploit these weaknesses, the study introduces a black-box LiDAR spoofing attack, which follows a three-step process. In the first step, attack traces are generated by extracting data from occluded and distant vehicles in the KITTI dataset. A 3D mesh of a vehicle is then rendered using a ray-casting simulation to replicate the LiDAR scanning process. The second step involves transforming these attack traces and injecting them into the perception pipeline of the victim autonomous vehicle (AV). This attack can take two forms: digital spoofing, where attack traces are digitally merged into point clouds and tested in simulations, and physical spoofing, where laser-based devices inject attack traces into actual LiDAR sensors. The third step evaluates the attack’s effectiveness against three state-of-the-art LiDAR perception models: Apollo 5.0 (bird’s-eye view-based), PointPillars (voxel-based), and PointRCNN (point-wise). \n To mitigate these threats, the study proposes two countermeasures. The first approach, CARLO (oCclusion-Aware hieRarchy anomaLy detectiOn), employs a hierarchical detection pipeline. In the first stage, it identifies legitimate objects by ensuring they exhibit minimal LiDAR beam penetration due to their solid structure, whereas spoofed objects tend to allow more penetration due to their sparsity. In the second stage, the system detects spoofed vehicles by recognising their unnaturally high free-space ratios caused by a lack of occlusion. The second mitigation technique, SVF (Sequential View Fusion), enhances LiDAR perception by integrating neglected physical features. It projects 3D LiDAR point clouds into a front-view representation and combines them with traditional 3D representations to ensure both perspectives are effectively utilised. Additionally, SVF improves LiDAR feature extraction by classifying each point with confidence scores and detecting spoofed objects that fail to match expected occlusion properties."
+        },
+		{
+            "ID": "RE0021",
+            "name": "Can You Trust Autonomous Vehicles: Contactless Attacks against Sensors of Self-driving Vehicle",
+			"cite": "Y. Chen, W. Xu, and L. Jianhao, “Can You Trust Autonomous Vehicles: Contactless Attacks against Sensors of Self-driving Vehicle,” Defcon 24, pp. 189–190, 2024, doi: 10.1145/1235.",
+            "link": "https://infocon.org/cons/DEF%20CON/DEF%20CON%2024/DEF%20CON%2024%20presentations/DEF%20CON%2024%20-%20Liu-Yan-Xu-Can-You-Trust-Autonomous-Vehicles-WP.pdf",
+            "description": "The study of Chen et al. (2024) [13] highlights the security risks associated with sensor-based driving decisions in autonomous vehicles, demonstrating how attackers can exploit vulnerabilities in ultrasonic sensors, millimeter-wave radars, and forward-looking cameras to deceive or disable vehicle systems. The research presents contactless attack methods, including jamming and spoofing techniques, tested on a Tesla Model S in both lab and outdoor environments. \n The study details multiple ultrasonic sensor attacks. A jamming attack is executed using an Arduino device to continuously emit high-frequency sound waves (40–50 kHz), which overloads the vehicle’s sensors, causing them to misread distances or fail to detect obstacles entirely, increasing the risk of crashes during parking or low-speed driving. A spoofing attack, on the other hand, sends out specially crafted sound waves that mimic real echoes, tricking the sensors into detecting false obstacles or misjudging distances. Additionally, an acoustic quieting approach is explored, where attackers use sound-absorbing materials (passive approach) or noise cancellation techniques (active approach) to disrupt sensor signals. \n The research also investigates millimeter-wave radar attacks. A jamming attack is conducted by transmitting high-power electromagnetic waves (76–77 GHz) to interfere with the vehicle’s radar system, rendering it unable to detect objects and potentially disabling critical safety features like Autopilot. A spoofing attack involves injecting synthetic radar signals with modified frequency modulation patterns to generate false detections or distort object distances, leading to incorrect responses from safety systems such as cruise control and collision prevention. Furthermore, a replay attack captures and retransmits radar signals with a delay, creating phantom objects that mislead the vehicle into taking unnecessary actions or ignoring real obstacles. \n Lastly, the study explores camera-based attacks, particularly blinding attacks. This method uses three different light sources - high-power LED lights, laser pointers, and infrared LEDs - aimed either directly at the camera lens or at nearby objects to create strong glare. As a result, the attack can cause temporary or permanent blindness in the camera, preventing it from recognising lane markings, traffic signs, and obstacles. This disruption can influence the Advanced Driver Assistance System (ADAS), leading to unintended vehicle deviations, emergency braking, and potentially causing accidents. \n These findings underscore the severity of contactless attacks against autonomous vehicle sensors, highlighting the urgent need for more resilient sensing mechanisms and advanced countermeasures to mitigate these threats."
+        },
+		{
+            "ID": "RE0022",
+            "name": "A Practical Wireless Attack on the Connected Car and Security Protocol for In-Vehicle CAN",
+			"cite": "S. Woo, H. J. Jo, and D. H. Lee, “A Practical Wireless Attack on the Connected Car and Security Protocol for In-Vehicle CAN,” IEEE Trans. Intell. Transp. Syst., vol. 16, no. 2, pp. 993–1006, 2015, doi: 10.1109/TITS.2014.2351612.",
+            "link": "https://doi.org/10.1109/TITS.2014.2351612",
+            "description": "The study of Woo et al. (2015) investigates the vulnerabilities of the Controller Area Network (CAN) in connected cars and demonstrates a long-range wireless attack using a real vehicle and a malicious smartphone application. The attack exploits the OBD2 diagnostic interface, which is commonly used for vehicle monitoring and maintenance. \n The step-by-step attack begins with the installation of an OBD2 scan tool on the target vehicle, which is paired with the driver’s smartphone via Bluetooth. The smartphone runs a malicious self-diagnostic application that transmits in-vehicle CAN data frames to an attacker's remote server using mobile communication networks (3G/4G). The attacker first captures CAN data frames using diagnostic tools and subsequently injects malicious data remotely through the infected smartphone. The experiment successfully demonstrates several remote attack scenarios, including dashboard distortion, engine shutdown, and unintended acceleration, highlighting the security risks associated with connected vehicle systems. \nTo mitigate these threats, the authors propose a lightweight security protocol tailored to the constraints of CAN networks. The protocol integrates encryption and authentication mechanisms, ensuring real-time message protection through a message authentication code (MAC) and AES-128 encryption. Additionally, efficient key management is implemented to facilitate secure session key distribution and periodic updates, maintaining both forward and backward secrecy. The proposed security framework was tested on a Secure-ECU and evaluated using CANoe software, demonstrating improved efficiency compared to existing security solutions."
+        },
+		{
+			"ID": "RE0023",
+			"name": "Mercedes-Benz MBUX Security Research Report",
+			"cite": "Tencent Keen Security Lab, “Mercedes-Benz MBUX Security Research Report,” 2021.",
+			"link": "https://keenlab.tencent.com/en/whitepapers/Mercedes_Benz_Security_Research_Report_Final.pdf",
+			"description": "Tencent Lab’s research on Mercedes-Benz vehicle security uncovered multiple attack vectors targeting the T-Box, telematics system, and remote vehicle services. \n Researchers first forced the vehicle’s T-Box to downgrade from LTE to GSM using a rogue cellular base station built with USRP and OpenBTS. By jamming LTE frequencies and restricting communication to GSM, attackers positioned themselves as a man-in-the-middle (MitM), intercepting SMS messages used for remote vehicle commands. \n The team then extracted firmware from the T-Box and analyzed its software stack, encryption methods, and authentication mechanisms. They found that the vehicle communicated with backend servers using the MQTT protocol, and authentication tokens were stored locally, potentially allowing spoofed communications if extracted. Additionally, certain debugging and diagnostic functionalities remained enabled, and authentication mechanisms were not fully resistant to replay attacks. \n While analyzing the CAN bus, researchers determined that the T-Box had limited direct access, making remote takeover via telematics alone infeasible. However, attackers with physical access could modify firmware to execute unauthorized CAN commands. Furthermore, diagnostic messages and UDS-based commands presented potential avenues for further attack escalation. Lastly, some hardcoded credentials and API keys were discovered, posing a security risk if extracted."
+		},
+		{
+			"ID": "RE0024",
+			"name": "Exploiting Wi-fi Stack On Tesla Model S",
+			"cite": "Exploiting Wi-Fi Stack on Tesla Model S | Keen Security Lab Blog. (n.d.). Retrieved March 19, 2025,[Online].",
+			"link": "https://keenlab.tencent.com/en/2020/01/02/exploiting-wifi-stack-on-tesla-model-s/",
+			"description": "Keen Security Lab conducted an investigation into the Parrot module in the Tesla Model S, focusing on its Wi-Fi and Bluetooth functionalities. Their research uncovered vulnerabilities in both the Marvell 88W8688 Wi-Fi chip's firmware and its associated Linux driver, which could be exploited to remotely compromise the vehicle's infotainment system.\n Through reverse engineering, the team discovered a critical vulnerability in the firmware's handling of Add Traffic Stream (ADDTS) response frames. This vulnerability stemmed from improper length calculations that could lead to memory corruption and buffer overflow. By crafting malicious ADDTS response frames, the researchers could achieve arbitrary code execution within the Wi-Fi chip, enabling them to manipulate its behavior and interact with the host system. They further exploited a vulnerability in the Linux driver to escalate privileges and execute code on the CID's Linux system. \n The attack sequence involves several steps: First, the attacker sends deauthentication frames to disconnect the Tesla from its Wi-Fi network. When the vehicle attempts to reconnect, the attacker captures its MAC address. Then, they deliver a crafted ADDTS response frame to exploit the firmware vulnerability, gaining code execution on the Wi-Fi chip. Finally, they leverage the compromised Wi-Fi chip to exploit the driver vulnerability and gain control over the CID's Linux system. This attack chain potentially allows an adversary to remotely access and control the vehicle's infotainment system, with possible implications for other connected in-vehicle components. In response, Tesla has deployed a fix to these vulnerabilities"
+		},
+		{
+			"ID": "RE0025",
+			"name": "Road Decals as Trojans: Disrupting Autonomous Vehicle Navigation with Adversarial Patterns",
+			"cite": "W. J. Chen, C. Y. Hsu, W. Bin Lee, C. M. Yu, and C. Y. Huang, “Road Decals as Trojans: Disrupting Autonomous Vehicle Navigation with Adversarial Patterns,” Proc. - 2024 54th Annu. IEEE/IFIP Int. Conf. Dependable Syst. Networks - Suppl. Vol. DSN-S 2024, pp. 133–140, 2024, doi: 10.1109/DSN-S60304.2024.00039.",
+			"link": "https://doi.org/10.1109/DSN-S60304.2024.00039",
+			"description": "The authors explores how physical adversarial patches in the form of road decals can be used to mislead object detection systems in autonomous vehicles. Existing adversarial patch attacks often fail in dynamic environments, where AVs continuously process sensor inputs. To overcome this, the authors propose an improved Expectation Over Transformation (EOT) technique that ensures adversarial patches remain effective under varying conditions, such as different distances, angles, and lighting. Unlike prior colorful adversarial patches, their method uses monochrome adversarial patches with controlled shapes, making them stealthier and easier to deploy in real-world road environments. \n The proposed attack leverages Generative Adversarial Networks (GANs) to create robust adversarial patches. The training process includes: GAN-based Adversarial Patch Generation to produces adversarial patches designed to mislead the object detector; EOT for Robustness to transform to ensure effectiveness in different real-world conditions, such as resizing, rotation, and shadowing; Then the adversarial patches are designed to mislead AVs across multiple frames. \n The attack then was tested in both simulated and real-world environments."
+		},
+		{
+			"ID": "RE0026",
+			"name": "Attacks on Machine Learning: Adversarial Examples in Connected and Autonomous Vehicles",
+			"cite": "P. Sharma, D. Austin, and H. Liu, “Attacks on Machine Learning: Adversarial Examples in Connected and Autonomous Vehicles,” 2019 IEEE Int. Symp. Technol. Homel. Secur. HST 2019, pp. 1–7, 2019, doi: 10.1109/HST47167.2019.9032989.",
+			"link": "https://doi.org/10.1109/HST47167.2019.9032989",
+			"description": "This paper examines adversarial attacks on machine learning (ML) models in Connected and Autonomous Vehicles (CAVs), focusing on misbehavior detection and intrusion detection systems (IDS). The researchers use the VeReMi dataset—which simulates various types of vehicular misbehavior—to train their ML models. \nThe study begins by building an Intrusion Detection System using the VeReMi dataset. The researchers train four machine learning models: K-Nearest Neighbors (KNN), Random Forest (RF), Logistic Regression (LR), and Long Short-Term Memory (LSTM) to distinguish between normal and malicious behavior. Using an adversarial dataset, they generate initial attack samples and modify this data through ML and DL models to create deceptive examples that appear normal but contain attacks. They then test the IDS by feeding it these adversarial examples. The findings reveal that while traditional IDS models (KNN, RF) can detect standard attacks, they fail to identify adversarial examples. Moreover, even the more sophisticated deep learning-based IDS models (LSTM, LR) prove vulnerable to these attacks."
+		},
+		{
+			"ID": "RE0027",
+			"name": "Attacks on Machine Learning: Adversarial Examples in Connected and Autonomous Vehicles",
+			"cite": "F. Aloraini and A. Javed, “Adversarial Attacks in Intrusion Detection Systems: Triggering False Alarms in Connected and Autonomous Vehicles,” Proc. 2024 IEEE Int. Conf. Cyber Secur. Resilience, CSR 2024, pp. 714–719, 2024, doi: 10.1109/CSR61664.2024.10679419.",
+			"link": "https://doi.org/10.1109/CSR61664.2024.10679419",
+			"description": "This paper investigates how adversarial attacks can manipulate ML-based Intrusion Detection Systems (IDSs) in Connected and Autonomous Vehicles (CAVs). This research introduces adversarial techniques that modify benign frames to appear as attacks, causing false positives (FPs). \n First, researchers train five IDS models to classify CAN frames as normal or malicious using the Car Hacking Dataset, including Deep Neural Network (DNN), Decision Tree (DT), Random Forest (RF), Extra Trees (ET), XGBoost. Then they modify normal CAN frames so that IDS misclassifies them as attacks, leading to false alarms. Specially,, they modifies only data fields (D0–D7) while keeping CAN IDs and DLC values unchanged to maintain valid CAN frame structures. The adversarial attack is performed using four attack techniques: Fast Gradient Sign Method (FGSM) – Quickly perturbs input data using gradients; Basic Iterative Method (BIM) – Repeatedly applies FGSM for stronger attacks; Projected Gradient Descent (PGD) – Adds controlled perturbations while staying within predefined limits; and Decision Tree (DT) Attack – Exploits structural weaknesses in tree-based models to force misclassification. The result show that the IDS models perform well under normal conditions, with 100% accuracy and minimal false positives. However, under adversarial attacks, IDS accuracy drops significantly, and FPs increase dramatically, with attack success rates reach up to 89%."
+		},
+		{
+			"ID": "RE0028",
+			"name": "Adversarial Attacks on Intrusion Detection Systems in In-Vehicle Networks of Connected and Autonomous Vehicles",
+			"cite": "F. Aloraini, A. Javed, and O. Rana, “Adversarial Attacks on Intrusion Detection Systems in In-Vehicle Networks of Connected and Autonomous Vehicles,” Sensors, vol. 24, no. 12, pp. 1–29, 2024, doi: 10.3390/s24123848.",
+			"link": "https://doi.org/10.3390/s24123848",
+			"description": "This paper investigates adversarial attacks on Intrusion Detection Systems (IDSs) in In-Vehicle Networks (IVNs) of Connected and Autonomous Vehicles. \n The authors designed two IDS systems: a baseline system using Deep Neural Network (DNN) with four hidden layers, and a Multi-Tier Hybrid IDS (MTH-IDS) combining Decision Tree (DT), Random Forest (RF), and k-means clustering for anomaly detection. Both systems were trained using the Car Hacking Dataset (HCRL dataset), analyzing CAN ID, Data Length Code (DLC), and payload bytes (D0-D7). \n The researchers tested five adversarial attack techniques: Fast Gradient Sign Method (FGSM), Basic Iterative Method (BIM), Projected Gradient Descent (PGD), Carlini & Wagner (C&W) Attack, and Decision Tree (DT) Attack. These attacks modified only data payload fields (D0–D7), leaving CAN IDs and DLC values unchanged to maintain valid CAN frame structure. Their goal was to alter normal CAN frames to trigger false alarms in the IDS. \n Results showed significant degradation in baseline IDS performance, with F1 Score dropping from 95% to 38%. While the MTH-IDS demonstrated better resilience, its F1 Score still fell from 97% to 79% under attack. Additionally, up to 52.34% of normal frames were incorrectly flagged as attacks."
+		},
+		{
+			"ID": "RE0029",
+			"name": "Jamming attacks and Anti-Jamming Strategies on Car Remote Keyless Entry System",
+			"cite": "C. Temaneh-Nyah and E. J. N. Shivute, “Jamming attacks and Anti-Jamming Strategies on Car Remote Keyless Entry System,” 2023 Int. Conf. Emerg. Trends Networks Comput. Commun. ETNCC 2023 - Proc., pp. 202–208, 2023, doi: 10.1109/ETNCC59188.2023.10284964.",
+			"link": "https://doi.org/10.1109/ETNCC59188.2023.10284964",
+			"description": "The paper examines jamming attacks on car Remote Keyless Entry (RKE) systems, analysing how signal-to-noise ratio impacts locking mechanisms. The study highlights how small, portable radio frequency jamming devices disrupt car RKE operations, which rely on 315 MHz (North America) and 433.92 MHz (Europe) frequencies.\n Attackers exploit jamming by continuously transmitting interference at the same frequency as the car key fob, preventing the vehicle from locking. They set up two signals were transmitted to a car: one from a gate motor remote (jammer) and another from a car key fob, and test it on different vehicle models to determine their vulnerability to jamming. The study used mathematical models to estimate the received power at the car RKE receiver based on transmission distance and power. \n The result shows that the likelihood of jamming depends on the relative distance between the car key fob and the jammer. Also, higher transmission power from the jammer can overpower the key fob signal, reducing SNR below acceptable levels."
+		},
+		{
+			"ID": "RE0030",
+			"name": "Jamming attacks and Anti-Jamming Strategies on Car Remote Keyless Entry System",
+			"cite": "Francillon, Aurélien & Danev, Boris & Capkun, Srdjan. (2010). Relay Attacks on Passive Keyless Entry and Start Systems in Modern Cars.. IACR Cryptology ePrint Archive. 2010. 332. ",
+			"link": "https://eprint.iacr.org/2010/332.pdf",
+			"description": "This paper demonstrates relay attacks on Passive Keyless Entry and Start (PKES) systems used in modern cars. \n The authors construct two relay attack setups, one using a wired physical-layer relay and another using a wireless radio frequency relay, to successfully open and start vehicles while the key remains physically far from the car. \n For the relay-over-cable attack, they set up two loop antennas connected by a coaxial cable: one placed near the car's door handle to capture the Low-Frequency (LF) challenge signal sent by the car, and another placed near the owner's key fob to transmit the relayed signal, making the key believe it is close to the car. The key then transmits its UHF response, and the car receives the correct response and unlocks. \n For the relay-over-air attack, they set up two devices that communicate over a 2.5 GHz RF channel to relay the LF signals—one relay device near the car's door handle and the other near the key fob. This method is more flexible since it can work over long distances (tested up to 50 meters)."
+		},
+		{
+			"ID": "RE0031",
+			"name": "Jamming attacks and Anti-Jamming Strategies on Car Remote Keyless Entry System",
+			"cite": "F. D. Garcia, D. Oswald, T. Kasper, O. Gmbh, and P. Pavlidès, “Lock It and Still Lose It — On the ( In ) Security of Automotive Remote Keyless Entry Systems,” 25th USENIX Secur. Symp., 2016.",
+			"link": "https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf",
+			"description": "This paper exposes severe security vulnerabilities in Remote Keyless Entry (RKE) systems used by major car manufacturers. The authors demonstrate how an attacker can gain unauthorized access to vehicles by exploiting weaknesses in their cryptographic implementations. They analyze two widely used RKE schemes: VW Group's RKE system and the Hitag2 rolling code system. \n For VW Group's RKE system, they reverse-engineered the firmware of the RKE Electronic Control Units (ECUs) and found that most VW Group vehicles share a small set of global master cryptographic keys. With this vulnerability, an attacker can eavesdrop on a single rolling code transmission from a victim's key fob. Then, using the master key, they can decrypt the rolling code and generate new valid codes to unlock the car at will. \n FFor Hitag2-based RKE systems, which are used in Alfa Romeo, Chevrolet, Peugeot, Opel, Renault, Ford, and other vehicles, the authors reverse-engineered the Hitag2 rolling code system and developed a correlation attack. This attack allows an attacker to recover the cryptographic key after eavesdropping on just 4 to 8 rolling codes. To gather these rolling codes, the attacker continuously jams the final checksum byte of the rolling code transmission, preventing the car from receiving the complete signal. Since the vehicle does not respond, the victim presses the button multiple times, unaware of the attack. Each button press generates a new rolling code, which the attacker captures. Once 4–8 rolling codes are collected, the attacker can generate valid rolling codes to unlock the car. \n These vulnerabilities affect millions of cars worldwide, leaving no forensic traces and making remote vehicle theft feasible."
+		},
+		{
+			"ID": "RE0032",
+			"name": "On the Security of Remote Key Less Entry for Vehicles",
+			"cite": "J. Patel, M. L. Das, and S. Nandi, “On the Security of Remote Key Less Entry for Vehicles,” Int. Symp. Adv. Networks Telecommun. Syst. ANTS, vol. 2018-December, pp. 1–6, 2018, doi: 10.1109/ANTS.2018.8710105.",
+			"link": "https://doi.org/10.1109/ANTS.2018.8710105",
+			"description": "This paper examines security weaknesses in existing Remote Keyless Entry (RKE) systems. The authors highlight vulnerabilities in rolling code authentication and challenge-response mechanisms, specifically referencing security flaws in Glocker et al.'s protocol. Existing RKE systems have several vulnerabilities: fixed code authentication is transmitted each time, rolling code systems suffer from cryptographic key recovery attacks, and challenge-response mechanisms are vulnerable to OBD port scan attacks—allowing attackers to extract the entire memory state of the key fob and clone it. In Glocker et al.'s protocol, attackers can recover secret keys through pattern analysis, then generate fake authentication responses to bypass security and steal vehicles. The protocol is also susceptible to OBD port scan attacks, enabling attackers to clone key fobs in seconds. \nAdditionally, the authors propose a Secure RKE System that uses a challenge-response authentication scheme with an Unclonable Security Module and Secret Unknown Cipher. This system dynamically generates encryption keys for each session, prevents key fob cloning, and protects the OBD port from unauthorized scanning by ensuring no static authentication data is stored."
+		},
+		{
+			"ID": "RE0033",
+			"name": "Gone in 360 seconds: Hijacking with hitag2",
+			"cite": "[1] R. Verdult, F. D. Garcia, and J. Balasch, “Gone in 360 seconds: Hijacking with hitag2,” Proc. 21st USENIX Secur. Symp., pp. 237–252, 2012.",
+			"link": "https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf",
+			"description": "This paper examines security vulnerabilities in the Hitag2 transponder, a widely used cryptographic authentication system in vehicles. Through analysis of Hitag2's stream cipher, the authors uncovered several critical weaknesses that enable attackers to extract secret keys and bypass authentication. These vulnerabilities include a weak 48-bit key vulnerable to brute-force attacks, the absence of a proper random number generator that leaves the system susceptible to replay attacks, and predictable key derivation that allows exploitation of session dependencies. \n The researchers successfully implemented three distinct attacks against Hitag2. \n\t The Malleability Attack involves replaying authentication attempts to the key fob and extracting keystream bits to recover memory contents, including passwords and keys, completing in less than one second. \n\tThe Time/Memory Tradeoff Attack utilizes a precomputed lookup table (1.2 TB) of potential keys. By eavesdropping on authentication attempts and collecting 256 bytes of keystream, attackers can match this data against the table to recover the secret key in approximately one minute. \n\t Finally, the Cryptanalytic Attack exploits vulnerabilities in Hitag2's stream cipher that leak key bits during multiple authentication attempts. By collecting 136 authentication traces, attackers can recover the key in under six minutes."
+		}
+                
+    ]
+}

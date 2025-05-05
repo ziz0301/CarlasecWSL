@@ -1,0 +1,136 @@
+log_level = logging.DEBUG if args.debug else logging.WARNING
+  logging.basicConfig(format='%(levelname)s: %(message)s', level=log_level)
+  
+  
+  
+  Yes, another stuff that I need to work. As you know, if there are an attacker trying to call ``` ncat -lvp 4444``` then I print ```print("HeadUnit hacked")```. But I want to extend it abit.
+What I want to do is to have an variable call attack_path:
+if an attacker call reverse shell then it print "A->headunit" and on that reverse shell if an attacker call to ```cansend vcan0 123#05310101A964``` for example, then it print another "A->headunit->some ECU"
+But things got complicated here as it from seperate file. I will explain you the step.
+1. When an attacker call the reverse shell, the printing of "A->headunit" is in the scenario.py
+2. When attacker on the shell, type in the ```cansend vcan0 123#05310101A964``` it process on the ecu.py - def virtual_shell:
+```
+def virtual_shell(self, stop_event):
+	print(f"headunit-shell> ", end="", flush=True)
+	while not stop_event.is_set():                
+		ready, _, _ = select.select([sys.stdin], [], [], 0.1)		
+		if ready: 
+			command = sys.stdin.readline().strip()
+			if command.startswith("cansend"):
+				try:
+					_, interface, message = command.split(maxsplit=2)
+					os.system(f"cansend {interface} {message}")
+					print(f"Sent CAN message on {interface}: {message}")
+				except ValueError:
+					print("Usage: cansend <interface> <message>")					
+			else:
+                        print(f"Unknown command: {command}")
+		else:
+			if stop_event.is_set():
+				print("Virtual shell thread stopping.")
+				break
+```
+3. Then it go to function ecu_uds_server which is on the same ecu.py
+```
+def ecu_uds_server(self, stop_event, control, vehicle, vehicledoor):
+	uds_server = UDSServer()
+	s = isotp.socket()
+	s.set_fc_opts(stmin=5, bs=10)
+	s.bind("vcan0", isotp.Address(rxid=0x123, txid=0x456))
+	#print("Start Listening")
+	while not stop_event.is_set():
+		try:
+			request = s.recv()
+			if not request:
+				continue
+			if request[0] == services.DiagnosticSessionControl._sid:
+				response = uds_server.handle_session_change(request)
+				s.send(response)
+			elif request[0] == services.SecurityAccess._sid:
+				response = uds_server.handle_security_access(request)
+				s.send(response)
+			elif request[0] == services.WriteDataByIdentifier._sid:
+				response = uds_server.handle_write_data_by_identifier(request)
+				s.send(response)
+			elif request[0] == services.ReadDataByIdentifier._sid:
+				response = uds_server.handle_read_data_by_identifier(request)
+				s.send(response)
+			elif request[0] == services.InputOutputControlByIdentifier._sid:
+				response = uds_server.handle_input_output_control(request)
+				s.send(response)
+			elif request[0] == services.RoutineControl._sid:
+				response = uds_server.handle_routine_control(request, control, vehicle, vehicledoor)
+				self.door_count = uds_server.door_count
+				#print (f"Door count ecu side: {self.door_count}")
+				s.send(response)
+		except Exception as e:
+			print (f"Error: {e}")
+	print("UDS thread stop")	
+```
+4. The message is call to routinecontrol, then it call to uds_server. Here I got some if/else logic to let it know to control
+```
+def handle_routine_control(self, request, control, vehicle, vehicledoor):
+	control_type = request[1]
+	routine_id = int.from_bytes(request[2:4], 'big')
+	if routine_id == 0x01A9:  # Routine Identifiers for diagnostic Throttle
+		#some logic
+		print(f"Send diagnostic with throttle value {throttle_value}")
+	if routine_id == 0x04F1:  # Routine Identifiers for diagnostic Steer
+		#some logic
+		print(f"Send diagnostic with steer value {steer_value}")
+	if routine_id == 0x0205:  # Routine Identifiers for diagnostic Brake
+		#some logic
+		print(f"Send diagnostic with break value {break_value}")
+	if routine_id == 0x04F5:  # Routine Identifiers for diagnostic Gear
+		#some logic
+		print(f"Send diagnostic with gear value {gear_value}")
+	if routine_id == 0x0203:  # Control Door
+		#some logic
+		print(f"Send diagnostic with door value {door_value}")
+		
+```			
+I create attack_tracker.py as simple as you said. And what I did is
+1. On scenario.py
+```
+from attacker.attack_tracker import AttackTracker
+class Scenario:
+	def __init__(self, stop_event, can_obj=None, ivn_instance=None):
+		self.attack_tracker = AttackTracker()
+		
+	def reverse_shell(self, service_shell, stop_event):
+        def attempt_connection():            
+            #other code
+            if connected and not stop_event.is_set():
+                print("HeadUnit hacked")
+                self.attack_tracker.update_path("HeadUnit")
+                self.attack_tracker.print_path()
+```
+2. On uds_server.py
+```
+from attacker.attack_tracker import AttackTracker
+class UDSServer:
+	def handle_routine_control(self, request, control, vehicle, vehicledoor):
+		attack_tracker = AttackTracker()
+		if routine_id == 0x01A9:  # Routine Identifiers for diagnostic Throttle
+			attack_tracker.update_path("Throttle")  
+			attack_tracker.print_path()
+		if routine_id == 0x04F1:  # Routine Identifiers for diagnostic Steer
+			attack_tracker.update_path("Steering")  
+			attack_tracker.print_path()
+		if routine_id == 0x0205:  # Routine Identifiers for diagnostic Brake
+			attack_tracker.update_path("Brake")  
+			attack_tracker.print_path()
+		#othercode
+```
+3. So my problem is: 
+- I run client_run.py on WSL2 and the pygame open to run the vehicle, this window I call "vehicle window"
+- I do `ncat -lvp 4444` on normal windows cmd, this window I call "hacker window"
+- When the reverse shell is connect, on the vehicle window, it print:
+	```
+	HeadUnit hacked
+	Attack Path: A->HeadUnit
+	```
+	This part is good as I expected
+- On the hacker window, I type "cansend vcan0 123#05310101A964", then it print out "Attack Path: A->Throttle"
+This part is not what I expected.
+- As you see, the app need to run through the scenario.py before run the uds_server.py, but the attack_tracker is not follow in the hacker window. In the hacker window, it should print "A->HeadUnit->Throttle". Otherwise, it should print on the hacker window, which I guess it should be on the scenario.py file. Should there are another thread running under to track if an attacker send message to which part of the vehicle?

@@ -1,0 +1,812 @@
+Version: 1
+Map: Town10HD
+Date: 02/10/24 15:41:48
+
+Frame 1 at 0 seconds
+ Create 24: spectator (0) at (-17219.7, 18385.9, 2763.81)
+ Create 25: traffic.stop (4) at (5745, 6115, 15)
+ Create 26: traffic.stop (4) at (2610, 7515, 15)
+ Create 27: traffic.stop (4) at (3535, 5360, 15)
+ Create 28: traffic.yield (4) at (4960, 3850, 15)
+ Create 29: traffic.unknown (4) at (4315, 6645, 0)
+ Create 30: traffic.unknown (4) at (4404.62, 3779.89, 0)
+ Create 31: traffic.unknown (4) at (-2815, 6602.97, 0)
+ Create 32: traffic.traffic_light (3) at (-11923, 509.315, 26.277)
+ Create 33: traffic.traffic_light (3) at (11545, 3504.49, 22.2726)
+ Create 34: traffic.traffic_light (3) at (-4617.16, -7355.66, 25.4254)
+ Create 35: traffic.traffic_light (3) at (-3444.92, -5102.05, 25.4255)
+ Create 36: traffic.traffic_light (3) at (11445.2, 2119.6, 25.42)
+ Create 37: traffic.traffic_light (3) at (8979.19, 2092.21, 25.42)
+ Create 38: traffic.traffic_light (3) at (-3193.08, 2030.2, 25.4254)
+ Create 39: traffic.traffic_light (3) at (-6426.42, 706.331, 25.4254)
+ Create 40: traffic.traffic_light (3) at (-6235.21, 2019.69, 25.4254)
+ Create 41: traffic.traffic_light (3) at (-9492.82, 2033.48, 25.4256)
+ Create 42: traffic.traffic_light (3) at (-5924.23, -5149.84, 25.4254)
+ Create 43: traffic.traffic_light (3) at (-11923.8, 1900.45, 25.4253)
+ Create 44: traffic.traffic_light (3) at (-5871.54, 14582.5, 25.4188)
+ Create 45: traffic.traffic_light (3) at (-6209.93, 12375.6, 28.3086)
+ Create 46: traffic.traffic_light (3) at (-3163.64, 3358.93, 25.4254)
+ Create 84: vehicle.mercedes.coupe_2020 (1) at (5775.08, 3120.38, -0.0830078)
+  generation = 2
+  has_lights = true
+  number_of_wheels = 4
+  terramechanics = true
+  special_type = 
+  base_type = car
+  object_type = 
+  color = 0,21,81
+  has_dynamic_doors = true
+  sticky_control = true
+  role_name = hero
+ Create 49: sensor.other.collision (5) at (5756.83, -6784.99, -0.151184)
+  role_name = front
+ Create 50: sensor.other.lane_invasion (5) at (5756.83, -6784.99, -0.151184)
+  role_name = front
+ Create 51: sensor.other.gnss (5) at (5656.83, -6784.94, 279.849)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 52: sensor.other.imu (5) at (5756.83, -6784.99, -0.151184)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 53: sensor.camera.rgb (5) at (6324.2, -6785.22, 244.043)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 61: sensor.other.collision (5) at (-3689.53, -8788.9, 11.6788)
+  role_name = front
+ Create 55: sensor.other.collision (5) at (6316.81, 3790.38, 15.2958)
+  role_name = front
+ Create 56: sensor.other.lane_invasion (5) at (6316.81, 3790.38, 15.2958)
+  role_name = front
+ Create 57: sensor.other.gnss (5) at (6266.55, 3876.59, 295.369)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 58: sensor.other.imu (5) at (6316.81, 3790.38, 15.2958)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 59: sensor.camera.rgb (5) at (6600.63, 3299.11, 259.49)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 62: sensor.other.lane_invasion (5) at (-3689.53, -8788.9, 11.6788)
+  role_name = front
+ Create 63: sensor.other.gnss (5) at (-3628.74, -8869.35, 291.378)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 64: sensor.other.imu (5) at (-3689.53, -8788.9, 11.6788)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 65: sensor.camera.rgb (5) at (-4035.19, -8338.98, 255.873)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 85: sensor.other.collision (5) at (5775.08, 3120.38, -0.0830078)
+  role_name = front
+ Create 67: sensor.other.collision (5) at (-3641.53, 11318.1, 12.7536)
+  role_name = front
+ Create 68: sensor.other.lane_invasion (5) at (-3641.53, 11318.1, 12.7536)
+  role_name = front
+ Create 69: sensor.other.gnss (5) at (-3693.82, 11224.4, 290.015)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 70: sensor.other.imu (5) at (-3641.53, 11318.1, 12.7536)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 71: sensor.camera.rgb (5) at (-3435.26, 11846.7, 256.948)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 86: sensor.other.lane_invasion (5) at (5775.08, 3120.38, -0.0830078)
+  role_name = front
+ Create 73: sensor.other.collision (5) at (11693.6, 4709.06, 15.0868)
+  role_name = front
+ Create 74: sensor.other.lane_invasion (5) at (11693.6, 4709.06, 15.0868)
+  role_name = front
+ Create 75: sensor.other.gnss (5) at (11786.5, 4746.36, 295.06)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 76: sensor.other.imu (5) at (11693.6, 4709.06, 15.0868)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 77: sensor.camera.rgb (5) at (11167.4, 4496.96, 259.281)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 87: sensor.other.gnss (5) at (5862.94, 3167.89, 279.958)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 79: sensor.other.collision (5) at (8267.43, 11662.5, 15.1197)
+  role_name = front
+ Create 80: sensor.other.lane_invasion (5) at (8267.43, 11662.5, 15.1197)
+  role_name = front
+ Create 81: sensor.other.gnss (5) at (8361.97, 11630.1, 295.143)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 82: sensor.other.imu (5) at (8267.43, 11662.5, 15.1197)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 83: sensor.camera.rgb (5) at (7730.44, 11845.6, 259.314)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 88: sensor.other.imu (5) at (5775.08, 3120.38, -0.0830078)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 89: sensor.camera.rgb (5) at (5276.53, 2849.53, 244.111)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 90: vehicle.mercedes.coupe_2020 (1) at (10999.5, 10937.5, 6.95484)
+  generation = 2
+  has_lights = true
+  number_of_wheels = 4
+  terramechanics = true
+  special_type = 
+  base_type = car
+  object_type = 
+  color = 0,21,81
+  has_dynamic_doors = true
+  sticky_control = true
+  role_name = hero
+ Create 91: sensor.other.collision (5) at (10999.5, 10937.5, 6.95484)
+  role_name = front
+ Create 92: sensor.other.lane_invasion (5) at (10999.5, 10937.5, 6.95484)
+  role_name = front
+ Create 93: sensor.other.gnss (5) at (11072.2, 10979.9, 292.118)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 94: sensor.other.imu (5) at (10999.5, 10937.5, 6.95484)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 95: sensor.camera.rgb (5) at (10509.7, 10651.3, 251.149)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 108: vehicle.mercedes.coupe_2020 (1) at (-3611.3, 801.554, -0.0782166)
+  generation = 2
+  has_lights = true
+  number_of_wheels = 4
+  terramechanics = true
+  special_type = 
+  base_type = car
+  object_type = 
+  color = 187,187,187
+  has_dynamic_doors = true
+  sticky_control = true
+  role_name = hero
+ Create 109: sensor.other.collision (5) at (-3611.3, 801.554, -0.0782166)
+  role_name = front
+ Create 110: sensor.other.lane_invasion (5) at (-3611.3, 801.554, -0.0782166)
+  role_name = front
+ Create 111: sensor.other.gnss (5) at (-3524.05, 752.936, 279.964)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 112: sensor.other.imu (5) at (-3611.3, 801.554, -0.0782166)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 113: sensor.camera.rgb (5) at (-4106.35, 1078.74, 244.116)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Create 120: vehicle.mercedes.coupe_2020 (1) at (-10993, -2342.84, -0.164852)
+  generation = 2
+  has_lights = true
+  number_of_wheels = 4
+  terramechanics = true
+  special_type = 
+  base_type = car
+  object_type = 
+  color = 0,21,81
+  has_dynamic_doors = true
+  sticky_control = true
+  role_name = hero
+ Create 124: sensor.other.imu (5) at (-10993, -2342.84, -0.164852)
+  noise_gyro_stddev_y = 0.0
+  noise_gyro_stddev_x = 0.0
+  noise_gyro_stddev_z = 0.0
+  noise_accel_stddev_y = 0.0
+  noise_accel_stddev_x = 0.0
+  noise_accel_stddev_z = 0.0
+  noise_seed = 0
+  noise_gyro_bias_x = 0.0
+  sensor_tick = 0.0
+  noise_gyro_bias_z = 0.0
+  noise_gyro_bias_y = 0.0
+  role_name = default
+ Create 123: sensor.other.gnss (5) at (-10994.1, -2242.85, 279.835)
+  noise_alt_bias = 0.0
+  noise_alt_stddev = 0.0
+  noise_lon_bias = 0.0
+  noise_lon_stddev = 0.0
+  noise_lat_bias = 0.0
+  noise_seed = 0
+  noise_lat_stddev = 0.0
+  sensor_tick = 0.0
+  role_name = default
+ Create 122: sensor.other.lane_invasion (5) at (-10993, -2342.84, -0.164852)
+  role_name = front
+ Create 121: sensor.other.collision (5) at (-10993, -2342.84, -0.164852)
+  role_name = front
+ Create 125: sensor.camera.rgb (5) at (-10986.6, -2910.17, 244.03)
+  chromatic_aberration_intensity = 0.0
+  tint = 0.0
+  shoulder = 0.26
+  toe = 0.55
+  white_clip = 0.04
+  slope = 0.88
+  blur_radius = 0.0
+  blur_amount = 1.0
+  blade_count = 5
+  exposure_speed_down = 1.0
+  min_fstop = 1.2
+  exposure_speed_up = 3.0
+  exposure_max_bright = 12.0
+  motion_blur_min_object_screen_size = 0.1
+  bloom_intensity = 0.675
+  lens_flare_intensity = 0.1
+  black_clip = 0.0
+  motion_blur_max_distortion = 0.35
+  focal_distance = 1000.0
+  motion_blur_intensity = 0.45
+  temp = 6500.0
+  gamma = 2.2
+  enable_postprocess_effects = true
+  iso = 100.0
+  shutter_speed = 200.0
+  exposure_compensation = 0.0
+  exposure_mode = histogram
+  calibration_constant = 16.0
+  lens_y_size = 0.08
+  lens_x_size = 0.08
+  lens_kcube = 0.0
+  lens_k = -1.0
+  lens_circle_multiplier = 0.0
+  fstop = 1.4
+  fov = 90.0
+  image_size_y = 720
+  chromatic_aberration_offset = 0.0
+  lens_circle_falloff = 5.0
+  image_size_x = 1280
+  sensor_tick = 0.0
+  exposure_min_bright = 10.0
+  role_name = front
+ Positions: 5
+  Id: 24 Location: (-17219.7, 18385.9, 2763.81) Rotation (0, 0, -45.5921)
+  Id: 84 Location: (5775.08, 3120.38, -0.0830078) Rotation (-0.0343018, 0.0237008, 28.4991)
+  Id: 90 Location: (10999.5, 10937.5, 6.95484) Rotation (-0.0161438, 3.21228, 30.291)
+  Id: 108 Location: (-3611.3, 801.554, -0.0782166) Rotation (0.036445, 0.023974, -29.2294)
+  Id: 120 Location: (-10993, -2342.84, -0.164852) Rotation (0, 0, 90.6422)
+ State traffic lights: 15
+  Id: 32 state: 0 frozen: 0 elapsedTime: 0
+  Id: 33 state: 1 frozen: 0 elapsedTime: 2.47123
+  Id: 34 state: 0 frozen: 0 elapsedTime: 0
+  Id: 35 state: 1 frozen: 0 elapsedTime: 2.47123
+  Id: 36 state: 0 frozen: 0 elapsedTime: 0
+  Id: 37 state: 0 frozen: 0 elapsedTime: 0
+  Id: 38 state: 0 frozen: 0 elapsedTime: 0
+  Id: 39 state: 1 frozen: 0 elapsedTime: 2.47123
+  Id: 40 state: 0 frozen: 0 elapsedTime: 0
+  Id: 41 state: 1 frozen: 0 elapsedTime: 2.47123
+  Id: 42 state: 0 frozen: 0 elapsedTime: 0
+  Id: 43 state: 0 frozen: 0 elapsedTime: 0
+  Id: 44 state: 1 frozen: 0 elapsedTime: 2.47123
+  Id: 45 state: 0 frozen: 0 elapsedTime: 0
+  Id: 46 state: 0 frozen: 0 elapsedTime: 0
+ Vehicle animations: 4
+  Id: 84 Steering: 0 Throttle: 0 Brake 0 Handbrake: 0 Gear: 1
+  Id: 90 Steering: 0 Throttle: 0 Brake 0 Handbrake: 0 Gear: 1
+  Id: 108 Steering: 0 Throttle: 0 Brake 0 Handbrake: 0 Gear: 1
+  Id: 120 Steering: 0 Throttle: 0 Brake 0 Handbrake: 0 Gear: 0
+ Walker animations: 0
+ Vehicle light animations: 4
+  Id: 84 None
+  Id: 90 None
+  Id: 108 None
+  Id: 120 None
+
+Frames: 1
+Duration: 0 seconds

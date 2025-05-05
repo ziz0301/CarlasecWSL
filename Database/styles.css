@@ -1,0 +1,335 @@
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 0 5%;
+}
+
+header {
+    background: #3c1b5a;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a {
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        background: #3c1b5a;
+        width: 200px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3c1b5a;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #3c1b5a;
+    margin-bottom: 10px;
+}
+
+
+p{
+	font-weight: 300;
+	font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #ccc;  
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+tr:hover {
+    background-color: #e8f0ff; 
+}
+
+td a {
+    color:#2e4e70; 
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+.content-container {
+    width: 90%; 
+    margin: 20px auto;
+    text-align: center; 
+}
+
+.content-container a{
+	color: #2e4e70;
+}
+
+.section-info{
+	color: #2e4e70;
+	font-style: italic;
+	font-size: 10px;
+}
+
+#matrix-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.tactic {    
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+    font-size: 14px; 
+}
+
+.techniques {
+    background: #e3dde8;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px; 
+}
+
+.tactic a, .techniques a {
+    color: #3b3d3d;
+    text-decoration: none; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+/* Underline effect on hover */
+.tactic a:hover, .techniques a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.popup-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 60%;
+    max-height: 80vh; 
+    overflow-y: auto;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.popup-content p {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.3; 
+    letter-spacing: 0.2px; 
+    padding: 5px 10px;
+    text-align: justify; 
+}
+
+.popup-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.popup-content th, 
+.popup-content td {
+    border: 1px solid #ccc;  
+    padding: 8px 12px;
+    text-align: left;	
+}
+
+.popup-content td {
+    font-weight: 300;
+    font-size: 14px;
+	line-height: 1.5; 
+    letter-spacing: 0.05px; 
+    padding: 8px 8px;
+}
+
+.popup-content th {
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+}
+
+.popup-content tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+.popup-content tr:hover {
+    background-color: #e8f0ff; 
+}
+
+.popup-content td a {
+    color: #2e4e70; 
+    text-decoration: none;
+}
+
+.popup-content td a:hover {
+    text-decoration: underline;
+}
+
+.popup-content .sub-technique-row {
+    font-size: 13px;
+    color: #555; 
+    background-color: #fcfcfc;
+}
+.popup-content td.examref{
+    width: 30%;
+}
+
+.close {
+    position: sticky;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    align-self: flex-end;
+}
+
+
+.sub-techniques {
+	margin-left: 20px;
+	font-size: 0.9em;
+	display: none;
+}
+.sub-techniques-item {
+	background: #dbd0e4;
+	padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.sub-technique-row {
+	background-color: #f0f0f0;
+	font-size: 0.9em;
+}
+.toggle-btn {
+	cursor: pointer;
+	margin-left: 5px;
+	font-size: 0.8em;
+	background: none;
+	border: none;
+	color: blue;
+	text-decoration: underline;
+}

@@ -1,0 +1,49 @@
+ALL INFORMATION ON THE RUN pilotrun01.rec_simplistic_result.txt
+------------------- ANALYSE ------------------
+Filename: pilotrun01.rec
+Driving_score: 0.015156648925457804
+Route_completion: 0.5519227279037884
+Infraction_penalty: 0.00027461541551338187
+Collisions_pedestrians: 0
+Collisions_vehicles: 0
+Collisions_layout: 1
+Score_collisions_pedestrians: 1
+Score_collisions_vehicles: 1
+Score_collisions_layout: 0.0003923077364476884
+Red_light_infractions: 1
+Stop_sign_infractions: 0
+Offroad_infractions: 1
+Duration: 0
+Fully_complete: False
+--------------- FULL INFORMATION -------------
+filename: pilotrun01.rec
+weather: Default
+number_of_vehicles: 10
+number_of_walker: 8
+ego_vehicle: vehicle.mercedes.coupe_2020
+start_positon: None
+destination_position: None
+fully_completed: False
+total_time_run: 0
+total_metre_run: 135.70124110970445
+average_speed: 0
+count_collision_others: 1
+count_collision_pedestrians: 0
+count_collision_vehicles: 0
+count_off_road: 1
+count_red_light_violation: 1
+count_stop_sign_violation: 0
+score_collision_others: 0.0003923077364476884
+score_collision_pedestrians: 1
+score_collision_vehicles: 1
+
+--------- INFRACTION INFORMATION -----------
+Collisions with layout:
+ - Agent collided against object with type=static.vegetation and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=1656.8625586782766
+Collisions with pedestrians:
+Collisions with vehicles:
+Red lights infractions:
+ - Agent ran a red light 43 at location (x=-119.238, y=19.004, z=0.254) and time 2024-02-10T15:41:54.170650
+Stop sign infractions:
+Off-road infractions:
+ - Agent ran go off road at location (x=-111.39, y=109.918, z=0.072) and time 2024-02-10T15:42:04.710073

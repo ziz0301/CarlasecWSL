@@ -1,0 +1,1 @@
+for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 123#$(printf 07310101A9"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 123#05310201A964

@@ -1,0 +1,34 @@
+1. Reused ATT&CK Techniques. 
+Initial Access: Phishing, Valid Account
+Execution:Exploitation for Client Execution
+Persistence:Account Manipulation, Create or Modify System Process
+Privilege Escalation: Exploitation for Privilege Escalation, Valid Accounts
+Credential Access: Brute Force, Exploitation for Credential Access
+Discovery:File and Directory Discovery, Network Service Discovery
+Lateral Movement:Remote Services, Exploitation of Remote Services
+Collection:Data from Cloud Service
+Exfiltration: Automated Exfiltration
+
+
+2. Adapted Techniques
+Initial Access: External Remote Service, Hardware Addition, Exploit Public Facing Application, Replication Through Removable Media.
+Execution: Change Operation Mode (ICS), Command and Scripting Interpreter, Execution through API (ICS), Inter-Process Communication,  Modify Controller Tasking (ICS) 
+Persistence: Modify Program (ICS), Pre-OS Boot, Event triggered execution
+Privilege Escalation: Abuse Elevation Control Mechanisms
+Defense Evasion: Impair Defense, Obfuscated Files or Information
+Credential Access: Adversary-in-the-Middle, Modify Authentication Process, Steal Application Access Token
+Discovery:Network Sniffing, Network Service Discovery
+Lateral Movement: Lateral Tool Transfer
+Collection: Adversary-in-the-Middle, Data from Local System, Data from Removable Media, Input Capture
+Command and Control: Application Layer Protocol, Communication Through Removable Media, Remote Access Software
+Impair Process Control:Modify Parameter, Spoof report message
+Inhibit Response Function:Alarm Suppression, Block Command Message
+Exfiltration:Exfiltration Over C2 Channel, Exfiltration Over other network medium
+Impact:Data Destruction, Denial of Control, Denial of Service, Loss of control,  Loss of protection, Loss of Safety, Loss of View, Manipulation of Control, Theft of Operational Information 
+
+3. newly Introduced Techniques
+Initial Access : Equipment Hijacking (new), Physical Access (new),  Wireless Compromise(new), Supply Chain Compromise
+Execution: Abuse Diagnostic Command (new), Content Injection (new), Execution Through Firmware Modification(new), External application (new), OTA Process Manipulation (new)
+Defense Evasion:Bypass Code Integrity Checks(new),Bypass Authentication Challenge (new)
+Lateral Movement:Vehicle Worm Propagation 
+Impact: Adversarial Machine Learning (new),  Device Theft (new), Sensor Interference (new), Sensor Manipulation (new)

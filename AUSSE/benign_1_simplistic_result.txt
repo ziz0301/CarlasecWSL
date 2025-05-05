@@ -1,0 +1,48 @@
+ALL INFORMATION ON THE RUN benign_1_simplistic_result.txt
+------------------- ANALYSE ------------------
+Filename: benign_1
+Driving_score: 100.0
+Route_completion: 1.0
+Infraction_penalty: 1.0
+Collisions_pedestrians: 0
+Collisions_vehicles: 0
+Collisions_layout: 0
+Score_collisions_pedestrians: 1
+Score_collisions_vehicles: 1
+Score_collisions_layout: 1
+Red_light_infractions: 0
+Stop_sign_infractions: 0
+Offroad_infractions: 0
+Door_open: 0
+Duration: 17.60634469985962
+Fully_complete: True
+--------------- FULL INFORMATION -------------
+filename: benign_1
+weather: Default
+number_of_vehicles: 1
+number_of_walker: 0
+ego_vehicle: vehicle.mercedes.coupe_2020
+start_positon: Location(x=-41.491478, y=111.945290, z=0.600000)
+destination_position: Location(x=17.091217, y=28.104216, z=0.600000)
+fully_completed: True
+total_time_run: 17.60634469985962
+total_metre_run: 131.2195022329473
+average_speed: 26.830680421835478
+count_collision_others: 0
+count_collision_pedestrians: 0
+count_collision_vehicles: 0
+count_off_road: 0
+count_red_light_violation: 0
+count_stop_sign_violation: 0
+score_collision_others: 1
+score_collision_pedestrians: 1
+score_collision_vehicles: 1
+door_open: 0
+
+--------- INFRACTION INFORMATION -----------
+Collisions with layout:
+Collisions with pedestrians:
+Collisions with vehicles:
+Red lights infractions:
+Stop sign infractions:
+Off-road infractions:

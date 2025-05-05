@@ -1,0 +1,47 @@
+				{
+					"reference ID": "RE0041",
+					"description": "Researchers sent CAN message with ID 0000, whichs considerred the highhest priority and no other packets will be able to be transmitted which made the transmited function being denied. "
+				}
+				{
+					"reference ID": "RE0048",
+					"description": "Researchers exploited error handling to increment the transmitter's error counter, of the CAN message by injecting dominant bits during CAN message transmission. After 32 bit-level disruptions, the target ECU entered bus-off state, causing complete denial of control of the parking sensor module."
+				},
+				{
+					"reference ID": "RE0049",
+					"description": "Researchers performed a spoofing attack by first inducing bus-off state on a target ECU using dominant bit flooding in one CAN frame. Once the legitimate ECU was silenced, spoofed messages were injected at the same timing and ID."
+				},
+				{
+					"reference ID": "RE0050",
+					"description": "Researchers demonstrated a stealthy bus-off attack that injects recessive bits during dominant bits in a target ECU’s message. The victim ECU's transmit error counter increases to 255 and enters bus-off, fully disabling its communication while the attacker remains active."
+				}
+
+{
+    "ID": "T5081",
+    "name": "Denial of Control",
+    "short_description": "Adversaries may temporarily disrupt control over specific vehicle functions by jamming or blocking communication, causing commands to be lost or ignored during the attack period.",
+    "full_description": "In autonomous vehicles, denial of control attacks aim to prevent targeted ECUs from executing or responding to commands during the active period of the attack. This can result from communication blocking, jamming, or exploiting CAN error-handling mechanisms to force the ECU into a bus-off state. Unlike 'Loss of Control', which reflects a sustained or unrecoverable inability to operate, denial of control is typically temporary and may be used to perform follow-up actions such as spoofing. Examples include sending high-priority CAN messages (e.g., with ID 0000) to monopolise the bus or injecting bit-level faults to exploit CAN's fault confinement and error recovery processes. This technique falls under the 'Impact' tactic and may overlap with other techniques; however, its core objective is to momentarily suppress the control of a specific function or ECU to enable further malicious activity.",
+    "created": "25/02/2025",
+    "modified": "25/02/2025",
+    "sub-technique ID": [],
+    "mitigation ID": [],
+    "example": [
+        {
+            "reference ID": "RE0041",
+            "description": "Researchers sent a CAN message with ID 0000, which is considered the highest priority. This prevented other packets from being transmitted, resulting in denial of the transmitted function."
+        },
+        {
+            "reference ID": "RE0048",
+            "description": "Researchers exploited error handling by injecting dominant bits during CAN message transmission to increment the transmitter's error counter. After 32 bit-level disruptions, the target ECU entered bus-off state, causing complete denial of control of the parking sensor module."
+        },
+        {
+            "reference ID": "RE0049",
+            "description": "Researchers performed a spoofing attack by first inducing bus-off state on a target ECU using dominant bit flooding in one CAN frame. After the legitimate ECU was silenced, they injected spoofed messages with matching timing and ID."
+        },
+        {
+            "reference ID": "RE0050",
+            "description": "Researchers demonstrated a stealthy bus-off attack by injecting recessive bits during dominant bits in a target ECU's message. The victim ECU's transmit error counter increased to 255, causing it to enter bus-off state and fully disable its communication while the attacker remained active."
+        }
+    ],
+    "reference ID": ["RE0041", "RE0048", "RE0049", "RE0050"]
+}
+
