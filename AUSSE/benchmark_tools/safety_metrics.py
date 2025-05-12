@@ -53,6 +53,17 @@ class SafetyMetrics:
         filenamet = f"{filename}_velocity.txt" 
         with open(filenamet, 'a') as file:
             file.write(f"{filename},{vehicle_velocity} \n")
+            
+    def log_door_status(self, filename, status):
+        filenamet = f"{filename}_door.txt"
+        with open(filenamet, 'a') as file:
+            file.write(f"{filename},{status}\n")
+            
+            
+    def get_data_light(self, filename, light_status):
+        filenamet = f"{filename}_light.txt" 
+        with open(filenamet, 'a') as file:
+            file.write(f"{filename},{light_status} \n")
 
 
     def door_update_distance(self, current_location):

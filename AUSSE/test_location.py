@@ -42,7 +42,7 @@ def confirm_and_destroy_walkers(world):
 
 
 # Connect to the CARLA simulator (running on localhost and the default port 2000)
-client = carla.Client('10.35.12.121', 2000)
+client = carla.Client('192.168.1.14', 2000)
 client.set_timeout(10.0)
 
 # Get the world currently running in the simulation

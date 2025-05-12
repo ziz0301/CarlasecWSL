@@ -1,48 +1,50 @@
 ALL INFORMATION ON THE RUN benign_1_simplistic_result.txt
 ------------------- ANALYSE ------------------
 Filename: benign_1
-Driving_score: 100.0
-Route_completion: 1.0
-Infraction_penalty: 1.0
+Driving_score: 757.5480262307278
+Route_completion: 0.27194031826881965
+Infraction_penalty: 27.857142738278075
 Collisions_pedestrians: 0
 Collisions_vehicles: 0
-Collisions_layout: 0
+Collisions_layout: 1
 Score_collisions_pedestrians: 1
 Score_collisions_vehicles: 1
-Score_collisions_layout: 1
+Score_collisions_layout: 37.142856984370766
 Red_light_infractions: 0
 Stop_sign_infractions: 0
-Offroad_infractions: 0
+Offroad_infractions: 1
 Door_open: 0
-Duration: 17.60634469985962
-Fully_complete: True
+Duration: 0
+Fully_complete: False
 --------------- FULL INFORMATION -------------
 filename: benign_1
 weather: Default
 number_of_vehicles: 1
 number_of_walker: 0
 ego_vehicle: vehicle.mercedes.coupe_2020
-start_positon: Location(x=-41.491478, y=111.945290, z=0.600000)
-destination_position: Location(x=17.091217, y=28.104216, z=0.600000)
-fully_completed: True
-total_time_run: 17.60634469985962
-total_metre_run: 131.2195022329473
-average_speed: 26.830680421835478
-count_collision_others: 0
+start_positon: Location(x=-87.276062, y=24.441530, z=0.600000)
+destination_position: Location(x=57.568340, y=-67.849854, z=0.600000)
+fully_completed: False
+total_time_run: 0
+total_metre_run: 62.3423179631269
+average_speed: 0
+count_collision_others: 1
 count_collision_pedestrians: 0
 count_collision_vehicles: 0
-count_off_road: 0
+count_off_road: 1
 count_red_light_violation: 0
 count_stop_sign_violation: 0
-score_collision_others: 1
+score_collision_others: 37.142856984370766
 score_collision_pedestrians: 1
 score_collision_vehicles: 1
 door_open: 0
 
 --------- INFRACTION INFORMATION -----------
 Collisions with layout:
+ - Agent collided against object with type=static.building and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=0.017500000074671465
 Collisions with pedestrians:
 Collisions with vehicles:
 Red lights infractions:
 Stop sign infractions:
 Off-road infractions:
+ - Agent ran go off road at location (x=-117.841, y=24.251, z=0.062) and time 2025-05-10T21:11:40.616457

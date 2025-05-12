@@ -717,7 +717,7 @@ def game_loop(args):
             random.seed(args.seed)
 
         client = carla.Client(args.host, args.port)
-        client.set_timeout(60.0)
+        client.set_timeout(100.0)
 
         traffic_manager = client.get_trafficmanager()
         sim_world = client.get_world()
@@ -814,7 +814,7 @@ def main():
     argparser.add_argument(
         '--host',
         metavar='H',
-        default='192.168.1.17',
+        default='192.168.1.14',
         help='IP of the host server (default: 127.0.0.1)')
     argparser.add_argument(
         '-p', '--port',

@@ -64,7 +64,7 @@ class Scenario:
 
 
     def setup_common_environment(self):
-        #print("---------- GATEWAY AND BUS LISTENING START -------------")
+        print("---------- GATEWAY AND BUS LISTENING START -------------")
         gateway = IVN.find_service('transfer_can_message', self.ivn_instance)
         self.listener_kcan4_thread = threading.Thread(target=gateway.gateway_listener_kcan4, args=(self.stop_event, self.temp_queue_kcan4))
         self.listener_kcan4_thread.start()
@@ -110,7 +110,7 @@ class Scenario:
             temp_items.append(item)
         print(temp_items)
 
-    def process_kcan_messages(self, vehicle, vehiclecontrol):
+    def process_kcan_messages(self, vehicle, vehiclecontrol):       
         process_finish = True
         while not self.temp_queue_kcan4.empty() and process_finish == True:
             msg = self.temp_queue_kcan4.get()
@@ -122,17 +122,18 @@ class Scenario:
             if(self.priority_queue_kcan4.empty()):
                 process_finish = True
             can_id = message.arbitration_id
-            if can_id == 0x24B:
+            if can_id == 0x24B:#control door
                 doorflag = self.can_obj.control_door_seperate1(vehicle, message)
                 if doorflag == 1 and self.tmp_door == False:
                     self.door_count += 1
+                    print(f"Door_count:{self.door_count}")
                     self.door_open = True
                     self.tmp_door = True
                 if doorflag == 0 and self.tmp_door == True:
-                    self.door_close = False
+                    self.door_open = False
                     self.tmp_door = False
             elif can_id == 0x2F6:
-                pass
+                self.can_obj.control_light_seperate(vehicle,message)
             elif can_id == 0x0CE:
                 pass
             else:
@@ -168,9 +169,9 @@ class Scenario:
                 process_finish = True
             can_id = message.arbitration_id
             if can_id == 0x1A0:
-                #control = self.can_obj.control_wheelspeed_seperate(vehiclecontrol, message)
-                #return control
-                pass
+                control = self.can_obj.control_enginedata_seperate(vehiclecontrol, message)
+                return control
+                #pass
             elif can_id == 0xBA:
                 #control = self.can_obj.control_gear_seperate(vehiclecontrol, message)
                 #print(f"Control is :{control}")
@@ -248,8 +249,8 @@ class Scenario:
 
     def get_door_count(self):
         service_tester = IVN.find_service("diag_service", self.ivn_instance)
-        self.door_count = service_tester.get_door_count()
-        #print(f"Door count scenario side: {self.door_count}")
+        #self.door_count = service_tester.get_door_count()
+        print(f"Door count scenario side: {self.door_count}")
         return self.door_count
 
 

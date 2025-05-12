@@ -122,14 +122,16 @@ class Ecu:
                 return False
 
         # Set the GATEWAY listen to the KCAN4 BUS all the time
-        def gateway_listener_kcan4(self, stop_event, can_queue):
+        def gateway_listener_kcan4(self, stop_event, can_queue):            
             with can.interface.Bus(bustype='socketcan', channel='kcan4') as kcan4:
                 while not stop_event.is_set():
                     try:
                         msg1 = kcan4.recv(1.0)
+                        #print(f"msg1: {msg1}")
                         if msg1 is not None:
                             if (self.firewall_filter(msg1.arbitration_id)):
                                 can_queue.put((msg1.arbitration_id, time.time(), msg1))
+                                #print(f"canqueue: {can_queue}")
                         #else:
                             #print("Listener time out, no message received on KCAN4")
 

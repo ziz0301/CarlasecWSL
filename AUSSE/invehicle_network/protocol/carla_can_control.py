@@ -167,8 +167,9 @@ class CAN():
     def control_door(self, vehicle, msg):
         #can_queue.put((msg.arbitration_id, msg))
         data = self.door_message.decode(msg.data)
+        print (f"data: {data}")
         if data.get("Door_FL") == 1 and data.get("Door_RL") == 1 and data.get("Door_FR") == 1 and data.get("Door_RR") == 1:
-            print (vehicle)
+            print ("Door Open")
             return vehicle.open_door(carla.VehicleDoor.All)
         if data.get("Door_FL") == 0 and data.get("Door_RL") == 0 and data.get("Door_FR") == 0 and data.get("Door_RR") == 0:
             print (vehicle)
@@ -210,7 +211,51 @@ class CAN():
         print(control)
         return control
 
+    
+    def control_enginedata_seperate(self, control, msg):
+        data = self.enginedata_message.decode(msg.data)
+        print(data)
 
+        if data.get("Checksum_416") != 0:
+            moving_forward = data.get("MovingForward", 0)
+            moving_reverse = data.get("MovingReverse", 0)
+            brake_active = data.get("Brake_active", 0)
+
+            # Conflict: both directions on
+            if moving_forward == 1 and moving_reverse == 1:
+                print("Conflict: Both forward and reverse set. Ignoring input.")
+                return None
+
+            # Apply brake logic
+            if brake_active == 1:
+                control.throttle = 0.0
+                print("Brake active: throttle set to 0")
+            else:
+                speed = data.get("VehicleSpeed", 0)
+
+                # Normalize speed into throttle range (0 to 1)
+                # You can adjust 100.0 to tune sensitivity
+                throttle_value = min(speed / 100.0, 1.0)
+
+                if moving_forward == 1:
+                    control.throttle = throttle_value
+                    control.reverse = False
+                elif moving_reverse == 1:
+                    control.throttle = throttle_value
+                    control.reverse = True
+                else:
+                    control.throttle = 0.0
+                    control.reverse = False
+
+            return control
+        else:
+            control.manual_gear_shift = False
+            print("No hack (invalid checksum)")
+            return None
+
+    
+    
+    
     #------------------------------------------------------------------------------
     # TESTING ONLY - FUNCTIONS FOR CONVERT CAN MESSAGE TO CARLA.VEHICLE.CONTROL
     # Using cansend vcan0 to test
@@ -235,8 +280,8 @@ class CAN():
             return control
             #control_can.gear = 2
         else:
-            #control.manual_gear_shift = False
-            #print("No hack")
+            control.manual_gear_shift = False
+            print("No hack")
             return None
 
         #print(control)
@@ -267,7 +312,7 @@ class CAN():
             #print("No hack")
             return None
 
-    # Convert door message to carla vehicle control seperatly - For test only
+    # Convert door message to carla vehicle control seperatly. Done, has been used for counting door open time
     def control_door_seperate1(self, vehicle, msg):
         data = self.door_message.decode(msg.data)
         if data.get("Checksum_416") != 0:
@@ -281,8 +326,43 @@ class CAN():
                 vehicle.close_door(carla.VehicleDoor.All)
                 return 0
         else:
-            #print("No hack")
+            print("No hack")
             return
+            
+            
+    #while true; do cansend kcan4 000002f6#0000000000000100; done
+    def control_light_seperate(self, vehicle, msg):
+        data = self.light_message.decode(msg.data)
+        print("[DEBUG] Raw light control values:", data)
+        light_mask = 0
+        if data.get("LowBeam") == 1:
+            light_mask |= carla.VehicleLightState.LowBeam
+        if data.get("HighBeam") == 1:
+            light_mask |= carla.VehicleLightState.HighBeam
+        if data.get("Reverse") == 1:
+            light_mask |= carla.VehicleLightState.Reverse
+        if data.get("Brake") == 1:
+            light_mask |= carla.VehicleLightState.Brake
+        if data.get("RightBlinker") == 1:
+            light_mask |= carla.VehicleLightState.RightBlinker
+        if data.get("LeftBlinker") == 1:
+            light_mask |= carla.VehicleLightState.LeftBlinker
+        if data.get("Fog") == 1:
+            light_mask |= carla.VehicleLightState.Fog
+        if data.get("Interior") == 1:
+            light_mask |= carla.VehicleLightState.Interior
+        
+
+        # If LightOff is 1, override everything
+        if data.get("LightOff") == 1:
+            light_mask = carla.VehicleLightState.NONE
+
+        if light_mask != 0 or data.get("LightOff") == 1:
+            return vehicle.set_light_state(carla.VehicleLightState(light_mask))
+        else:
+            print("ERROR sending light message: no valid bit set")
+            return
+
 
 
 
@@ -315,25 +395,7 @@ class CAN():
             print (vehicle)
             return vehicle.close_door(carla.VehicleDoor.All)
 
-    #while true; do cansend kcan4 000002f6#0000000000000100; done
-    def control_light_seperate(self, vehicle):
-        kcan4 = can.interface.Bus(bustype='socketcan', channel='kcan4')
-        msg = kcan4.recv()
-        data = self.door_message.decode(msg.data)
-        if data.get("LowBeam") == 1:
-            light_mask=carla.VehicleLightState.LowBeam
-            return vehicle.set_light_state(carla.VehicleLightState(light_mask))
-        elif data.get("HighBeam") == 1:
-            light_mask=carla.VehicleLightState.HighBeam
-            return vehicle.set_light_state(carla.VehicleLightState(light_mask))
-        elif data.get("Reverse") == 1:
-            light_mask=carla.VehicleLightState.Reverse
-            return vehicle.set_light_state(carla.VehicleLightState(light_mask))
-        elif data.get("LightOff") == 1:
-            light_mask=carla.VehicleLightState.NONE
-            return vehicle.set_light_state(carla.VehicleLightState(light_mask))
-        else:
-            print("ERROR")
+    
 
     # Convert Throttle message to carla vehicle control seperatly - For test only
     def control_throttle_seperate(self, control):
@@ -341,7 +403,7 @@ class CAN():
         msg = vcan0.recv()
         #print(f"Message information: {msg.data}")
         data = self.throttle_message.decode(msg.data)
-        #print(data)
+        print(data)
         if data.get("Checksum_416") == 15:
             control.throttle = data.get("MovingForward")
             control.gear = data.get("MovingReverse")

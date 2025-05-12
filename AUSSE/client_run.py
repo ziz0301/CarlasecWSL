@@ -84,6 +84,14 @@ from invehicle_network.ivn.scenario import Scenario
 from attacker.attackprofile import Attacker
 from attacker.attackerhelper import start_dbus, start_gnome_terminal, stop_dbus
 
+
+weather_presets = {
+    "default": carla.WeatherParameters.ClearNoon,
+    "night": carla.WeatherParameters(cloudiness=10.0, precipitation=0.0, sun_altitude_angle=-10.0),
+    "rainynight": carla.WeatherParameters(cloudiness=90.0, precipitation=80.0, sun_altitude_angle=-15.0),
+}
+
+
 # ==============================================================================
 # -- KeyboardControl -----------------------------------------------------------
 # ==============================================================================
@@ -134,7 +142,7 @@ def game_loop(args, filename, scenario):
             random.seed(args.seed)
 
         client = carla.Client(args.host, args.port)
-        client.set_timeout(60.0)
+        client.set_timeout(2.0)
         traffic_manager = client.get_trafficmanager()
         sim_world = client.get_world()
 
@@ -161,7 +169,8 @@ def game_loop(args, filename, scenario):
         hud = HUD(args.width, args.height, filename)
         world = World(client.get_world(), hud, args)
         controller = KeyboardControl(world)
-
+        
+        
         ###VEL_Declare Scenario
         #scenario = Scenario()
         
@@ -273,8 +282,8 @@ def game_loop(args, filename, scenario):
             
 
             ###VEL_Check if car block, if the car stop for more than stop_threshold (tick), then exit the in-game_loop
-            stop_threshold = 1000
-            if len(distances_log) > 50:
+            stop_threshold = 3000
+            if len(distances_log) > 100:
                 if safety_metrics.is_car_blocked(distances_log, stop_threshold):
                     fully_completed = False
                     end_time = time.time()
@@ -337,6 +346,10 @@ def game_loop(args, filename, scenario):
             control = carla.VehicleControl()
             vcan_process = scenario.process_vcan_messages(control)
             kcan_process = scenario.process_kcan_messages(world.player, control)
+            if(scenario.door_open == False):
+                safety_metrics.log_door_status(filename, 'Close')
+            else: 
+                safety_metrics.log_door_status(filename, 'Open')
 
             if(scenario.kcan_dos == True):
                 print(f"control_value:{kcan_process}")
@@ -482,7 +495,7 @@ def main():
     """Main method"""
     argparser = argparse.ArgumentParser(description='CARLA Automatic Control Client')
     argparser.add_argument('--verbose',action='store_true',dest='debug',help='Print debug information')
-    argparser.add_argument('--host',metavar='H',default='192.168.1.17',help='IP of the host server (default: 127.0.0.1)')
+    argparser.add_argument('--host',metavar='H',default='192.168.160.1',help='IP of the host server (default: 127.0.0.1)')
     argparser.add_argument('--port',metavar='P',default=2000,type=int,help='TCP port to listen to (default: 2000)')
     argparser.add_argument('--res',metavar='WIDTHxHEIGHT',default='889x500',help='Window resolution (default: 1280x720)')
     argparser.add_argument('--sync',action='store_true',help='Synchronous mode execution')
@@ -503,8 +516,9 @@ def main():
     argparser.add_argument('--sniff', action='store_true', help='Dump vehicle CAN message')
 
     args = argparser.parse_args()
-    args.width, args.height = [int(x) for x in args.res.split('x')]
-
+    args.width, args.height = [int(x) for x in args.res.split('x')]   
+        
+        
     log_level = logging.DEBUG if args.debug else logging.WARNING
     logging.basicConfig(format='%(levelname)s: %(message)s', level=log_level)
 
@@ -512,6 +526,7 @@ def main():
 
     print(__doc__)
 
+    
     stop_event = threading.Event()
     #Set file name for each run to export data to file:
     if args.basename:

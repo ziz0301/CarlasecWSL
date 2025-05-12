@@ -1,15 +1,42 @@
 import re
 import carla
 
-def set_weather(world, weather_type):
-    available_weather = [x for x in dir(carla.WeatherParameters) if re.match('[A-Z].+', x)]
-    presets = {x: getattr(carla.WeatherParameters, x) for x in available_weather}
-    weather_parameters = presets.get(weather_type, carla.WeatherParameters.Default)
-    world.set_weather(weather_parameters)
-    if weather_type not in presets or weather_type == 'Default':
-        print(f"Invalid or default weather type '{weather_type}' provided. Setting to default weather.")
+#def set_weather(world, weather_type):
+ #   available_weather = [x for x in dir(carla.WeatherParameters) if re.match('[A-Z].+', x)]
+#    presets = {x: getattr(carla.WeatherParameters, x) for x in available_weather}
+#    weather_parameters = presets.get(weather_type, carla.WeatherParameters.Default)
+#    world.set_weather(weather_parameters)
+ #   if weather_type not in presets or weather_type == 'Default':
+ #       print(f"Invalid or default weather type '{weather_type}' provided. Setting to default weather.")
+ #   else:
+ #       print(f"Weather set to '{weather_type}'.")
+        
+        
+def set_weather(world, weather_name):
+    weather_name = weather_name.lower()
+    if weather_name == "default":
+        weather = carla.WeatherParameters.ClearNoon
+    elif weather_name == "night":
+        weather = carla.WeatherParameters(
+            cloudiness=10.0,
+            precipitation=0.0,
+            sun_altitude_angle=-10.0,
+            fog_density=0.0
+        )
+    elif weather_name == "rainynight":
+        weather = carla.WeatherParameters(
+            cloudiness=90.0,
+            precipitation=80.0,
+            sun_altitude_angle=-15.0,
+            fog_density=10.0,
+            wetness=80.0
+        )
     else:
-        print(f"Weather set to '{weather_type}'.")
+        print(f"[WARNING] Unknown weather '{weather_name}', using default.")
+        weather = carla.WeatherParameters.ClearNoon
+
+    world.set_weather(weather)
+
 
 def get_actor_display_name(actor, truncate=250):
     """Method to get actor display name"""
