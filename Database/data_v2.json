@@ -728,7 +728,7 @@
 					"description": "Toyota's CRM system exposed vehicle APIs without proper server-side validation, allowing attackers to access customer data by modifying client-side JavaScript. "
 				}
             ],
-            "reference ID": []
+            "reference ID": ["RE0037", "RE0038", "RE0039", "RE0040"]
         },
 		{
             "ID": "T5029",

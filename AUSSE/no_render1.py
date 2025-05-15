@@ -1582,7 +1582,7 @@ def main():
     argparser = argparse.ArgumentParser(
         description='CARLA No Rendering Mode Visualizer')
     argparser.add_argument('-v', '--verbose',action='store_true',dest='debug',help='print debug information')
-    argparser.add_argument('--host',metavar='H',default='192.168.1.14',help='IP of the host server (default: 127.0.0.1)')
+    argparser.add_argument('--host',metavar='H',default='192.168.160.1',help='IP of the host server (default: 127.0.0.1)')
     argparser.add_argument('-p', '--port',metavar='P',default=2000,type=int,help='TCP port to listen to (default: 2000)')
     argparser.add_argument('--res',metavar='WIDTHxHEIGHT',default='1280x720',help='window resolution (default: 1280x720)')
     argparser.add_argument('--filter',metavar='PATTERN',default='vehicle.*',help='actor filter (default: "vehicle.*")')

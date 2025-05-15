@@ -52,7 +52,7 @@ class Scenario:
         self.vcan_fail_message_counter = 0
         self.kcan_start_time = time.time()  # Initialize start time
         self.vcan_start_time = time.time()
-        self.kcan_dos_threshold = 500
+        self.kcan_dos_threshold = 200
         self.vcan_dos_threshold = 900
         self.kcan_dos = False
         self.vcan_dos = False
@@ -122,7 +122,7 @@ class Scenario:
             if(self.priority_queue_kcan4.empty()):
                 process_finish = True
             can_id = message.arbitration_id
-            if can_id == 0x24B:#control door
+            if can_id == 0x24B: #Door
                 doorflag = self.can_obj.control_door_seperate1(vehicle, message)
                 if doorflag == 1 and self.tmp_door == False:
                     self.door_count += 1
@@ -132,9 +132,9 @@ class Scenario:
                 if doorflag == 0 and self.tmp_door == True:
                     self.door_open = False
                     self.tmp_door = False
-            elif can_id == 0x2F6:
+            elif can_id == 0x2F6: #Light
                 self.can_obj.control_light_seperate(vehicle,message)
-            elif can_id == 0x0CE:
+            elif can_id == 0x0CE: #Speedometer
                 pass
             else:
                 self.kcan_fail_message_counter += 1
@@ -153,12 +153,12 @@ class Scenario:
                         vehiclecontrol.gear = 0
                         vehiclecontrol.throttle = 0
                         return vehiclecontrol
+            return vehiclecontrol
 
-    def process_vcan_messages(self, vehiclecontrol):
+    def process_vcan_messages(self, vehicle, vehiclecontrol):
         process_finish = True
         while not self.temp_queue_vcan0.empty() and process_finish == True:
             msg = self.temp_queue_vcan0.get()
-            #print(f"Message {msg}")
             self.priority_queue_vcan0.put(msg)
             if (self.priority_queue_vcan0.qsize() > 5):
                 process_finish = False
@@ -168,20 +168,19 @@ class Scenario:
             if(self.priority_queue_kcan4.empty()):
                 process_finish = True
             can_id = message.arbitration_id
-            if can_id == 0x1A0:
+            if can_id == 0x1A0: #Throttle, Brake, Forward, Backward
                 control = self.can_obj.control_enginedata_seperate(vehiclecontrol, message)
                 return control
+                #pass            
+            elif can_id == 0xC4: # Steering
+                control = self.can_obj.control_steering_seperate(vehicle, vehiclecontrol, message)
+                return control
                 #pass
-            elif can_id == 0xBA:
+            elif can_id == 0xBA: # Gear
                 #control = self.can_obj.control_gear_seperate(vehiclecontrol, message)
                 #print(f"Control is :{control}")
                 #return control
                 pass
-            elif can_id == 0xC4:
-                control = self.can_obj.control_steering_seperate(vehiclecontrol, message)
-                print(f"Control is :{control}")
-                return control
-                #pass
             else:
                 self.vcan_fail_message_counter += 1
                 elapsed_time = time.time() - self.vcan_start_time
@@ -292,6 +291,7 @@ class Scenario:
         self.can_obj.dump_handbrake(c)
         # Dump CAN message of stearing
         self.can_obj.dump_steering(c, world.player, v_dump)
+        #print(f"[DEBUG] Steer possition: {c.steer}, SteerFR: {int(world.player.get_wheel_steer_angle(carla.VehicleWheelLocation.FL_Wheel))}, SteerFL: {int(world.player.get_wheel_steer_angle(carla.VehicleWheelLocation.FR_Wheel))}")
         # Dump CAN message of gear
         self.can_obj.dump_gear(c)
 

@@ -142,7 +142,7 @@ def game_loop(args, filename, scenario):
             random.seed(args.seed)
 
         client = carla.Client(args.host, args.port)
-        client.set_timeout(2.0)
+        client.set_timeout(10.0)
         traffic_manager = client.get_trafficmanager()
         sim_world = client.get_world()
 
@@ -316,9 +316,9 @@ def game_loop(args, filename, scenario):
 
             ###VEL NORMAL AUTONOMOUS RUNNING - USE FOR NORMAL RUN AND UDS ATTACK
             #agent.update_information(world)
-            control_auto = agent.run_step()
-            control_auto.manual_gear_shift = False
-            world.player.apply_control(control_auto)
+            #control_auto = agent.run_step()
+           # control_auto.manual_gear_shift = False
+           # world.player.apply_control(control_auto)
 
 
             '''
@@ -341,30 +341,70 @@ def game_loop(args, filename, scenario):
                 world.player.apply_control(control_auto)
             '''
 
-
+            
             ###VEL CAN control everything here
-            control = carla.VehicleControl()
-            vcan_process = scenario.process_vcan_messages(control)
-            kcan_process = scenario.process_kcan_messages(world.player, control)
-            if(scenario.door_open == False):
+            if scenario.door_open is False:
                 safety_metrics.log_door_status(filename, 'Close')
             else: 
                 safety_metrics.log_door_status(filename, 'Open')
+                
+                
+            control = carla.VehicleControl()
+            vcan_process = scenario.process_vcan_messages(world.player, control)
+            kcan_process = scenario.process_kcan_messages(world.player, control)
+            
 
-            if(scenario.kcan_dos == True):
-                print(f"control_value:{kcan_process}")
-                world.player.apply_control(kcan_process)
-                break
-            if vcan_process != None:
+            #if(scenario.kcan_dos == True):
+               # print("The car has been attacked")
+                #control.steer = 0.0
+                #print(f"control_value:{kcan_process.steer}")
+                #control.steer = 0.000
+                #control.brake = True
+                #world.player.apply_control(kcan_process)
+                #break
+                
+            #Allow the automatic controller to handle all operations
+            #But if a message appears in vcan_process or DoS cases, find a logic to handle both CAN messages and autonomous driving simultaneously
+            control_auto = agent.run_step()
+            if vcan_process is not None:
+                #print(f"vcan_process: {vcan_process}")             
+                if hasattr(vcan_process, "steer"):
+                    control_auto.steer = vcan_process.steer               
+                if hasattr(vcan_process, "throttle") and vcan_process.throttle > 0.0:
+                    control_auto.throttle = vcan_process.throttle
+                if hasattr(vcan_process, "brake") and vcan_process.brake > 0.0:
+                    control_auto.brake = vcan_process.brake    
+                    print(f"The equation: {control_auto.throttle} - {vcan_process.brake} = {control_auto.throttle - vcan_process.brake}")
+                    if control_auto.brake > 0.05:
+                        control_auto.throttle = 0.0
+                    else:
+                        control_auto.throttle = max(0.0, control_auto.throttle - vcan_process.brake)
+                if hasattr(vcan_process, "reverse"):
+                    control_auto.reverse = vcan_process.reverse
+                    
+            if(scenario.kcan_dos == True) and kcan_process is not None:
+                print(f"kcan_process: {kcan_process}")  
+                print("The car has been attacked")
+                control_auto.throttle = kcan_process.throttle     
+            world.player.apply_control(control_auto)
+            
+            
+            
+            #if vcan_process != None:
                 #print(f"control_value:{vcan_process}")
-                world.player.apply_control(vcan_process)
-            else:
-                control_auto = agent.run_step()
+                #world.player.apply_control(vcan_process)
+            #else:
+                #control_auto = agent.run_step()
+                #if vcan_process is not None:
+                 #   control_auto.steer = vcan_process.steer
+                 #   control_auto.manual_gear_shift = False
+                  #  #control_auto.gear = 1  # ensure the vehicle moves
                 #print(f"Control: {control_auto}")
-                control_auto.manual_gear_shift = False
-                world.player.apply_control(control_auto)
+                #control_auto.manual_gear_shift = False
+                #world.player.apply_control(control_auto)
+              
 
-
+            
             #control_value = scenario.process_can_messages(carla.VehicleControl())
             #print(f"control: {control}")
             #if control == None:

@@ -110,7 +110,6 @@ class Ecu:
             can_obj.ecu_receiver()
 
         def firewall_filter(self, can_id):
-            # Need change: open file too many times
             with open('whitelist.txt', 'r') as f:
                 whitelist = f.read().splitlines()
 
@@ -127,14 +126,10 @@ class Ecu:
                 while not stop_event.is_set():
                     try:
                         msg1 = kcan4.recv(1.0)
-                        #print(f"msg1: {msg1}")
                         if msg1 is not None:
                             if (self.firewall_filter(msg1.arbitration_id)):
                                 can_queue.put((msg1.arbitration_id, time.time(), msg1))
-                                #print(f"canqueue: {can_queue}")
-                        #else:
-                            #print("Listener time out, no message received on KCAN4")
-
+                                #print(f"canqueue: {can_queue}")     
                     except Exception as e:
                         print(f"Exception in CAN Bus Listener: {e}")
                 print("KCAN thread stop")
@@ -150,8 +145,6 @@ class Ecu:
                             if (self.firewall_filter(msg1.arbitration_id)):
                                 #print(f"vcan0: {hex(msg1.arbitration_id)}")
                                 can_queue.put((msg1.arbitration_id, time.time(), msg1))
-                        #else:
-                            #print("Listener time out, no message received on VCAN0")
                     except Exception as e:
                         print(f"Exception in CAN Bus Listener: {e}")
 
@@ -375,7 +368,7 @@ class Ecu:
                     if stop_event.is_set():
                         print("Virtual shell thread stopping.")
                         break
-                #---------------------------------------------------------
+        #---------------------------------------------------------
         # FUNCTIONS TO DO THE API CONTROL
         #---------------------------------------------------------
 

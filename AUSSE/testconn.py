@@ -2,7 +2,7 @@ import carla
 import time
 import os
 
-HOST = "192.168.1.14"
+HOST = "192.168.160.1"
 PORT = 2000
 TIMEOUT = 60.0
 WAIT_FOR_FRAMES = 10

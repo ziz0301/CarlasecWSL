@@ -1,12 +1,12 @@
 # !/home/vel/miniforge3/envs/carlasec/bin/python
 # This file can be run with python=3.8 and carla=0.9.14
 
-# [11.08.2023] - [guhnn] - [ziz0301@gmail.com]
+# [11.05.2025] - [guhnn] - [ziz0301@gmail.com]
 # This work pertains to a PhD project on vehicle security modeling.
 
 # This class allows the Carla vehicle to connect with the CANBUS and dump/receive messages from it.
 # The CAN message structure is taken from the bmw_e9x_e8x.dbc - commaai/opendbc
-# Using WheelSpeeds, EngineAndBrake, SteeringWheelAngle, Speed
+# Using WheelSpeeds, EngineAndBrake, SteeringWheelAngle, Speed, Door, Light, Gear
 
 import threading
 import queue
@@ -94,9 +94,27 @@ class CAN():
 
     # Define and dump throttle message
     def dump_throttle(self, control, speed, checksum=0):
-        #print(f"Start sending CAN_speed message with ID {self.enginedata_message.frame_id}")
         with can.interface.Bus(bustype='socketcan', channel='vcan0') as bus:
-            data = self.enginedata_message.encode({'VehicleSpeed':speed, 'MovingForward': control.throttle, 'MovingReverse': control.reverse, 'BrakePressed': control.brake, 'Brake_active': control.brake,'YawRate':speed, 'Counter_416': 0, 'Checksum_416': checksum})
+            brake_value = control.brake
+            brake_flag = 1 if brake_value > 0.0 else 0
+
+            data = bytearray(self.enginedata_message.encode({
+                'VehicleSpeed': speed,
+                'MovingForward': control.throttle,
+                'MovingReverse': control.reverse,
+                'BrakePressed': brake_value,
+                'Brake_active': brake_flag,
+                'YawRate': speed,
+                'Counter_416': 0,
+                'Checksum_416': 0  # temporary
+            }))
+
+            # Calculate checksum from first 7 bytes to store in 16 bits checksum
+            checksum = sum(data[:6]) % 65536  
+            data[6] = (checksum >> 8) & 0xFF  
+            data[7] = checksum & 0xFF        
+
+            
             message = can.Message(arbitration_id=self.enginedata_message.frame_id, data=data)
             bus.send(message)
 
@@ -112,19 +130,20 @@ class CAN():
     def dump_steering(self, control, vehicle, speed, checksum=0):
         #print(f"Start sending CAN_speed message with ID {self.steering_message.frame_id}")
         with can.interface.Bus(bustype='socketcan', channel='vcan0') as bus:
-
-            #data = self.steering_message.encode({'Checksum': checksum,
-            #                                    'SteeringSpeed':speed,
-            #                                    'SteeringPosition': control.steer,
-            #                                    'MaxSteerAngle':random.randint(-360,-360),
-            #                                    'Checksum_416': checksum})
-            data = self.steering_message.encode({'SteeringPosition': control.steer,
-                                                'SteeringWheelFL': int(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.FL_Wheel)),
-                                                'SteeringWheelFR': int(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.FR_Wheel)),
-                                                'SteeringSpeed': speed,
-                                                'MaxSteerAngle': random.randint(-360,-360),
+            print(f"[DEBUG] Steer position: {control.steer}")
+            #print(f"[TX] Raw CAN data: {data.hex()}")
+            encoded = self.steering_message.encode({'SteeringPosition': control.steer,
+                                                'FrontWheel': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.Front_Wheel)),
+                                                'BackWheel': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.Back_Wheel)),
+                                                'SteeringWheelFL': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.FL_Wheel)),
+                                                'SteeringWheelFR': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.FR_Wheel)),
+                                                'SteeringWheelBL': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.BL_Wheel)),
+                                                'SteeringWheelBR': float(vehicle.get_wheel_steer_angle(carla.VehicleWheelLocation.BR_Wheel)),
                                                 'Checksum_416': checksum})
-            message = can.Message(arbitration_id=self.steering_message.frame_id, data=data)
+            data = bytearray(encoded)
+            checksum = sum(data[:7]) % 256 
+            data[7] = checksum  # Set byte 7 with calculated checksum
+            message = can.Message(arbitration_id=self.steering_message.frame_id, data=data)            
             bus.send(message)
 
     # Define and dump gear message
@@ -208,35 +227,28 @@ class CAN():
             control.manual_gear_shift = True
         else:
             control.manual_gear_shift = False
-        print(control)
+        #print(control)
         return control
 
     
     def control_enginedata_seperate(self, control, msg):
         data = self.enginedata_message.decode(msg.data)
-        print(data)
-
+        #print("[DEBUG] Raw engine data values:", data)
         if data.get("Checksum_416") != 0:
             moving_forward = data.get("MovingForward", 0)
             moving_reverse = data.get("MovingReverse", 0)
             brake_active = data.get("Brake_active", 0)
-
-            # Conflict: both directions on
+            brake_value = data.get("BrakePressed", 0.0)
+            brake_value = max(0.0, min(brake_value, 1.0))
+            
             if moving_forward == 1 and moving_reverse == 1:
                 print("Conflict: Both forward and reverse set. Ignoring input.")
                 return None
-
-            # Apply brake logic
             if brake_active == 1:
-                control.throttle = 0.0
-                print("Brake active: throttle set to 0")
+                control.brake = brake_value
             else:
                 speed = data.get("VehicleSpeed", 0)
-
-                # Normalize speed into throttle range (0 to 1)
-                # You can adjust 100.0 to tune sensitivity
                 throttle_value = min(speed / 100.0, 1.0)
-
                 if moving_forward == 1:
                     control.throttle = throttle_value
                     control.reverse = False
@@ -246,17 +258,31 @@ class CAN():
                 else:
                     control.throttle = 0.0
                     control.reverse = False
-
             return control
         else:
             control.manual_gear_shift = False
-            print("No hack (invalid checksum)")
             return None
 
-    
-    
+    def control_steering_seperate(self, vehicle, control, msg):
+        data = self.steering_message.decode(msg.data)        
+        #print("[DEBUG] Raw steering control values:", data)
+        if data.get("Checksum_416") != 0 :
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.FL_Wheel, float(data.get("SteeringWheelFL")))
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.FR_Wheel, float(data.get("SteeringWheelFR")))
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.BL_Wheel, float(data.get("SteeringWheelBL")))
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.BR_Wheel, float(data.get("SteeringWheelBR")))
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.Front_Wheel, float(data.get("FrontWheel")))
+            vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.Back_Wheel, float(data.get("BackWheel")))
+            control.steer = data.get("SteeringPosition")
+            #control.throttle = 0.3
+            return control
+            #return None;
+        else:
+            #print("No hack")
+            return None
     
     #------------------------------------------------------------------------------
+    # OLD FUNCTION, PUT HERE TO STORE
     # TESTING ONLY - FUNCTIONS FOR CONVERT CAN MESSAGE TO CARLA.VEHICLE.CONTROL
     # Using cansend vcan0 to test
     #-----------------------------------------------------------------------------
@@ -281,7 +307,7 @@ class CAN():
             #control_can.gear = 2
         else:
             control.manual_gear_shift = False
-            print("No hack")
+            #print("No hack")
             return None
 
         #print(control)
@@ -301,16 +327,7 @@ class CAN():
             return None
 
 
-    def control_steering_seperate(self, control, msg):
-        data = self.steering_message.decode(msg.data)
-        #print(f"Message data:{msg.data}")
-        if data.get("Checksum_416") != 0 :
-            print(f"Decode data:{data}")
-            control.steer = data.get("SteeringPosition")
-            return control
-        else:
-            #print("No hack")
-            return None
+    
 
     # Convert door message to carla vehicle control seperatly. Done, has been used for counting door open time
     def control_door_seperate1(self, vehicle, msg):
@@ -326,14 +343,14 @@ class CAN():
                 vehicle.close_door(carla.VehicleDoor.All)
                 return 0
         else:
-            print("No hack")
+            #print("No hack")
             return
             
             
     #while true; do cansend kcan4 000002f6#0000000000000100; done
     def control_light_seperate(self, vehicle, msg):
         data = self.light_message.decode(msg.data)
-        print("[DEBUG] Raw light control values:", data)
+        #print("[DEBUG] Raw light control values:", data)
         light_mask = 0
         if data.get("LowBeam") == 1:
             light_mask |= carla.VehicleLightState.LowBeam
@@ -350,8 +367,7 @@ class CAN():
         if data.get("Fog") == 1:
             light_mask |= carla.VehicleLightState.Fog
         if data.get("Interior") == 1:
-            light_mask |= carla.VehicleLightState.Interior
-        
+            light_mask |= carla.VehicleLightState.Interior      
 
         # If LightOff is 1, override everything
         if data.get("LightOff") == 1:
@@ -360,7 +376,7 @@ class CAN():
         if light_mask != 0 or data.get("LightOff") == 1:
             return vehicle.set_light_state(carla.VehicleLightState(light_mask))
         else:
-            print("ERROR sending light message: no valid bit set")
+            #print("ERROR sending light message: no valid bit set")
             return
 
 

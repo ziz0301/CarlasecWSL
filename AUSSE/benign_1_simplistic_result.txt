@@ -1,18 +1,18 @@
 ALL INFORMATION ON THE RUN benign_1_simplistic_result.txt
 ------------------- ANALYSE ------------------
 Filename: benign_1
-Driving_score: 757.5480262307278
-Route_completion: 0.27194031826881965
-Infraction_penalty: 27.857142738278075
+Driving_score: 24.280379798132177
+Route_completion: 0.24280379798132176
+Infraction_penalty: 1.0
 Collisions_pedestrians: 0
 Collisions_vehicles: 0
-Collisions_layout: 1
+Collisions_layout: 0
 Score_collisions_pedestrians: 1
 Score_collisions_vehicles: 1
-Score_collisions_layout: 37.142856984370766
+Score_collisions_layout: 1
 Red_light_infractions: 0
 Stop_sign_infractions: 0
-Offroad_infractions: 1
+Offroad_infractions: 0
 Door_open: 0
 Duration: 0
 Fully_complete: False
@@ -22,29 +22,27 @@ weather: Default
 number_of_vehicles: 1
 number_of_walker: 0
 ego_vehicle: vehicle.mercedes.coupe_2020
-start_positon: Location(x=-87.276062, y=24.441530, z=0.600000)
-destination_position: Location(x=57.568340, y=-67.849854, z=0.600000)
+start_positon: Location(x=-103.179001, y=-14.434907, z=0.600000)
+destination_position: Location(x=-87.276062, y=24.441530, z=0.600000)
 fully_completed: False
 total_time_run: 0
-total_metre_run: 62.3423179631269
+total_metre_run: 55.662770687218014
 average_speed: 0
-count_collision_others: 1
+count_collision_others: 0
 count_collision_pedestrians: 0
 count_collision_vehicles: 0
-count_off_road: 1
+count_off_road: 0
 count_red_light_violation: 0
 count_stop_sign_violation: 0
-score_collision_others: 37.142856984370766
+score_collision_others: 1
 score_collision_pedestrians: 1
 score_collision_vehicles: 1
 door_open: 0
 
 --------- INFRACTION INFORMATION -----------
 Collisions with layout:
- - Agent collided against object with type=static.building and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=0.017500000074671465
 Collisions with pedestrians:
 Collisions with vehicles:
 Red lights infractions:
 Stop sign infractions:
 Off-road infractions:
- - Agent ran go off road at location (x=-117.841, y=24.251, z=0.062) and time 2025-05-10T21:11:40.616457
