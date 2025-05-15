@@ -382,10 +382,10 @@ def game_loop(args, filename, scenario):
                 if hasattr(vcan_process, "reverse"):
                     control_auto.reverse = vcan_process.reverse
                     
-            if(scenario.kcan_dos == True) and kcan_process is not None:
-                print(f"kcan_process: {kcan_process}")  
-                print("The car has been attacked")
-                control_auto.throttle = kcan_process.throttle     
+            #if(scenario.kcan_dos == True) and kcan_process is not None:
+            #    print(f"kcan_process: {kcan_process}")  
+            #    print("The car has been attacked")
+            #    control_auto.throttle = kcan_process.throttle     
             world.player.apply_control(control_auto)
             
             

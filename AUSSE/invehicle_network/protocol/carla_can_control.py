@@ -274,7 +274,6 @@ class CAN():
             vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.Front_Wheel, float(data.get("FrontWheel")))
             vehicle.set_wheel_steer_direction(carla.VehicleWheelLocation.Back_Wheel, float(data.get("BackWheel")))
             control.steer = data.get("SteeringPosition")
-            #control.throttle = 0.3
             return control
             #return None;
         else:

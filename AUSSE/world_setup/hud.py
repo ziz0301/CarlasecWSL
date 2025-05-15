@@ -77,7 +77,7 @@ class HUD(object):
         heading += 'W' if -0.5 > transform.rotation.yaw > -179.5 else ''
         colhist = world.collision_sensor.get_collision_history()
         self.safetymetric.get_data_location(self.filename, transform.location.x, transform.location.y)
-        self.safetymetric.get_data_rotation(self.filename, transform.rotation.yaw)
+        self.safetymetric.get_data_rotation(self.filename, control.steer)
         self.safetymetric.get_data_velocity(self.filename, 3.6 * math.sqrt(vel.x**2 + vel.y**2 + vel.z**2))
         #if(self.reset_frame < 500):
         #    self.safetymetric.get_data_location(self.filename, transform.location.x, transform.location.y)
