@@ -23,13 +23,13 @@ class CAN():
         self.db = cantools.database.load_file('bmw.dbc') # Define CAN-message format
 
         #Define CAN message by name
-        self.door_message = self.db.get_message_by_name('Status_door_sensors')
+        self.door_message = self.db.get_message_by_name('DoorControlSensors')
         self.light_message = self.db.get_message_by_name('LightControl')
         self.wheelspeed_message = self.db.get_message_by_name('WheelSpeeds')
         self.enginedata_message = self.db.get_message_by_name('EngineData')
         self.handbrake_message = self.db.get_message_by_name('InstrumentHandBrake')
         self.steering_message = self.db.get_message_by_name('SteeringWheelAngle')
-        self.gear_message = self.db.get_message_by_name('TransmissionData')
+        self.gear_message = self.db.get_message_by_name('GearSelectorSwitch')
         self.gear_message_test = self.db.get_message_by_name('TransmissionDataTest')
 
     #---------------------------------------------------------
