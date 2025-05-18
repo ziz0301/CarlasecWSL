@@ -139,7 +139,7 @@ class Scenario:
             else:
                 self.kcan_fail_message_counter += 1
                 elapsed_time = time.time() - self.kcan_start_time
-                if elapsed_time > 30:
+                if elapsed_time > 30: # If we receive too many unexpected messages in 30 seconds, flag as DoS
                     print("run elaspe")
                     if self.kcan_fail_message_counter <= self.kcan_dos_threshold:
                         print(f"run counter {self.kcan_fail_message_counter}")
@@ -171,15 +171,15 @@ class Scenario:
             if can_id == 0x1A0: #Throttle, Brake, Forward, Backward
                 control = self.can_obj.control_enginedata_seperate(vehiclecontrol, message)
                 return control
-                #pass            
+                pass            
             elif can_id == 0xC4: # Steering
                 control = self.can_obj.control_steering_seperate(vehicle, vehiclecontrol, message)
                 return control
-                #pass
+                pass
             elif can_id == 0xBA: # Gear
-                #control = self.can_obj.control_gear_seperate(vehiclecontrol, message)
+                control = self.can_obj.control_gear_seperate(vehiclecontrol, message)
                 #print(f"Control is :{control}")
-                #return control
+                return control
                 pass
             else:
                 self.vcan_fail_message_counter += 1
