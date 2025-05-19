@@ -30,21 +30,20 @@ class CAN():
         self.handbrake_message = self.db.get_message_by_name('InstrumentHandBrake')
         self.steering_message = self.db.get_message_by_name('SteeringWheelAngle')
         self.gear_message = self.db.get_message_by_name('GearSelectorSwitch')
-        self.gear_message_test = self.db.get_message_by_name('TransmissionDataTest')
+        self.gear_message_test = self.db.get_message_by_name('TransmissionData')
 
     #---------------------------------------------------------
     # FUNCTIONS FOR DEFINEDING AND DUMPING CAN MESSAGES
     #---------------------------------------------------------
 
-    # Define wheelspeed message
+    # Define and dump wheelspeed message
     def dump_wheelspeed(self,speed):
         with can.interface.Bus(bustype='socketcan', channel='kcan4') as kcan4:
             data = self.wheelspeed_message.encode({'Wheel_FL': speed,'Wheel_FR':speed, 'Wheel_RL':speed, 'Wheel_RR': speed})
             message = can.Message(arbitration_id=self.wheelspeed_message.frame_id, data=data)
             kcan4.send(message)
-        #print(message)
 
-    # Define door message
+    # Define and dump door message
     def dump_door(self,world, trunk=0, mirror=2, checksum=0):
         with can.interface.Bus(bustype='socketcan', channel='kcan4') as kcan4:
             door_open = world.doors_are_open
@@ -58,7 +57,7 @@ class CAN():
             message = can.Message(arbitration_id=self.door_message.frame_id, data=data)
             kcan4.send(message)
 
-    # Define wheelspeed message
+    # Define and dump light message
     def dump_light(self,vehicle):
         light_none, light_lowbeam, light_highbeam, light_reverse = False, False, False, False
         light_brake, light_rightblinker, light_leftblinker, light_fog = False, False, False, False
@@ -98,23 +97,20 @@ class CAN():
             brake_value = control.brake
             brake_flag = 1 if brake_value > 0.0 else 0
 
-            data = bytearray(self.enginedata_message.encode({
+            encoded_data = bytearray(self.enginedata_message.encode({
                 'VehicleSpeed': speed,
                 'MovingForward': control.throttle,
                 'MovingReverse': control.reverse,
                 'BrakePressed': brake_value,
                 'Brake_active': brake_flag,
-                'YawRate': speed,
-                'Counter_416': 0,
-                'Checksum_416': 0  # temporary
+                'Damping_rate_full_throttle': 0.15,
+                'Damping_rate_zero_throttle_clutch_engaged': 2.0,
+                'Damping_rate_zero_throttle_clutch_disengaged': 0.35, 
+                'Checksum_416': 0  
             }))
-
-            # Calculate checksum from first 7 bytes to store in 16 bits checksum
-            checksum = sum(data[:6]) % 65536  
-            data[6] = (checksum >> 8) & 0xFF  
-            data[7] = checksum & 0xFF        
-
-            
+            data = bytearray(encoded_data)
+            checksum = sum(data[:7]) % 256
+            data[7] = checksum        
             message = can.Message(arbitration_id=self.enginedata_message.frame_id, data=data)
             bus.send(message)
 
@@ -122,7 +118,7 @@ class CAN():
     def dump_handbrake(self, control, checksum=0):
         #print(f"Start sending CAN_speed message with ID {self.handbrake_message.frame_id}")
         with can.interface.Bus(bustype='socketcan', channel='vcan0') as bus:
-            data = self.handbrake_message.encode({'HandbrakeActive':control.hand_brake,'Checksum_416': checksum})
+            data = self.handbrake_message.encode({'HandbrakeActive':control.hand_brake,'Checksum': checksum})
             message = can.Message(arbitration_id=self.handbrake_message.frame_id, data=data)
             bus.send(message)
 
@@ -147,12 +143,26 @@ class CAN():
             bus.send(message)
 
     # Define and dump gear message
-    def dump_gear(self, control, checksum=0):
+    def dump_gear(self, control):
         with can.interface.Bus(bustype='socketcan', channel='vcan0') as bus:
-            data = self.gear_message.encode({'Checksum': checksum, 'Shifting':control.manual_gear_shift,'GearRatio': random.randint(0,255), 'GearTar': control.gear, 'Checksum_416': checksum})
-            #print(f"Gear Value: {control.gear}")
+            manual_flag = 1 if control.manual_gear_shift else 0            
+            encoded_data = self.gear_message.encode({
+                'ManualGear': manual_flag,
+                'AutoGear': manual_flag,
+                'GearSwitchTime': 0.5,
+                'Ratio': 1.0,
+                'DownRatio': 0.5,
+                'UpRatio': 0.65,
+                'GearState': control.gear,
+                'Checksum': 0  # placeholder
+            })
+
+            data = bytearray(encoded_data)
+            checksum = sum(data[:7]) % 256
+            data[7] = checksum 
             message = can.Message(arbitration_id=self.gear_message.frame_id, data=data)
             bus.send(message)
+
 
     def dump_gear_test(self, control, checksum=0):
         with can.interface.Bus(bustype='socketcan', channel='vcan0') as bus:

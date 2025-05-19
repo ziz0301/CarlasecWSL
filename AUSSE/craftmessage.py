@@ -7,21 +7,19 @@ msg = db.get_message_by_name("EngineData")
 
 # Craft two signals
 signals_1 = {
-    "VehicleSpeed": 0,
+    "VehicleSpeed": 67,
     "MovingForward": 0,
     "MovingReverse": 0,
-    "BrakePressed": 1.0,  # physical value
+    "BrakePressed": 1,  # physical value
     "Brake_active": 1,
-    "YawRate": 0,
-    "Counter_416": 0,
+    "Damping_rate_full_throttle": 0.15,
+    "Damping_rate_zero_throttle_clutch_engaged": 2.0,
+    "Damping_rate_zero_throttle_clutch_disengaged": 0.35,
     "Checksum_416": 0  # temp, we'll fill it later
 }
 data_1 = bytearray(msg.encode(signals_1))
-
-# Compute checksum for first 6 bytes
-checksum = sum(data_1[:6]) % 65536
-data_1[6] = (checksum >> 8) & 0xFF
-data_1[7] = checksum & 0xFF
+checksum = sum(data_1[:7]) % 256
+data_1[7] = checksum        
 
 print("Message for BrakePressed = 0.5:")
 print(" ".join(f"{b:02X}" for b in data_1))
