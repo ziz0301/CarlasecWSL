@@ -59,7 +59,7 @@ def main():
     argparser.add_argument(
         '--host',
         metavar='H',
-        default='192.168.56.1',
+        default='192.168.160.1',
         help='IP of the host server (default: 127.0.0.1)')
     argparser.add_argument(
         '-p', '--port',
@@ -157,7 +157,7 @@ def main():
     walkers_list = []
     all_id = []
     client = carla.Client(args.host, args.port)
-    client.set_timeout(10.0)
+    client.set_timeout(30000.0)
 
     synchronous_master = False
     random.seed(args.seed if args.seed is not None else int(time.time()))

@@ -150,7 +150,7 @@ class Ecu:
 
                 print("VCAN thread stop")
 
-        def ecu_uds_server(self, stop_event, control, vehicle, vehicledoor, attack_tracker):
+        def ecu_uds_server(self, stop_event, control, vehicle, vehicledoor, attack_tracker, scenario):
             uds_server = UDSServer(attack_tracker)
             s = isotp.socket()
             s.set_fc_opts(stmin=5, bs=10)
@@ -179,7 +179,7 @@ class Ecu:
                         response = uds_server.handle_input_output_control(request)
                         s.send(response)
                     elif request[0] == services.RoutineControl._sid:
-                        response = uds_server.handle_routine_control(request, control, vehicle, vehicledoor)
+                        response = uds_server.handle_routine_control(request, control, vehicle, vehicledoor, scenario)
                         self.door_count = uds_server.door_count
                         #print (f"Door count ecu side: {self.door_count}")
                         s.send(response)

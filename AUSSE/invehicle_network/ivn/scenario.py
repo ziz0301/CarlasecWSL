@@ -61,6 +61,7 @@ class Scenario:
         self.tmp_door = False
         self.stop_event = stop_event
         self.attack_tracker = AttackTracker()
+        self.attack_out_of_range = False
 
 
     def setup_common_environment(self):
@@ -82,7 +83,7 @@ class Scenario:
         if not service_tester or not service_server:
             print(f"Exception: Service '{service_tester}' or '{service_server}' not found.")
             return
-        self.udsserver_thread= threading.Thread(target=service_tester.ecu_uds_server, args=(self.stop_event, control, vehicle, vehicledoor, self.attack_tracker))
+        self.udsserver_thread= threading.Thread(target=service_tester.ecu_uds_server, args=(self.stop_event, control, vehicle, vehicledoor, self.attack_tracker, self))
         self.udsserver_thread.start()
 
 

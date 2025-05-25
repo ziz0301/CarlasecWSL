@@ -83,6 +83,7 @@ from benchmark_tools.safety_metrics import SafetyMetrics
 from invehicle_network.ivn.scenario import Scenario
 from attacker.attackprofile import Attacker
 from attacker.attackerhelper import start_dbus, start_gnome_terminal, stop_dbus
+from attacker.attackerrange import AttackRange
 
 
 weather_presets = {
@@ -142,7 +143,7 @@ def game_loop(args, filename, scenario):
             random.seed(args.seed)
 
         client = carla.Client(args.host, args.port)
-        client.set_timeout(20.0)
+        client.set_timeout(30.0)
         traffic_manager = client.get_trafficmanager()
         sim_world = client.get_world()
 
@@ -210,7 +211,6 @@ def game_loop(args, filename, scenario):
         running_time = 0
 
 
-
         ###VEL_Start recording and save the file as filename
         filename_record = filename + "_record.rec"
         client.start_recorder(filename_record)
@@ -227,7 +227,13 @@ def game_loop(args, filename, scenario):
         vehicle = world.player
         control = carla.VehicleControl()
         scenario.create_uds_hack_scenario("diag_service","handle_uds_message", control, vehicle, carla.VehicleDoor)
-
+        
+        
+        ###VEL_Attacker range
+        attack_type = "cellular"  # or "bluetooth", "cellular"
+        attack_range = AttackRange(attack_type)
+        vehicle_loc = world.player.get_location()
+        attacker_loc = carla.Location(x=vehicle_loc.x + 1.0, y=vehicle_loc.y, z=vehicle_loc.z)
 
         ###VEL_ATTACKER
         #attacker.run_attack('05310101A964', '05310201A964')
@@ -256,6 +262,10 @@ def game_loop(args, filename, scenario):
             world.render(display)
             pygame.display.flip()
 
+
+            
+             
+             
             ###VEL test threading
             #active_thread = threading.active_count()
             #print(f"Number of active thread is {active_thread}")
@@ -279,6 +289,8 @@ def game_loop(args, filename, scenario):
             safety_metrics.update_distance(current_location)
             current_distance = safety_metrics.total_distance_meters
             distances_log.append(current_distance)
+            
+            
             
 
             ###VEL_Check if car block, if the car stop for more than stop_threshold (tick), then exit the in-game_loop
@@ -388,7 +400,37 @@ def game_loop(args, filename, scenario):
             #    control_auto.throttle = kcan_process.throttle     
             world.player.apply_control(control_auto)
             
-            
+            ###VEL_Test attacker range
+            vehicle_loc = world.player.get_location()
+            distance = attack_range.distance_between_attacker_vehicle(vehicle_loc, attacker_loc)
+            print(f"Distance between attacker and vehicle: {distance:.2f} meters")
+            max_range = attack_range.get_range()
+            # Always deliver if well within range (≤ 90%)
+            if distance <= max_range:
+                print(f"{attack_type.capitalize()} attack succeeded (within reliable range).")        
+            # Out of range
+            else:
+                print(f"{attack_type.capitalize()} attack failed (out of range).")
+                scenario.attack_out_of_range = True;
+                
+                
+            safety_metrics.log_safety_per_tick(
+                filename=filename,
+                route_completion=current_distance,
+                count_collision_pedestrians=world.collision_sensor.count_collision_pedestrians,
+                count_collision_vehicles=world.collision_sensor.count_collision_vehicles,
+                count_collision_others=world.collision_sensor.count_collision_others,
+                score_collision_pedestrians=world.collision_sensor.score_collision_pedestrians,
+                score_collision_vehicles=world.collision_sensor.score_collision_vehicles,
+                score_collision_others=world.collision_sensor.score_collision_others,
+                count_red_light_violation=countrunningredlight.get_violation_count(),
+                count_stop_sign_violation=countrunningstop.get_violation_count(),
+                count_off_road=countoffroad.get_offroad_count(),
+                door_open=1 if scenario.door_open else 0
+            )
+
+
+
             
             #if vcan_process != None:
                 #print(f"control_value:{vcan_process}")

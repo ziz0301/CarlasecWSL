@@ -1,48 +1,56 @@
 ALL INFORMATION ON THE RUN benign_1_simplistic_result.txt
 ------------------- ANALYSE ------------------
 Filename: benign_1
-Driving_score: 100.0
-Route_completion: 1.0
-Infraction_penalty: 1.0
+Driving_score: 0.04581070980325863
+Route_completion: 1.4886854521059294
+Infraction_penalty: 0.00030772591845009117
 Collisions_pedestrians: 0
 Collisions_vehicles: 0
-Collisions_layout: 0
+Collisions_layout: 6
 Score_collisions_pedestrians: 1
 Score_collisions_vehicles: 1
-Score_collisions_layout: 1
+Score_collisions_layout: 0.0005128765307501519
 Red_light_infractions: 0
-Stop_sign_infractions: 0
-Offroad_infractions: 0
+Stop_sign_infractions: 1
+Offroad_infractions: 1
 Door_open: 0
-Duration: 11.44029426574707
-Fully_complete: True
+Duration: 174.35260653495789
+Fully_complete: False
 --------------- FULL INFORMATION -------------
 filename: benign_1
 weather: Default
-number_of_vehicles: 1
-number_of_walker: 0
+number_of_vehicles: 13
+number_of_walker: 7
 ego_vehicle: vehicle.mercedes.coupe_2020
-start_positon: Location(x=-3.973868, y=28.104216, z=0.600000)
+start_positon: Location(x=98.800659, y=82.890846, z=0.600000)
 destination_position: Location(x=109.956909, y=-27.333675, z=0.600000)
-fully_completed: True
-total_time_run: 11.44029426574707
-total_metre_run: 162.75799429210323
-average_speed: 51.21623324024782
-count_collision_others: 0
+fully_completed: False
+total_time_run: 174.35260653495789
+total_metre_run: 341.2811398952843
+average_speed: 7.046709126064516
+count_collision_others: 6
 count_collision_pedestrians: 0
 count_collision_vehicles: 0
-count_off_road: 0
+count_off_road: 1
 count_red_light_violation: 0
-count_stop_sign_violation: 0
-score_collision_others: 1
+count_stop_sign_violation: 1
+score_collision_others: 0.0005128765307501519
 score_collision_pedestrians: 1
 score_collision_vehicles: 1
 door_open: 0
 
 --------- INFRACTION INFORMATION -----------
 Collisions with layout:
+ - Agent collided against object with type=static.static and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=13267.5107421875
+ - Agent collided against object with type=static.static and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=119.29352569580078
+ - Agent collided against object with type=static.static and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=28.061933517456055
+ - Agent collided against object with type=static.static and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=117.61002349853516
+ - Agent collided against object with type=static.static and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=111.3161813116038
+ - Agent collided against object with type=static.vegetation and id=0 at (x=0.0, y=0.0, z=0.0) with intensity=1267.3615598071651
 Collisions with pedestrians:
 Collisions with vehicles:
 Red lights infractions:
 Stop sign infractions:
+ - Agent ran a stop sign with id=307 at (x=26.1, y=75.15, z=0.15)
 Off-road infractions:
+ - Agent ran go off road at location (x=59.576, y=62.428, z=0.068) and time 2025-05-26T00:33:59.872717

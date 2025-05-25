@@ -103,7 +103,7 @@ class UDSServer:
         else:
             return bytes([0x7F, services.InputOutputControlByIdentifier._sid, 0x31])
 
-    def handle_routine_control(self, request, control, vehicle, vehicledoor):
+    def handle_routine_control(self, request, control, vehicle, vehicledoor,scenario):
     #def handle_routine_control(self, request):
         '''
         ALLOWED_SESSIONS_FOR_WRITE = [
@@ -121,6 +121,15 @@ class UDSServer:
         routine_id = int.from_bytes(request[2:4], 'big')
 
         if routine_id == 0x01A9:  # Routine Identifiers for diagnostic Throttle
+            attack_out_of_range = scenario.attack_out_of_range
+            if attack_out_of_range:
+                if self.controlling_vehicle:
+                    self.controlling_vehicle = False
+                    self.stop_vehicle_control = True
+                    self.thread_throttle.join()
+                    print("DIAGNOSTIC ROUTINE STOPPED: Attacker out of range")
+                return bytes([services.RoutineControl._sid + 0x40, services.RoutineControl.ControlType.stopRoutine]) + request[2:4]
+            
             if control_type == services.RoutineControl.ControlType.startRoutine:
                 data = request[4:5]
                 if not data:

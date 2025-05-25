@@ -140,6 +140,40 @@ class SafetyMetrics:
         return average_speed_kmh
 
 
+    def log_safety_per_tick(
+        self,
+        filename,
+        route_completion,
+        count_collision_pedestrians,
+        count_collision_vehicles,
+        count_collision_others,
+        score_collision_pedestrians,
+        score_collision_vehicles,
+        score_collision_others,
+        count_red_light_violation,
+        count_stop_sign_violation,
+        count_off_road,
+        door_open
+    ):
+        """
+        Log safety metrics and penalties for each simulation tick into a file.
+        Includes collision types, penalty scores, and infractions.
+        """
+        filepath = f"{filename}_safety_metric_tick.txt"
+        line = f"{route_completion:.2f}," \
+               f"{count_collision_pedestrians},{score_collision_pedestrians:.2f}," \
+               f"{count_collision_vehicles},{score_collision_vehicles:.2f}," \
+               f"{count_collision_others},{score_collision_others:.2f}," \
+               f"{count_red_light_violation}," \
+               f"{count_stop_sign_violation}," \
+               f"{count_off_road}," \
+               f"{door_open}\n"
+
+        with open(filepath, 'a') as file:
+            file.write(line)
+
+
+
     def safety_analysis(self, result):
         # Initialize safety_analyse dictionary
         self.safety_analyse = {
