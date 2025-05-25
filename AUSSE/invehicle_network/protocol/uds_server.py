@@ -10,7 +10,7 @@ try:
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/carla')
 except IndexError:
     pass
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from attacker.attack_tracker import AttackTracker
 
 
@@ -185,7 +185,7 @@ class UDSServer:
                 if not data:
                     return bytes([0x7F, services.RoutineControl._sid, 0x13])  # Incorrect message length or invalid format
                 brake_int_value = int.from_bytes(data, 'big') # Validate and use the data as needed
-                if brake_int_value < 0 or steering_int_value > 100:
+                if brake_int_value < 0 or brake_int_value > 100:
                     return bytes([0x7F, services.RoutineControl._sid, 0x31])  # Request out of range
                 brake_value = brake_int_value / 100 # Convert the integer throttle value to the float range [0.0, 1.0]
                 self.attack_tracker.update_path("Brake")  
@@ -220,13 +220,13 @@ class UDSServer:
                 #gear_value = gear_int_value / 100 # Convert the integer throttle value to the float range [0.0, 1.0]
                 self.attack_tracker.update_path("Gear")  
                 self.attack_tracker.print_path()  
-                print(f"Send diagnostic with gear value {gear_value}")
+                print(f"Send diagnostic with gear value {gear_int_value}")
                 if self.thread_gear is not None and self.thread_gear.is_alive(): # If previous thread still alive then set the flag to false then stop it
                     self.controlling_vehicle = False
                     self.thread_gear.join()
                 if not self.controlling_vehicle: # Create a new thread
                     self.controlling_vehicle = True
-                    self.thread_gear = threading.Thread(target=self.control_vehicle_brake, args=(control, vehicle, gear_int_value))
+                    self.thread_gear = threading.Thread(target=self.control_vehicle_gear, args=(control, vehicle, gear_int_value))
                     self.thread_gear.start()
                 return bytes([services.RoutineControl._sid + 0x40, control_type]) + request[2:4] #Return the server response
 
@@ -317,6 +317,7 @@ class UDSServer:
 
     def control_vehicle_gear(self, control, vehicle, gear_value):
         while self.controlling_vehicle:
+            control.manual_gear_shift  = True
             control.gear = gear_value
             vehicle.apply_control(control)
         self.controlling_vehicle = False
@@ -405,7 +406,7 @@ def main():
     uds_server = UDSServer()
     s = isotp.socket()
     s.set_fc_opts(stmin=5, bs=10)
-    s.bind("vcan0", isotp.Address(rxid=0x123, txid=0x456))
+    s.bind("vcan0", isotp.Address(rxid=0x7E0, txid=0x7E8))
     print("Start Listening")
 
     while True:

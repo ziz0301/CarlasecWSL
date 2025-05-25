@@ -154,7 +154,7 @@ class Ecu:
             uds_server = UDSServer(attack_tracker)
             s = isotp.socket()
             s.set_fc_opts(stmin=5, bs=10)
-            s.bind("vcan0", isotp.Address(rxid=0x123, txid=0x456))
+            s.bind("vcan0", isotp.Address(rxid=0x7E0, txid=0x7E8))
             #print("Start Listening")
 
             while not stop_event.is_set():
@@ -165,8 +165,9 @@ class Ecu:
                     if request[0] == services.DiagnosticSessionControl._sid:
                         response = uds_server.handle_session_change(request)
                         s.send(response)
-                    elif request[0] == services.SecurityAccess._sid:
+                    elif request[0] == services.SecurityAccess._sid:                        
                         response = uds_server.handle_security_access(request)
+                        print(f"SecurityAccess Require, the response is: {response}")
                         s.send(response)
                     elif request[0] == services.WriteDataByIdentifier._sid:
                         response = uds_server.handle_write_data_by_identifier(request)

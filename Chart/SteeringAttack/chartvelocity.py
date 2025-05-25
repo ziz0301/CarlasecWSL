@@ -20,13 +20,13 @@ plt.axvline(x=1720, color='#FBDB93', linestyle='--', linewidth=1)
 
 # Add shaded region for attack duration
 plt.axvspan(575, 1720, color='#B5FCCD', alpha=0.2)
-plt.text(1200, plt.ylim()[1]*0.85, 'Attack Time', ha='center', color='red', fontsize='15')
+plt.text(1200, -0.5, 'Attack Time', ha='center', color='red', fontsize='15')
 
 # Labels and formatting
-plt.title('Vehicle Steering Value Over Time (Marked Every 20 Ticks)')
-plt.xlabel('Simulation Time')
-plt.ylabel('Vehicle Steering Scalar Value')
-plt.legend()
+plt.title('Vehicle Steering Value Over Time (Marked Every 20 Ticks)', fontsize='15')
+plt.xlabel('Simulation Time', fontsize='13')
+plt.ylabel('Vehicle Steering Scalar Value', fontsize='13')
+plt.legend(fontsize='11')
 plt.grid(True)
 plt.tight_layout()
 plt.show()

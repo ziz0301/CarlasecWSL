@@ -38,7 +38,7 @@
         },
         {
             "ID": "TA0505",
-            "name": "Defense Evasion",
+            "name": "Defence Evasion",
             "short_description": "The adversary is trying to bypass or disable the UGV's security measures.",
             "full_description": "Defense evasion consists of techniques adversaries use to disable or bypass security mechanisms within an UGV system. Unlike traditional ATT&CK approaches that focus on UGVoiding detection, these methods allow attackers to directly neutralize security controls. This enables them to execute malicious code, advance their attacks, or manipulate the system without interference.\nCommon techniques include:\n\t- Disabling or bypassing security mechanisms in the telematics system to maintain access.\n\t- Exploiting software update processes and code integrity checks to insert malicious code undetected.\n\t- Disabling vehicle IDS to evade monitoring and alerts.\n\t- Bypassing security controls in diagnostic functions to perform unauthorised operations.\nThis tactic is adapted from AUTO-ISAC ATM.",
             "created": "25/02/2025",

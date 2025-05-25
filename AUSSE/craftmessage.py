@@ -7,11 +7,11 @@ msg = db.get_message_by_name("EngineData")
 
 # Craft two signals
 signals_1 = {
-    "VehicleSpeed": 67,
+    "VehicleSpeed": 6,
     "MovingForward": 0,
-    "MovingReverse": 0,
-    "BrakePressed": 1,  # physical value
-    "Brake_active": 1,
+    "MovingReverse": 1,
+    "BrakePressed": 0,  # physical value
+    "Brake_active": 0,
     "Damping_rate_full_throttle": 0.15,
     "Damping_rate_zero_throttle_clutch_engaged": 2.0,
     "Damping_rate_zero_throttle_clutch_disengaged": 0.35,

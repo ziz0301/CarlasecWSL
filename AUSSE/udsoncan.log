@@ -1,0 +1,335 @@
+2025-05-19 23:09:21 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:09:21 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:09:21 [DEBUG] Connection: Received 18 bytes : [b'6703d07825a8abbdb40dd8a35b17ac6b9d6b']
+2025-05-19 23:09:21 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:09:21 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:09:21 [DEBUG] Connection: Sending 18 bytes : [b'2704d07825a8abbdb40dd8a35b17ac6b9d6c']
+2025-05-19 23:09:21 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:09:21 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:09:22 [INFO] Connection: Connection closed
+2025-05-19 23:09:22 [INFO] Connection: Connection closed
+2025-05-19 23:12:25 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:12:25 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:12:25 [DEBUG] Connection: Received 18 bytes : [b'6703db76767bbd76b7c64f01323f6df1c1f7']
+2025-05-19 23:12:25 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:12:25 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:12:25 [DEBUG] Connection: Sending 18 bytes : [b'2704db76767bbd76b7c64f01323f6df1c1f8']
+2025-05-19 23:12:25 [DEBUG] Connection: Received 3 bytes : [b'7f2733']
+2025-05-19 23:12:25 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SecurityAccessDenied (0x33)
+2025-05-19 23:12:25 [INFO] Connection: Connection closed
+2025-05-19 23:12:25 [INFO] Connection: Connection closed
+2025-05-19 23:12:58 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:12:58 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:12:58 [DEBUG] Connection: Received 18 bytes : [b'6703fbadd2affc6759fbac30e8f78c390f16']
+2025-05-19 23:12:58 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:12:58 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:12:58 [DEBUG] Connection: Sending 18 bytes : [b'2704fbadd2affc6759fbac30e8f78c390f17']
+2025-05-19 23:12:58 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:12:58 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:12:42 [INFO] Connection: Connection closed
+2025-05-19 23:12:42 [INFO] Connection: Connection closed
+2025-05-19 23:32:46 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:32:46 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:32:46 [DEBUG] Connection: Received 18 bytes : [b'670378e9209f5958842782a9c281cd088260']
+2025-05-19 23:32:46 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:32:46 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:32:46 [DEBUG] Connection: Sending 18 bytes : [b'270478e9209f5958842782a9c281cd088261']
+2025-05-19 23:32:46 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:32:46 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:32:46 [INFO] Connection: Connection closed
+2025-05-19 23:32:46 [INFO] Connection: Connection closed
+2025-05-19 23:33:05 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:33:05 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:33:05 [DEBUG] Connection: Received 18 bytes : [b'67035b29e6bd9f53b9742edc27636bca6385']
+2025-05-19 23:33:05 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:33:05 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:33:05 [DEBUG] Connection: Sending 18 bytes : [b'27045b29e6bd9f53b9742edc27636bca6386']
+2025-05-19 23:33:05 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:33:05 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:33:05 [INFO] Connection: Connection closed
+2025-05-19 23:33:05 [INFO] Connection: Connection closed
+2025-05-19 23:54:08 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:54:08 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:54:08 [DEBUG] Connection: Received 18 bytes : [b'67036e01de9467db4eddffd5feb7c7c7be21']
+2025-05-19 23:54:08 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:54:08 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:54:08 [DEBUG] Connection: Sending 18 bytes : [b'27046e01de9467db4eddffd5feb7c7c7be22']
+2025-05-19 23:54:08 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:54:08 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:53:52 [INFO] Connection: Connection closed
+2025-05-19 23:53:52 [INFO] Connection: Connection closed
+2025-05-19 23:54:28 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-19 23:54:28 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-19 23:54:28 [DEBUG] Connection: Received 18 bytes : [b'670344e1a7c756dea38f3631d20c4db850f5']
+2025-05-19 23:54:28 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:54:28 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-19 23:54:28 [DEBUG] Connection: Sending 18 bytes : [b'270444e1a7c756dea38f3631d20c4db850f6']
+2025-05-19 23:54:28 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-19 23:54:28 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-19 23:54:28 [INFO] Connection: Connection closed
+2025-05-19 23:54:28 [INFO] Connection: Connection closed
+2025-05-20 00:13:50 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 00:13:50 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 00:13:50 [DEBUG] Connection: Received 18 bytes : [b'6703ed40e2732c8b9f6d334ed314f1e8d8eb']
+2025-05-20 00:13:50 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:13:50 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 00:13:50 [DEBUG] Connection: Sending 18 bytes : [b'2704ed40e2732c8b9f6d334ed314f1e8d8ec']
+2025-05-20 00:13:50 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 00:13:50 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:13:50 [INFO] Connection: Connection closed
+2025-05-20 00:13:50 [INFO] Connection: Connection closed
+2025-05-20 00:13:57 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 00:13:57 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 00:13:57 [DEBUG] Connection: Received 18 bytes : [b'67032e669c3c2b08d303a70f741cec870aa8']
+2025-05-20 00:13:57 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:13:57 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 00:13:57 [DEBUG] Connection: Sending 18 bytes : [b'27042e669c3c2b08d303a70f741cec870aa9']
+2025-05-20 00:13:57 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 00:13:57 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:13:58 [INFO] Connection: Connection closed
+2025-05-20 00:13:58 [INFO] Connection: Connection closed
+2025-05-20 00:19:14 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x01
+2025-05-20 00:19:14 [DEBUG] Connection: Sending 2 bytes : [b'2701']
+2025-05-20 00:19:14 [DEBUG] Connection: Received 10 bytes : [b'670187757805011ded94']
+2025-05-20 00:19:14 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:19:14 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x02
+2025-05-20 00:19:14 [DEBUG] Connection: Sending 10 bytes : [b'270287757805011ded95']
+2025-05-20 00:19:14 [DEBUG] Connection: Received 2 bytes : [b'6702']
+2025-05-20 00:19:14 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:19:15 [INFO] Connection: Connection closed
+2025-05-20 00:19:15 [INFO] Connection: Connection closed
+2025-05-20 00:19:27 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x05
+2025-05-20 00:19:27 [DEBUG] Connection: Sending 2 bytes : [b'2705']
+2025-05-20 00:19:27 [DEBUG] Connection: Received 66 bytes : [b'670500e8e095eda2e0cc186c4e1db939e01e512d383844916cf496bd11223e4d8bcc63a43ad48d60067b227288fc3f505b276431069e0c4c4ada545efb852c5b46b7']
+2025-05-20 00:19:27 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:19:27 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x06
+2025-05-20 00:19:27 [DEBUG] Connection: Sending 66 bytes : [b'270600e8e095eda2e0cc186c4e1db939e01e512d383844916cf496bd11223e4d8bcc63a43ad48d60067b227288fc3f505b276431069e0c4c4ada545efb852c5b46b8']
+2025-05-20 00:19:27 [DEBUG] Connection: Received 2 bytes : [b'6706']
+2025-05-20 00:19:27 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:19:27 [INFO] Connection: Connection closed
+2025-05-20 00:19:27 [INFO] Connection: Connection closed
+2025-05-20 00:21:02 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:21:02 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:21:02 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:21:02 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:21:02 [INFO] Connection: Connection closed
+2025-05-20 00:21:02 [INFO] Connection: Connection closed
+2025-05-20 00:21:19 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:21:19 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:21:19 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:21:19 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:21:19 [INFO] Connection: Connection closed
+2025-05-20 00:21:19 [INFO] Connection: Connection closed
+2025-05-20 00:21:28 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:21:28 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:21:28 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:21:28 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:21:28 [INFO] Connection: Connection closed
+2025-05-20 00:21:28 [INFO] Connection: Connection closed
+2025-05-20 00:21:34 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:21:34 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:21:34 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:21:34 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:21:35 [INFO] Connection: Connection closed
+2025-05-20 00:21:35 [INFO] Connection: Connection closed
+2025-05-20 00:21:43 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:21:43 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:21:43 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:21:43 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:21:43 [INFO] Connection: Connection closed
+2025-05-20 00:21:43 [INFO] Connection: Connection closed
+2025-05-20 00:22:03 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:22:03 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:22:03 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:22:03 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:22:03 [INFO] Connection: Connection closed
+2025-05-20 00:22:03 [INFO] Connection: Connection closed
+2025-05-20 00:22:30 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:22:30 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:22:30 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:22:30 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:22:30 [INFO] Connection: Connection closed
+2025-05-20 00:22:30 [INFO] Connection: Connection closed
+2025-05-20 00:22:22 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 00:22:22 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 00:22:22 [DEBUG] Connection: Received 18 bytes : [b'6703ccba0369a2b43ec0de483ebf219a3348']
+2025-05-20 00:22:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:22 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 00:22:22 [DEBUG] Connection: Sending 18 bytes : [b'2704ccba0369a2b43ec0de483ebf219a3349']
+2025-05-20 00:22:22 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 00:22:22 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:22 [INFO] Connection: Connection closed
+2025-05-20 00:22:22 [INFO] Connection: Connection closed
+2025-05-20 00:22:33 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x05
+2025-05-20 00:22:33 [DEBUG] Connection: Sending 2 bytes : [b'2705']
+2025-05-20 00:22:33 [DEBUG] Connection: Received 66 bytes : [b'6705a842afbe210e8fce35291c9b5b8de81548efa45e5b75a77fe1f9d6427c38ad92bfdbc55a110d5f679189da1f1476583ddc65f71fb2aded82d2b2db54e0cf6d8b']
+2025-05-20 00:22:33 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:33 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x06
+2025-05-20 00:22:33 [DEBUG] Connection: Sending 66 bytes : [b'2706a842afbe210e8fce35291c9b5b8de81548efa45e5b75a77fe1f9d6427c38ad92bfdbc55a110d5f679189da1f1476583ddc65f71fb2aded82d2b2db54e0cf6d8c']
+2025-05-20 00:22:33 [DEBUG] Connection: Received 2 bytes : [b'6706']
+2025-05-20 00:22:33 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:33 [INFO] Connection: Connection closed
+2025-05-20 00:22:33 [INFO] Connection: Connection closed
+2025-05-20 00:22:43 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x05
+2025-05-20 00:22:43 [DEBUG] Connection: Sending 2 bytes : [b'2705']
+2025-05-20 00:22:43 [DEBUG] Connection: Received 66 bytes : [b'6705d8d4fbf2c2172c7b6c89104f15761266a1f829b6209c1b42ddfa68105bcb3c36c3e83a9daf82059597efa7dfe7bece3e8d66cdfb4dc6824fc6e77c43aed38e5d']
+2025-05-20 00:22:43 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:43 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x06
+2025-05-20 00:22:43 [DEBUG] Connection: Sending 66 bytes : [b'2706d8d4fbf2c2172c7b6c89104f15761266a1f829b6209c1b42ddfa68105bcb3c36c3e83a9daf82059597efa7dfe7bece3e8d66cdfb4dc6824fc6e77c43aed38e5e']
+2025-05-20 00:22:43 [DEBUG] Connection: Received 2 bytes : [b'6706']
+2025-05-20 00:22:43 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:43 [INFO] Connection: Connection closed
+2025-05-20 00:22:43 [INFO] Connection: Connection closed
+2025-05-20 00:22:51 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:22:51 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:22:51 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:22:51 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:22:51 [INFO] Connection: Connection closed
+2025-05-20 00:22:51 [INFO] Connection: Connection closed
+2025-05-20 00:22:58 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x01
+2025-05-20 00:22:58 [DEBUG] Connection: Sending 2 bytes : [b'2701']
+2025-05-20 00:22:58 [DEBUG] Connection: Received 10 bytes : [b'67010f29e8850d2410d8']
+2025-05-20 00:22:58 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:58 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x02
+2025-05-20 00:22:58 [DEBUG] Connection: Sending 10 bytes : [b'27020f29e8850d2410d9']
+2025-05-20 00:22:58 [DEBUG] Connection: Received 2 bytes : [b'6702']
+2025-05-20 00:22:58 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:22:58 [INFO] Connection: Connection closed
+2025-05-20 00:22:58 [INFO] Connection: Connection closed
+2025-05-20 00:23:32 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x05
+2025-05-20 00:23:32 [DEBUG] Connection: Sending 2 bytes : [b'2705']
+2025-05-20 00:23:32 [DEBUG] Connection: Received 66 bytes : [b'67052de0865a436bb9d9a48e71b490a7f28d57653fe2ddf55b7ae707168f3d9c8cdce6dfd312f53a0a00c034a5e51993a17446500c20c162a0b1786fc4c08c9b8a05']
+2025-05-20 00:23:32 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:23:32 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x06
+2025-05-20 00:23:32 [DEBUG] Connection: Sending 66 bytes : [b'27062de0865a436bb9d9a48e71b490a7f28d57653fe2ddf55b7ae707168f3d9c8cdce6dfd312f53a0a00c034a5e51993a17446500c20c162a0b1786fc4c08c9b8a06']
+2025-05-20 00:23:32 [DEBUG] Connection: Received 2 bytes : [b'6706']
+2025-05-20 00:23:32 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 00:23:32 [INFO] Connection: Connection closed
+2025-05-20 00:23:32 [INFO] Connection: Connection closed
+2025-05-20 00:23:39 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 00:23:39 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 00:23:39 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 00:23:39 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 00:23:55 [INFO] Connection: Connection closed
+2025-05-20 00:23:55 [INFO] Connection: Connection closed
+2025-05-20 14:36:55 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x07
+2025-05-20 14:36:55 [DEBUG] Connection: Sending 2 bytes : [b'2707']
+2025-05-20 14:36:55 [DEBUG] Connection: Received 3 bytes : [b'7f2712']
+2025-05-20 14:36:55 [WARNING] UdsClient: SecurityAccess service execution returned a negative response SubFunctionNotSupported (0x12)
+2025-05-20 14:36:55 [INFO] Connection: Connection closed
+2025-05-20 14:36:55 [INFO] Connection: Connection closed
+2025-05-20 14:37:24 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 14:37:24 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 14:37:24 [DEBUG] Connection: Received 18 bytes : [b'6703c6d71815fd1ee1cd3522d48bdedf9ac0']
+2025-05-20 14:37:24 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 14:37:24 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 14:37:24 [DEBUG] Connection: Sending 18 bytes : [b'2704c6d71815fd1ee1cd3522d48bdedf9ac1']
+2025-05-20 14:37:24 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 14:37:24 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 14:37:25 [INFO] Connection: Connection closed
+2025-05-20 14:37:25 [INFO] Connection: Connection closed
+2025-05-20 14:45:06 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 14:45:06 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 14:45:06 [DEBUG] Connection: Received 18 bytes : [b'670353c4ec91a02d241a2541d20cb948b247']
+2025-05-20 14:45:06 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 14:45:06 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 14:45:06 [DEBUG] Connection: Sending 18 bytes : [b'270453c4ec91a02d241a2541d20cb948b248']
+2025-05-20 14:45:06 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 14:45:06 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 14:45:06 [INFO] Connection: Connection closed
+2025-05-20 14:45:06 [INFO] Connection: Connection closed
+2025-05-20 15:55:40 [INFO] UdsClient: SecurityAccess<0x27> - Requesting seed to unlock security access level 0x03
+2025-05-20 15:55:40 [DEBUG] Connection: Sending 2 bytes : [b'2703']
+2025-05-20 15:55:40 [DEBUG] Connection: Received 18 bytes : [b'6703600657f03ba817db7e81f624fab5bf30']
+2025-05-20 15:55:40 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 15:55:40 [INFO] UdsClient: SecurityAccess<0x27> - Sending key to unlock security access level 0x04
+2025-05-20 15:55:40 [DEBUG] Connection: Sending 18 bytes : [b'2704600657f03ba817db7e81f624fab5bf31']
+2025-05-20 15:55:40 [DEBUG] Connection: Received 2 bytes : [b'6704']
+2025-05-20 15:55:40 [INFO] UdsClient: Received positive response for service SecurityAccess (0x27) from server.
+2025-05-20 15:55:40 [INFO] Connection: Connection closed
+2025-05-20 15:55:40 [INFO] Connection: Connection closed
+2025-05-20 15:56:00 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2025-05-20 15:56:00 [DEBUG] Connection: Sending 2 bytes : [b'1003']
+2025-05-20 15:56:00 [DEBUG] Connection: Received 6 bytes : [b'500301f403e8']
+2025-05-20 15:56:00 [INFO] UdsClient: Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-20 15:56:00 [INFO] UdsClient: DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.500s and P2*=10.000s.  Using these value from now on.
+2025-05-20 15:56:00 [INFO] Connection: Connection closed
+2025-05-20 15:56:00 [INFO] Connection: Connection closed
+2025-05-20 16:00:22 [INFO] UdsClient: ReadDataByIdentifier<0x22> - Reading data identifier : 0xf190 (VINDataIdentifier)
+2025-05-20 16:00:22 [DEBUG] Connection: Sending 3 bytes : [b'22f190']
+2025-05-20 16:00:22 [DEBUG] Connection: Received 20 bytes : [b'62f1903254335246524556374457313038393838']
+2025-05-20 16:00:22 [INFO] UdsClient: Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-20 16:00:22 [INFO] Connection: Connection closed
+2025-05-20 16:00:22 [INFO] Connection: Connection closed
+2025-05-20 16:03:18 [INFO] UdsClient: WriteDataByIdentifier<0x2e> - Writing data identifier 0xf190 (VINDataIdentifier)
+2025-05-20 16:03:18 [DEBUG] Connection: Sending 20 bytes : [b'2ef1903254335246524556374457313038313737']
+2025-05-20 16:03:18 [DEBUG] Connection: Received 3 bytes : [b'6ef190']
+2025-05-20 16:03:18 [INFO] UdsClient: Received positive response for service WriteDataByIdentifier (0x2e) from server.
+2025-05-20 16:03:18 [INFO] Connection: Connection closed
+2025-05-20 16:03:18 [INFO] Connection: Connection closed
+2025-05-20 16:12:24 [INFO] UdsClient: InputOutputControlByIdentifier<0x2f> - Sending request for DID=0xf192, control parameter 0x00 (returnControlToECU).
+2025-05-20 16:12:24 [DEBUG] Connection: Sending 4 bytes : [b'2ff19200']
+2025-05-20 16:12:24 [DEBUG] Connection: Received 4 bytes : [b'6ff19200']
+2025-05-20 16:12:24 [INFO] UdsClient: Received positive response for service InputOutputControlByIdentifier (0x2f) from server.
+2025-05-20 16:12:24 [INFO] Connection: Connection closed
+2025-05-20 16:12:24 [INFO] Connection: Connection closed
+2025-05-20 16:15:30 [INFO] UdsClient: InputOutputControlByIdentifier<0x2f> - Sending request for DID=0xf192, control parameter 0x01 (resetToDefault).
+2025-05-20 16:15:30 [DEBUG] Connection: Sending 4 bytes : [b'2ff19201']
+2025-05-20 16:15:30 [DEBUG] Connection: Received 4 bytes : [b'6ff19201']
+2025-05-20 16:15:30 [INFO] UdsClient: Received positive response for service InputOutputControlByIdentifier (0x2f) from server.
+2025-05-20 16:15:30 [INFO] Connection: Connection closed
+2025-05-20 16:15:30 [INFO] Connection: Connection closed
+2025-05-20 19:38:13 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 19:38:13 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 19:38:14 [DEBUG] Connection: No data received: [TimeoutException] - Did not received ISOTP frame in time (timeout=1 sec) 
+2025-05-20 19:38:14 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=1.000 sec)
+2025-05-20 19:38:14 [INFO] Connection: Connection closed
+2025-05-20 19:38:14 [INFO] Connection: Connection closed
+2025-05-20 19:40:55 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 19:40:55 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 19:40:55 [DEBUG] Connection: Received 3 bytes : [b'7f2e7e']
+2025-05-20 19:40:55 [ERROR] UdsClient: [UnexpectedResponseException] : WriteDataByIdentifier service execution returned a valid response but unexpected. Details : Response gotten from server has a service ID different than the request service ID. Received=0x6e, Expected=0x71 
+2025-05-20 19:40:55 [INFO] Connection: Connection closed
+2025-05-20 19:40:55 [INFO] Connection: Connection closed
+2025-05-20 19:41:39 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 19:41:39 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 19:41:39 [DEBUG] Connection: Received 3 bytes : [b'7f2e7e']
+2025-05-20 19:41:39 [ERROR] UdsClient: [UnexpectedResponseException] : WriteDataByIdentifier service execution returned a valid response but unexpected. Details : Response gotten from server has a service ID different than the request service ID. Received=0x6e, Expected=0x71 
+2025-05-20 19:41:39 [INFO] Connection: Connection closed
+2025-05-20 19:41:39 [INFO] Connection: Connection closed
+2025-05-20 19:41:51 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 19:41:51 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 19:41:51 [DEBUG] Connection: Received 3 bytes : [b'7f3111']
+2025-05-20 19:41:51 [WARNING] UdsClient: RoutineControl service execution returned a negative response ServiceNotSupported (0x11)
+2025-05-20 19:41:53 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 19:41:53 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2025-05-20 19:41:53 [DEBUG] Connection: Received 3 bytes : [b'7f3111']
+2025-05-20 19:41:53 [WARNING] UdsClient: RoutineControl service execution returned a negative response ServiceNotSupported (0x11)
+2025-05-20 19:41:53 [INFO] Connection: Connection closed
+2025-05-20 19:41:53 [INFO] Connection: Connection closed
+2025-05-20 20:34:49 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 20:34:49 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 20:34:50 [DEBUG] Connection: No data received: [TimeoutException] - Did not received ISOTP frame in time (timeout=1 sec) 
+2025-05-20 20:34:50 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=1.000 sec)
+2025-05-20 20:34:50 [INFO] Connection: Connection closed
+2025-05-20 20:34:50 [INFO] Connection: Connection closed
+2025-05-20 20:35:04 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 20:35:04 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 20:35:04 [DEBUG] Connection: Received 4 bytes : [b'71010203']
+2025-05-20 20:35:04 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2025-05-20 20:35:06 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 20:35:06 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2025-05-20 20:35:06 [DEBUG] Connection: Received 4 bytes : [b'71020203']
+2025-05-20 20:35:06 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2025-05-20 20:35:07 [INFO] Connection: Connection closed
+2025-05-20 20:35:07 [INFO] Connection: Connection closed
+2025-05-20 20:36:06 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x01 - Starting routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 20:36:06 [DEBUG] Connection: Sending 5 bytes : [b'3101020364']
+2025-05-20 20:36:06 [DEBUG] Connection: Received 4 bytes : [b'71010203']
+2025-05-20 20:36:06 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2025-05-20 20:36:08 [INFO] UdsClient: RoutineControl<0x31> - ControlType=0x02 - Stoping routine ID 0x0203 (VehicleManufacturerSpecific) with a payload of 1 bytes
+2025-05-20 20:36:08 [DEBUG] Connection: Sending 5 bytes : [b'3102020364']
+2025-05-20 20:36:08 [DEBUG] Connection: Received 4 bytes : [b'71020203']
+2025-05-20 20:36:08 [INFO] UdsClient: Received positive response for service RoutineControl (0x31) from server.
+2025-05-20 20:36:08 [INFO] Connection: Connection closed
+2025-05-20 20:36:08 [INFO] Connection: Connection closed

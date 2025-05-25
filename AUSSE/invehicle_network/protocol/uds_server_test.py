@@ -88,7 +88,7 @@ class UDSServer:
 
     def handle_routine_control(self, request):
     #def handle_routine_control(self, request):
-
+        '''
         ALLOWED_SESSIONS_FOR_WRITE = [
             services.DiagnosticSessionControl.Session.extendedDiagnosticSession,
             services.DiagnosticSessionControl.Session.programmingSession
@@ -98,7 +98,7 @@ class UDSServer:
             return bytes([0x7F, services.WriteDataByIdentifier._sid, 0x7E])
         else:
             print(f"[INFO]Diagnostic session PASS")
-
+        '''
         control_type = request[1]
         routine_id = int.from_bytes(request[2:4], 'big')
 
@@ -207,7 +207,7 @@ def main():
     uds_server = UDSServer()
     s = isotp.socket()
     s.set_fc_opts(stmin=0xF1, bs=10)
-    s.bind("vcan0", isotp.Address(rxid=0x123, txid=0x456))
+    s.bind("vcan0", isotp.Address(rxid=0x7E0, txid=0x7E8))
     print("Start Listening")
 
     while True:
